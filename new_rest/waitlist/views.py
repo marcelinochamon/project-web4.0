@@ -1,12 +1,9 @@
 from django.shortcuts import render
-# from .forms import FriendForm
+from rest_framework import viewsets
+from .models import Wait
+
 
 def waitlist_view(request):
-    # form = FriendForm(request.POST or None)
-    # if form.is_valid():
-    #     form.save()
-    #     form = FriendForm()
-    context = {
-    #     'form': form
-    }
+    waitlist = Wait.objects.all()
+    context = {'waitlist' : waitlist}
     return render(request, "waitlist.html", context)
