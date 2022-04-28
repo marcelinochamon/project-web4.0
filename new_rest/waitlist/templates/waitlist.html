@@ -3,8 +3,20 @@
 {% block content %}
 <h1>Waitlist</h1>
 <p>
-    Let's be friends!
+    Current Waitlist
 </p>
+<ol>
+    {% for party in waitlist %}
+        <li>Name: {{ party.name }}
+          <ul>
+          <li>Party Size: {{ party.party_size }}
+          <li>Dining Time: {{ party.dining_time }}
+          <li>Seated: {{ party.seated }}
+          <li>Left: {{ party.left }}
+          </ul>
+    {% endfor %}
+</ol>
+
 <!-- <form action = '.' method = 'POST'> {% csrf_token %}
     {{ form.as_p }}
     <input type = 'submit' value="Save" />
