@@ -1,32 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div style="margin-left:25%">
 <h1>Tables</h1>
-<p>
-    Current Tables
-</p>
-<ol>
-    {% for table in tables %}
-        <li>Table Number: {{ table.number }}
-            <ul>
-            <li>Party Name: {{ table.party }} 
-            <li>Seats: {{ table.seats }}
-            <li>Time Seated: {{ table.time_seated }}
-            <li>Dining Time Elapsed: {{ table.dining_time }} min  
-            <li>Server: {{ table.server }}
-            <li>
-                <form method = "post">
-                    {% csrf_token %}
-                    <button name = "table_num" value = "{{ table.number }}">Clear table {{ table.number }}</button>
-                </form>
-            </li>
-            </ul>
-    {% endfor %}
-</ol>
 
-<!-- <form action = '.' method = 'POST'> {% csrf_token %}
-    {{ form.as_p }}
-    <input type = 'submit' value="Save" />
-</form> -->
+<style>
+table {
+  font-family: verdana, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: middle;
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EAF8;
+}
+</style>
+
+<h3>Current Assignments</h3>
+
+<table>
+  <tr>
+    <th>Table Number</th>
+    <th>Party Name</th>
+    <th>Capacity</th>
+    <th>Time Seated</th>
+    <th>Dining Time</th>
+    <th>Server</th>
+    <th>Done</th>
+  </tr>
+  <tr>
+    {% for table in tables %}
+        <td>{{ table.table_number }}
+        <td>{{ table.party_name }}
+        <td>{{ table.table_capacity }}
+        <td>{{ table.time_seated }}
+        <td>{{ table.dining_time }} minutes
+        <td>{{ table.server }}
+        <td>
+          <form method = "post">
+            {% csrf_token %}
+            <button name = "table_num" value = "{{ table.table_number }}">Clear table {{ table.table_number }}</button>
+          </form>
+        </td>
+  </tr>
+    {% endfor %}
+</table>
+</div>
 
 {% endblock %}
