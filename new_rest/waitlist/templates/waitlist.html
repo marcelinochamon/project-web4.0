@@ -17,6 +17,7 @@ table {
   font-family: verdana, sans-serif;
   border-collapse: collapse;
   width: 90%;
+  font-size: 100%;
 }
 
 td, th {
@@ -47,19 +48,18 @@ tr:nth-child(even) {
         <td>{{ party.party_size }}
         <td>{{ party.arrival_time }}
         <td>{{ party.wait_time }}
-        <td>{{ party.assign_sugg }} 
+        <td>Table {{ party.assign_sugg }}
           <form method = "post">
             {% csrf_token %}
             <button name = "accept_sugg" value = "{{ party.assign_sugg }}">Accept</button>
             <button name = "reject_sugg" value = "{{ party.assign_sugg }}">Reject</button>
           </form>
-        <td>Table {{ party.assign_sugg }}
         <td>
-          <!-- <form action = '.' method = 'POST'>
+          <form action = '.' method = 'POST'>
             {% csrf_token %}
             {{ formA.as_p }}
-            <input type = 'submit' value = 'Assign' />
-          </form> -->
+          <input type = 'submit' value = 'Assign' />
+          </form>
   </tr>
     {% endfor %}
 </table>
