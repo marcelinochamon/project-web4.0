@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Wait, Table
 from .forms import WaitForm
+from .assignment import assign_tables
 
 
 def waitlist_view(request):
@@ -9,6 +10,7 @@ def waitlist_view(request):
     form = WaitForm(request.POST or None)
     if form.is_valid():
         form.save()
+        assign_tables()
         form = WaitForm()
     context = {
         'waitlist' : waitlist,
@@ -24,5 +26,6 @@ def tables_view(request):
         table = Table.objects.filter(number= returned_num['table_num']).first()
         table.party = "Empty"
         table.save()
+        assign_tables()
     print(returned_num)
     return render(request, "tables.html", context)
