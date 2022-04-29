@@ -2,23 +2,51 @@
 
 {% block content %}
 <h1>Waitlist</h1>
-<p>
-    Current Waitlist
-</p>
-<ol>
-    {% for party in waitlist %}
-        <li>Name: {{ party.name }}
-            <ul>
-            <li>Party Size: {{ party.party_size }}
-            <li>Arrival Time: {{ party.arrival_time }}
-            <li>Wait Time Elapsed: {{ party.wait_time }} min
-            </ul>
-    {% endfor %}
-</ol>
+
+<h2>Add to Waitlist</h2>
+
 <form action = '.' method = 'POST'>
     {% csrf_token %}
     {{ form.as_p}}
     <input type = 'submit' value = 'save' />
 </form>
 
+<style>
+table {
+  font-family: verdana, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: middle;
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EAF8;
+}
+</style>
+
+<h2>Current Waitlist</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Party Size</th>
+    <th>Arrival Time</th>
+    <th>Wait Time</th>
+  </tr>
+  <tr>
+    {% for party in waitlist %}
+        <td>{{ party.name }}
+        <td>{{ party.party_size }}
+        <td>{{ party.arrival_time }}
+        <td>{{ party.wait_time }}
+  </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}
+
