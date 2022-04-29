@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Wait, Table
-from .forms import WaitForm
+from .forms import WaitForm, AssignForm
 from .assignment import assign_tables
 from datetime import datetime
 from django.utils import timezone
