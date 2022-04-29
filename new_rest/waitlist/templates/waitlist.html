@@ -1,27 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div style="margin-left:25%">
 <h1>Waitlist</h1>
 
-<h2>Add to Waitlist</h2>
+<h5>Add to Waitlist</h5>
 
 <form action = '.' method = 'POST'>
     {% csrf_token %}
-    {{ form.as_p}}
-    <input type = 'submit' value = 'save' />
+    {{ formW.as_p }}
+    <input type = 'submit' value = 'Add' />
 </form>
 
-<style>
+<style >
 table {
   font-family: verdana, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 90%;
 }
 
 td, th {
   border: 1px solid black;
   text-align: middle;
-  padding: 12px;
+  padding: 4px;
 }
 
 tr:nth-child(even) {
@@ -37,6 +38,8 @@ tr:nth-child(even) {
     <th>Party Size</th>
     <th>Arrival Time</th>
     <th>Wait Time</th>
+    <th>Assignment Suggestion</th>
+    <th>Assign</th>
   </tr>
   <tr>
     {% for party in waitlist %}
@@ -44,9 +47,16 @@ tr:nth-child(even) {
         <td>{{ party.party_size }}
         <td>{{ party.arrival_time }}
         <td>{{ party.wait_time }}
+        <td>Table {{ party.assign_suggestion }}
+        <td>
+          <form action = '.' method = 'POST'>
+            {% csrf_token %}
+            {{ formA.as_p }}
+            <input type = 'submit' value = 'Assign' />
+          </form>
   </tr>
     {% endfor %}
 </table>
+</div>
 
 {% endblock %}
-
