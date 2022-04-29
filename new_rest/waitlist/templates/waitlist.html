@@ -37,6 +37,7 @@ tr:nth-child(even) {
     <th>Party Size</th>
     <th>Arrival Time</th>
     <th>Wait Time</th>
+    <th>Assignment Suggestion</th>
   </tr>
   <tr>
     {% for party in waitlist %}
@@ -44,6 +45,12 @@ tr:nth-child(even) {
         <td>{{ party.party_size }}
         <td>{{ party.arrival_time }}
         <td>{{ party.wait_time }}
+        <td>{{ party.assign_sugg }} 
+          <form method = "post">
+            {% csrf_token %}
+            <button name = "accept_sugg" value = "{{ party.assign_sugg }}">Accept</button>
+            <button name = "reject_sugg" value = "{{ party.assign_sugg }}">Reject</button>
+          </form>
   </tr>
     {% endfor %}
 </table>

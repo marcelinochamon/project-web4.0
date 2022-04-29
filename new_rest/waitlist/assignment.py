@@ -23,7 +23,7 @@ def assign_tables():
     # Get empty tables
     empty_tables = list(Table.objects.filter(party = "Empty"))
     # Get list of people on waitlist, ordered by longest to shortest wait time
-    waiting_people = list(Wait.objects.all().order_by("arrival_time"))
+    waiting_people = list(Wait.objects.filter(assign_sugg = 0).order_by("arrival_time"))
     # Loop through empty tables
     for table in empty_tables:
         # Check if anyone is waiting on the waitlist
@@ -31,13 +31,21 @@ def assign_tables():
             print("Nobody on waitlist")
             break
         else:
+            # Get best party for the table
             new_party = find_best_person(table, waiting_people)
-            # Assign table party the new name
-            table.party = new_party.name
-            # Initialize seated time
-            table.time_seated = datetime.now(tz)
-            # Save new Table object
+            # Change assignment suggestion
+            new_party.assign_sugg = table.number
+            new_party.save()
+            # Change table party to pending until user accepts or rejects
+            table.party = "Pending"
             table.save()
-            # Delete off the waitlist
-            new_party.delete()
+
+            # # Assign table party the new name
+            # table.party = new_party.name
+            # # Initialize seated time
+            # table.time_seated = datetime.now(tz)
+            # # Save new Table object
+            # table.save()
+            # # Delete off the waitlist
+            # new_party.delete()
             print("Assigned Party {} to table {}".format(table.party, table.number))
