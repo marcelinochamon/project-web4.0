@@ -11,14 +11,18 @@ tz = timezone.get_default_timezone()
 
 def waitlist_view(request):
     waitlist = Wait.objects.all()
-    form = WaitForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        assign_tables()
-        form = WaitForm()
+    formW = WaitForm(request.POST or None)
+    formA = AssignForm(request.POST or None)
+    if formW.is_valid():
+        formW.save()
+        formW = WaitForm()
+    if formA.is_valid():
+        formA.save()
+        formA = AssignForm()
     context = {
         'waitlist' : waitlist,
-        'form' : form
+        'formW' : formW,
+        'formA' : formA
     }
     returned_num = (request.POST or None)
     if returned_num is not None:
