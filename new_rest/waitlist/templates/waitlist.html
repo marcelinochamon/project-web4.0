@@ -8,18 +8,17 @@
 <ol>
     {% for party in waitlist %}
         <li>Name: {{ party.name }}
-          <ul>
-          <li>Party Size: {{ party.party_size }}
-          <li>Dining Time: {{ party.dining_time }}
-          <li>Seated: {{ party.seated }}
-          <li>Left: {{ party.left }}
-          </ul>
+            <ul>
+            <li>Party Size: {{ party.party_size }}
+            <li>Arrival Time: {{ party.arrival_time }}
+            <li>Wait Time Elapsed: {{ party.wait_time }} min
+            </ul>
     {% endfor %}
 </ol>
-
-<!-- <form action = '.' method = 'POST'> {% csrf_token %}
-    {{ form.as_p }}
-    <input type = 'submit' value="Save" />
-</form> -->
+<form action = '.' method = 'POST'>
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type = 'submit' value = 'save' />
+</form>
 
 {% endblock %}

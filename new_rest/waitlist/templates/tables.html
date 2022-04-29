@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Tables</h1>
+<p>
+    Current Tables
+</p>
+<ol>
+    {% for table in tables %}
+        <li>Table Number: {{ table.number }}
+            <ul>
+            <li>Party Name: {{ table.party }} 
+            <li>Seats: {{ table.seats }}
+            <li>Time Seated: {{ table.time_seated }}
+            <li>Dining Time Elapsed: {{ table.dining_time }} min  
+            <li>Server: {{ table.server }}
+            <li>
+                <form method = "post">
+                    {% csrf_token %}
+                    <button name = "table_num" value = "{{ table.number }}">Clear table {{ table.number }}</button>
+                </form>
+            </li>
+            </ul>
+    {% endfor %}
+</ol>
+
+<!-- <form action = '.' method = 'POST'> {% csrf_token %}
+    {{ form.as_p }}
+    <input type = 'submit' value="Save" />
+</form> -->
+
+{% endblock %}

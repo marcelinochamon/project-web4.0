@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from pages.views import home_view
 from waitlist.views import waitlist_view
-from tables.views import tables_view
+from waitlist.views import tables_view
 
 
 urlpatterns = [
