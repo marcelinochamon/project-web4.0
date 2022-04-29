@@ -48,7 +48,7 @@ class WaitlistConfig(AppConfig):
                     time.sleep(2)
             scheduler()
         p = Process(target = start_thread, args = ())
-        p.start()
+        # p.start()
 
 
 

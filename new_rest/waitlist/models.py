@@ -14,6 +14,8 @@ class Wait(models.Model):
     party_size = models.CharField(max_length = 20)
     # Time of Arrival
     arrival_time = models.DateTimeField(auto_now_add = True)
+    # Assignment suggestion
+    assign_sugg = models.IntegerField(default=0)
 
     @property
     def wait_time(self):
