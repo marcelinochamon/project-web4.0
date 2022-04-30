@@ -45,7 +45,7 @@ tr:nth-child(even) {
         <td>
           <form method = "post">
             {% csrf_token %}
-            <button name = "table_num" value = "{{ table.table_number }}">Clear table {{ table.table_number }}</button>
+            <button name = "table_num" value = "{{ table.number }}">Clear table {{ table.number }}</button>
           </form>
         </td>
   </tr>
