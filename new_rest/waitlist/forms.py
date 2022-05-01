@@ -16,7 +16,6 @@ class WaitForm(forms.ModelForm):
 
         
 class ConfigForm(forms.ModelForm):
-    number_of_servers = forms.IntegerField()
     server_names = forms.CharField(max_length = 50)
     tables_for_2 = forms.IntegerField()
     tables_for_4 = forms.IntegerField()
@@ -27,7 +26,6 @@ class ConfigForm(forms.ModelForm):
         model = Config
 
         fields = [
-            'number_of_servers',
             'server_names',
             'tables_for_2',
             'tables_for_4',

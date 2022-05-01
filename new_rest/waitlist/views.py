@@ -64,16 +64,18 @@ def config_view(request):
     config = Config.objects.all()
     formC = ConfigForm(request.POST or None)
     if formC.is_valid():
+        Config.objects.all().delete()
         formC.save()
         formC = ConfigForm()
     context = {
         'config' : config,
         'formC' : formC,
     }
+
     if config:
         setup = Config.objects.last()
-        num = setup.number_of_servers
         names_list = setup.server_names.split(',')
+        num = len(names_list)
         table2 = setup.tables_for_2
         table4 = setup.tables_for_4
         table6 = setup.tables_for_6
@@ -89,8 +91,7 @@ def config_view(request):
         for i in range(table8):
             table_size_list.append(8)
         Table.objects.all().delete()
-        for i in range(1, total_tables + 1):
-            table = Table(number = i, party = "Empty", seats = table_size_list[i-1], time_seated = datetime.now(tz), server = names_list[i % num])
-            table.save()
-    Config.objects.all().delete()
+        # for i in range(1, total_tables + 1):
+            # table = Table(number = i, party = "Empty", seats = table_size_list[i-1], time_seated = datetime.now(tz), server = names_list[i % num])
+            # table.save()
     return render(request, "config.html", context)

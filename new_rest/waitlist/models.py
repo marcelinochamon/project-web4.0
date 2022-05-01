@@ -50,8 +50,6 @@ class Table(models.Model):
         return name
 
 class Config(models.Model):
-    # Number of Servers
-    number_of_servers = models.IntegerField(default = 0)
     # Server Names
     server_names = models.CharField(max_length = 50, default = "None")
     # Tables of 2
