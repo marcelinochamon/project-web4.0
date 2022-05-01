@@ -66,7 +66,7 @@ def config_view(request):
         'formC' : formC,
     }
     if config:
-        setup = Config.objects.first()
+        setup = Config.objects.last()
         num = setup.number_of_servers
         names_list = setup.server_names.split(',')
         table2 = setup.tables_for_2
