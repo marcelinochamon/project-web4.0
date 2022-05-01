@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin-left:25%">
+  <h1>Configure the Restaurant</h1>
+
+  <h2>Enter Information</h2>
+
+  <form action = '.' method = 'POST'>
+      {% csrf_token %}
+      {{ formC.as_p }}
+      <input type = 'submit' value = 'Configure' />
+  </form>
+
+  <h2>Table Information</h2>
+
+  {% for info in config %}
+    <p> Servers Working: {{ info.number_of_servers }} <p>
+    <p> Servers: {{ info.server_names }} <p>
+    <p> Tables for 2: {{ info.tables_for_2 }} <p>
+    <p> Tables for 4: {{ info.tables_for_4 }} <p>
+    <p> Tables for 6: {{ info.tables_for_6 }} <p>
+    <p> Tables for 8: {{ info.tables_for_8 }} <p>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
