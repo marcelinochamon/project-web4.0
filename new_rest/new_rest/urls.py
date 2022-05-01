@@ -18,6 +18,7 @@ from django.urls import path, include
 from pages.views import home_view
 from waitlist.views import waitlist_view
 from waitlist.views import tables_view
+from waitlist.views import config_view
 
 
 urlpatterns = [
@@ -25,4 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('waitlist/', waitlist_view, name = "waitlist"),
     path('tables/', tables_view, name = "tables"),
+    path('config/', config_view, name = "config"),
 ]
