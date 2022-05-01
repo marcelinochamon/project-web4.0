@@ -70,4 +70,27 @@ def config_view(request):
         'config' : config,
         'formC' : formC,
     }
+    if config:
+        setup = Config.objects.last()
+        num = setup.number_of_servers
+        names_list = setup.server_names.split(',')
+        table2 = setup.tables_for_2
+        table4 = setup.tables_for_4
+        table6 = setup.tables_for_6
+        table8 = setup.tables_for_8
+        table_size_list = []
+        total_tables = table2 + table4 + table6 + table8
+        for i in range(table2):
+            table_size_list.append(2)
+        for i in range(table4):
+            table_size_list.append(4)
+        for i in range(table6):
+            table_size_list.append(6)
+        for i in range(table8):
+            table_size_list.append(8)
+        Table.objects.all().delete()
+        for i in range(1, total_tables + 1):
+            table = Table(number = i, party = "Empty", seats = table_size_list[i-1], time_seated = datetime.now(tz), server = names_list[i % num])
+            table.save()
+    Config.objects.all().delete()
     return render(request, "config.html", context)
