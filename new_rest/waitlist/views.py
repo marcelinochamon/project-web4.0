@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Wait, Table
-from .forms import WaitForm, AssignForm
+from .models import Wait, Table, Config
+from .forms import WaitForm, AssignForm, ConfigForm
 from .assignment import assign_tables
 from datetime import datetime
 from django.utils import timezone
@@ -54,3 +54,15 @@ def tables_view(request):
         assign_tables()
     print(returned_num)
     return render(request, "tables.html", context)
+
+def config_view(request):
+    config = Config.objects.all()
+    formC = ConfigForm(request.POST or None)
+    if formC.is_valid():
+        formC.save()
+        formC = ConfigForm()
+    context = {
+        'config' : config,
+        'formC' : formC,
+    }
+    return render(request, "config.html", context)
