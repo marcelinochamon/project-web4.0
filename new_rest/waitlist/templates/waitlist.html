@@ -40,7 +40,7 @@ tr:nth-child(even) {
     <th>Arrival Time</th>
     <th>Wait Time</th>
     <th>Assignment Suggestion</th>
-    <th>Assign</th>
+    <th>Manual Assign</th>
   </tr>
   <tr>
     {% for party in waitlist %}
@@ -48,17 +48,31 @@ tr:nth-child(even) {
         <td>{{ party.party_size }}
         <td>{{ party.arrival_time }}
         <td>{{ party.wait_time }}
-        <td>Table {{ party.assign_sugg }}
-          <form method = "post">
-            {% csrf_token %}
-            <button name = "accept_sugg" value = "{{ party.assign_sugg }}">Accept</button>
-            <button name = "reject_sugg" value = "{{ party.assign_sugg }}">Reject</button>
-          </form>
+        <td>
+          {% if party.assign_sugg != 0 %}
+            Table {{ party.assign_sugg }}
+            <form method = "POST">
+              {% csrf_token %}
+              <button name = "accept_sugg" value = "{{ party.assign_sugg }}">Accept</button>
+              <button name = "reject_sugg" value = "{{ party.assign_sugg }}">Reject</button>
+            </form>
+          {% else %}
+            None
+          {% endif %}
+            
+
         <td>
           <form action = '.' method = 'POST'>
             {% csrf_token %}
-            {{ formA.as_p }}
-          <input type = 'submit' value = 'Assign' />
+            Table 
+            <select name = "table_num">
+              {% for table in open_tables %}
+                <option name = 'table_num' value = '{{ table }}'> {{ table }} </option>
+              {% endfor %}
+            </select>
+            <input name = 'guest_name' value = '{{ party.name }}' hidden=True /> 
+            <input name = "manual_submit" type = 'submit' value = 'Assign' />
+            
           </form>
   </tr>
     {% endfor %}

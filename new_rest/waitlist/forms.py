@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Wait, Config
+from .models import Wait, Table, Config
 
 class WaitForm(forms.ModelForm):
     name = forms.CharField(max_length=20)
@@ -14,15 +14,6 @@ class WaitForm(forms.ModelForm):
             'party_size',
         ]
 
-class AssignForm(forms.ModelForm):
-    table = forms.CharField(max_length=10)
-
-    class Meta:
-        model = Wait
-
-        fields = [
-            'table',
-        ]
         
 class ConfigForm(forms.ModelForm):
     number_of_servers = forms.IntegerField()

@@ -12,17 +12,15 @@ tz = timezone.get_default_timezone()
 def waitlist_view(request):
     waitlist = Wait.objects.all()
     formW = WaitForm(request.POST or None)
-    formA = AssignForm(request.POST or None)
+    open_tables_list = [table.number for table in Table.objects.filter(party = "Empty")]
+    open_tables_list += [table.number for table in Table.objects.filter(party = "Pending")]
     if formW.is_valid():
         formW.save()
         formW = WaitForm()
-    if formA.is_valid():
-        formA.save()
-        formA = AssignForm()
     context = {
         'waitlist' : waitlist,
         'formW' : formW,
-        'formA' : formA
+        'open_tables': sorted(open_tables_list)
     }
     returned_num = (request.POST or None)
     if returned_num is not None:
@@ -40,6 +38,13 @@ def waitlist_view(request):
             table.save()
             cust.assign_sugg = 0
             cust.save()
+        elif "manual_submit" in returned_num:
+            cust = Wait.objects.filter(name= returned_num['guest_name']).first()
+            table = Table.objects.filter(number= returned_num['table_num']).first()
+            table.party = cust.name
+            table.time_seated = datetime.now(tz)
+            table.save()
+            cust.delete()
         assign_tables()
     return render(request, "waitlist.html", context)
 
