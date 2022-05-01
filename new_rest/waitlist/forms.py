@@ -16,7 +16,7 @@ class WaitForm(forms.ModelForm):
 
         
 class ConfigForm(forms.ModelForm):
-    server_names = forms.CharField(max_length = 50)
+    server_names = forms.CharField(max_length = 100, widget=forms.TextInput(attrs={'placeholder': 'Matthew M, John B G'}))
     tables_for_2 = forms.IntegerField()
     tables_for_4 = forms.IntegerField()
     tables_for_6 = forms.IntegerField()
