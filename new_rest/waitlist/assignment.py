@@ -13,6 +13,14 @@ def find_best_person(table, waiting_people):
     inputs: Table object, list of Wait objects
     return: Wait object
     """
+    for people in waiting_people:
+        if 0 <= table.seat-people.party <= 1:
+            waiting_people.assign_sugg = table.number
+            break
+        else:
+            continue
+    waiting_people.objects.all().order_by('assign_sugg','-arrival_time')
+        
     # Get new party from top of waitlist
     new_party = waiting_people.pop()
     return new_party
