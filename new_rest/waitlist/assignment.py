@@ -19,10 +19,14 @@ def find_best_person(table, waiting_people):
             break
         else:
             continue
-    waiting_people.objects.all().order_by('assign_sugg','-arrival_time')
+    waiting_people.objects.all().order_by('assign_sugg','arrival_time')
         
     # Get new party from top of waitlist
-    new_party = waiting_people.pop()
+    np = waiting_people.pop()
+    if np.assign_sugg != 0
+        new_party = waiting_people.pop()
+    else:
+        
     return new_party
 
 
