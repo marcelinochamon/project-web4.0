@@ -48,3 +48,21 @@ class Table(models.Model):
     def __str__(self):
         name = "Table " + str(self.number)
         return name
+
+class Config(models.Model):
+    # Number of Servers
+    number_of_servers = models.IntegerField(default = 0)
+    # Server Names
+    server_names = models.CharField(max_length = 50, default = "None")
+    # Tables of 2
+    tables_for_2 = models.IntegerField(default = 0)
+    # Tables of 4
+    tables_for_4 = models.IntegerField(default = 0)
+    # Tables of 6
+    tables_for_6 = models.IntegerField(default = 0)
+    # Tables of 8
+    tables_for_8 = models.IntegerField(default = 0)
+
+    def __str__(self):
+        name = "Configuration for " + str(self.server_names)
+        return name
