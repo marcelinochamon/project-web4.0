@@ -91,7 +91,7 @@ def config_view(request):
         for i in range(table8):
             table_size_list.append(8)
         Table.objects.all().delete()
-        # for i in range(1, total_tables + 1):
-            # table = Table(number = i, party = "Empty", seats = table_size_list[i-1], time_seated = datetime.now(tz), server = names_list[i % num])
-            # table.save()
+        for i in range(1, total_tables + 1):
+            table = Table(number = i, party = "Empty", seats = table_size_list[i-1], time_seated = datetime.now(tz), server = names_list[i % num])
+            table.save()
     return render(request, "config.html", context)
