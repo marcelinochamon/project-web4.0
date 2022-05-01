@@ -82,7 +82,6 @@ def config_view(request):
         table_size_list.append(6)
     for i in range(table8):
         table_size_list.append(8)
-    count = 0
     Table.objects.all().delete()
     for i in range(1, total_tables + 1):
         table = Table(number = i, party = "Empty", seats = table_size_list[i-1], time_seated = datetime.now(tz), server = names_list[i % num])
