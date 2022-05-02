@@ -26,8 +26,8 @@ def find_best_person(table, waiting_people):
         elif table.seat-people.party >= 6 and people.wait_time >= 45:
             new_party = people
             return new_party
-        else:
-            return None
+        if people == waiting_people[-1]:
+            return None 
 
 
 def assign_tables():
