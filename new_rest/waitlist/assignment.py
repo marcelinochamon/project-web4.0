@@ -16,19 +16,26 @@ def find_best_person(table, waiting_people):
     for people in waiting_people:
         if 0 <= table.seat-people.party <= 1:
             waiting_people.assign_sugg = table.number
+            new_party = people
             break
-        else:
-            continue
-    waiting_people.objects.all().order_by('assign_sugg','arrival_time')
-        
+        elif table.seat-people.party == 3 and people.wait_time >= 15
+            waiting_people.assign_sugg = table.number
+            new_party = people
+            break
+        elif table.seat-people.party == 4 and people.wait_time >= 25
+            waiting_people.assign_sugg = table.number
+            new_party = people
+            break
+        elif table.seat-people.party == 5 and people.wait_time >= 30
+            waiting_people.assign_sugg = table.number
+            new_party = people
+            break
+        elif table.seat-people.party >= 6 and people.wait_time >= 45
+            waiting_people.assign_sugg = table.number
+            new_party = people
+            break
     # Get new party from top of waitlist
-    np = waiting_people.pop()
-    if np.assign_sugg != 0
-        new_party = waiting_people.pop()
-    else:
-        
     return new_party
-
 
 def assign_tables():
     from .models import Table, Wait
