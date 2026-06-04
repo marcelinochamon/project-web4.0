@@ -47,6 +47,39 @@ python -m execucomp_revelio \
     --export-dir       ./out          # optional: also write CSVs
 ```
 
+## Getting the data from WRDS
+
+The six inputs come from WRDS, which requires *your* authenticated account
+(username + Duo 2FA) and direct network access — so extraction runs on your
+side, not in a sandbox. `wrds_extract.py` automates it with the official `wrds`
+package, writing CSVs whose headers match this pipeline exactly:
+
+```bash
+pip install wrds pandas
+# 1) confirm the library/table/column names + index codes in your WRDS vintage
+python -m execucomp_revelio.wrds_extract --username YOUR_WRDS_ID --list
+# 2) extract the six inputs (S&P 1000, FY 2009-2019) to ./wrds_csv
+python -m execucomp_revelio.wrds_extract --username YOUR_WRDS_ID --outdir ./wrds_csv
+# 3) build the databases
+python -m execucomp_revelio \
+    --funda ./wrds_csv/compustat_funda.csv --index ./wrds_csv/compustat_idxcst_his.csv \
+    --execucomp ./wrds_csv/execucomp_anncomp.csv \
+    --individual ./wrds_csv/revelio_individual.csv \
+    --positions ./wrds_csv/revelio_positions.csv \
+    --company-mapping ./wrds_csv/revelio_company_mapping.csv \
+    --export-dir ./out
+```
+
+It scopes Compustat/Execucomp to the S&P 1000 gvkeys and the window, and pulls
+Revelio in two stages — users at the focal companies, then *all* their
+positions — so each executive's complete work history is captured. The SQL is
+plain `db.raw_sql`, so you can also paste the queries into the WRDS web query
+tool. Run `--list` first and adjust the `TABLES` config at the top of the
+script if your schema names differ (Execucomp/Revelio table names drift).
+
+> Don't commit the resulting WRDS/Revelio CSVs — they're licensed data. Keep
+> them local and run the pipeline there (it has no third-party deps).
+
 ## Defining the universe (two modes)
 
 **Default — `idxcst_his` (recommended).** Pass the historical constituent table
@@ -301,6 +334,7 @@ execucomp_revelio/
 ├── loaders.py           # CSV readers with type coercion (expected headers)
 ├── names.py             # name normalization + similarity score
 ├── universe.py          # S&P 1000 / window / SIC filter (idxcst or list mode)
+├── wrds_extract.py      # pull the six inputs from WRDS (run on your account)
 ├── wiki_parse.py        # Wikipedia S&P 400/600 page -> constituent / change CSV
 ├── reconstruct.py       # backward-reconstruct historical membership from changes
 ├── crosswalk.py         # gvkey <-> rcid (Revelio gvkey + ticker/cusip fallback)
