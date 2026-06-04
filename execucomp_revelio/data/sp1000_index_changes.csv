@@ -32,7 +32,6 @@ date,year,action,ticker,company,index_name,reason
 "December 22, 2025",2025,added,ULS,UL Solutions,SP400MidCap,Market capitalization change.
 "December 22, 2025",2025,removed,FIX,Comfort Systems USA,SP400MidCap,Market capitalization change.
 "December 22, 2025",2025,added,PINS,Pinterest,SP400MidCap,Market capitalization change.
-"December 22, 2025",2025,removed,UAA/UA,Under Armour,SP400MidCap,Market capitalization change.
 "December 22, 2025",2025,added,BAH,Booz Allen Hamilton,SP400MidCap,Market capitalization change.
 "December 22, 2025",2025,removed,POWI,Power Integrations,SP400MidCap,Market capitalization change.
 "December 22, 2025",2025,added,SPXC,SPX Technologies,SP400MidCap,Market capitalization change.
@@ -345,7 +344,6 @@ date,year,action,ticker,company,index_name,reason
 "July 5, 2022",2022,removed,COHR,Coherent,SP400MidCap,S&P MidCap 400 constituent II-VI Inc. acquired Coherent.
 "June 29, 2022",2022,added,POR,Portland General Electric,SP400MidCap,Market capitalization change.
 "June 29, 2022",2022,removed,APPS,Digital Turbine,SP400MidCap,Market capitalization change.
-"June 21, 2022",2022,added,UA/UAA,Under Armour,SP400MidCap,Market capitalization change.
 "June 21, 2022",2022,removed,TRN,Trinity Industries,SP400MidCap,Market capitalization change.
 "June 21, 2022",2022,added,IPGP,IPG Photonics,SP400MidCap,Market capitalization change.
 "June 21, 2022",2022,removed,YELP,Yelp,SP400MidCap,Market capitalization change.
@@ -529,6 +527,24 @@ date,year,action,ticker,company,index_name,reason
 "June 25, 2020",2020,removed,EAT,Brinker International,SP400MidCap,Market capitalization change.
 "June 22, 2020",2020,added,ADS,Alliance Data Systems,SP400MidCap,Market capitalization changes
 "June 22, 2020",2020,removed,TDY,Teledyne Technologies,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,JWN,Nordstrom,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,BIO,Bio-Rad Laboratories,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,HOG,Harley-Davidson,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,TYL,Tyler Technologies,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,MIDD,Middleby Corporation,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,DDS,Dillard's,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,QDEL,Quidel Corp,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,DNOW,DNOW Inc.,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,HXL,Hexcel,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,CAKE,Cheesecake Factory,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,UNVR,Univar Solutions,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,REZI,Resideo Technologies,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,STRA,Strategic Education,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,BBBY,Bed Bath & Beyond,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,QLYS,Qualys Inc,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,MTDR,Matador Resources,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,added,GBCI,Glacier Bancorp,SP400MidCap,Market capitalization changes
+"June 22, 2020",2020,removed,MDRX,Allscripts Healthcare Solutions,SP400MidCap,Market capitalization changes
 "May 27, 2020",2020,added,HPP,Hudson Pacific Properties,SP400MidCap,Hudson Pacific Properties Inc. (NYSE:HPP) replaced Diversified Healthcare Trust (NASD:DHC).
 "May 27, 2020",2020,removed,DHC,Diversified Healthcare Trust,SP400MidCap,Hudson Pacific Properties Inc. (NYSE:HPP) replaced Diversified Healthcare Trust (NASD:DHC).
 "May 26, 2020",2020,added,ESNT,Essent Group Ltd,SP400MidCap,Essent Group Ltd. (NYSE:ESNT) replaced Patterson-UTI Energy Inc. (NASD:PTEN).
@@ -539,6 +555,8 @@ date,year,action,ticker,company,index_name,reason
 "May 6, 2020",2020,removed,DPZ,Domino's Pizza,SP400MidCap,STORE Capital Corp. (NYSE:STOR) replaced Domino's Pizza.
 "April 27, 2020",2020,added,ENPH,Enphase Energy,SP400MidCap,S&P 400 to S&P 600 moves
 "April 27, 2020",2020,removed,CLB,Core Laboratories,SP400MidCap,S&P 400 to S&P 600 moves
+"April 27, 2020",2020,added,PCTY,Paylocity Holding,SP400MidCap,S&P 400 to S&P 600 moves
+"April 27, 2020",2020,removed,MDP,Meredith Corp,SP400MidCap,S&P 400 to S&P 600 moves
 "April 13, 2020",2020,added,LHCG,LHC Group,SP400MidCap,S&P SmallCap 600 constituent LHC Group Inc. (NASD: LHCG) replaced Cypress Semiconductor Corp. (NASD: CY).
 "April 13, 2020",2020,removed,CY,Cypress Semiconductor,SP400MidCap,S&P SmallCap 600 constituent LHC Group Inc. (NASD: LHCG) replaced Cypress Semiconductor Corp. (NASD: CY).
 "February 27, 2020",2020,added,XEC,Cimarex Energy,SP400MidCap,Market capitalization change.
@@ -557,6 +575,16 @@ date,year,action,ticker,company,index_name,reason
 "December 17, 2019",2019,removed,UNIT,Uniti Group,SP400MidCap,Columbia Sportswear Company (NASD: COLM) replaced Uniti Group Inc. (NASD: UNIT).
 "December 13, 2019",2019,added,AMG,Affiliated Managers Group,SP400MidCap,Market capitalization changes.
 "December 13, 2019",2019,removed,LYV,Live Nation Entertainment,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,added,TRIP,TripAdvisor,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,removed,ZBRA,Zebra Technologies,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,added,MAC,Macerich Co.,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,removed,STE,STERIS plc,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,added,LOPE,Grand Canyon Education,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,removed,OAS,Oasis Petroleum,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,added,LEA,Lear Corp,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,removed,SWN,Southwestern Energy,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,added,ARWR,Arrowhead Pharmaceuticals,SP400MidCap,Market capitalization changes.
+"December 13, 2019",2019,removed,GVA,Granite Construction,SP400MidCap,Market capitalization changes.
 "December 10, 2019",2019,added,CHH,Choice Hotels,SP400MidCap,Choice Hotels International Inc. (NYSE: CHH) replaced Plantronics Inc. (NYSE: PLT).
 "December 10, 2019",2019,removed,PLT,Plantronics,SP400MidCap,Choice Hotels International Inc. (NYSE: CHH) replaced Plantronics Inc. (NYSE: PLT).
 "December 2, 2019",2019,added,CCMP,Cabot Microelectronics,SP400MidCap,S&P SmallCap 600 constituent Cabot Microelectronics Corp. (NASD: CCMP) replaced Old Dominion Freight Line.
@@ -565,6 +593,8 @@ date,year,action,ticker,company,index_name,reason
 "November 27, 2019",2019,removed,WRB,W.R. Berkley,SP400MidCap,S&P SmallCap 600 constituent RLI Corp. (NYSE:RLI) replaced W.R. Berkley.
 "October 30, 2019",2019,added,CDAY,Ceridian,SP400MidCap,Market capitalization changes.
 "October 30, 2019",2019,removed,OII,Oceaneering International,SP400MidCap,Market capitalization changes.
+"October 30, 2019",2019,added,BJ,BJ's Wholesale Club,SP400MidCap,Market capitalization changes.
+"October 30, 2019",2019,removed,CVET,Covetrus,SP400MidCap,Market capitalization changes.
 "October 24, 2019",2019,added,FCN,FTI Consulting,SP400MidCap,Dassault Systèmes SA is acquiring Medidata Solutions in a transaction expected to be completed on or about that date pending final conditions.
 "October 24, 2019",2019,removed,MDSO,Medidata Solutions,SP400MidCap,Dassault Systèmes SA is acquiring Medidata Solutions in a transaction expected to be completed on or about that date pending final conditions.
 "October 18, 2019",2019,added,SEDG,SolarEdge,SP400MidCap,NASCAR Holdings Inc. acquired International Speedway.
@@ -575,12 +605,32 @@ date,year,action,ticker,company,index_name,reason
 "October 3, 2019",2019,removed,BID,Sotheby's,SP400MidCap,Market capitalization change.
 "September 26, 2019",2019,added,JEF,Jefferies Financial Group,SP400MidCap,Market capitalization changes.
 "September 26, 2019",2019,removed,NVR,NVR,SP400MidCap,Market capitalization changes.
+"September 26, 2019",2019,added,IIVI,II-VI,SP400MidCap,Market capitalization changes.
+"September 26, 2019",2019,removed,CPE,Callon Petroleum,SP400MidCap,Market capitalization changes.
 "September 18, 2019",2019,added,PK,Park Hotels & Resorts,SP400MidCap,Market capitalization changes.
 "September 18, 2019",2019,removed,INGN,Inogen,SP400MidCap,Market capitalization changes.
 "September 23, 2019",2019,added,SIGI,Selective Insurance Group Inc.,SP400MidCap,Market capitalization changes
 "September 23, 2019",2019,removed,SIG,Signet Jewelers Ltd,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,RGEN,Repligen,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,RRC,Range Resources Corp,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,FCFS,FirstCash,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,TUP,Tupperware Brands Corp,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,ETSY,Etsy,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,MIK,The Michaels Companies,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,PPC,Pilgrim's Pride,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,QEP,QEP Resources,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,KAR,KAR Auction Services,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,VAL,Valaris Limited,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,AM,Antero Midstream,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,MDR,McDermott International,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,OC,Owens Corning,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,CARS,Cars.com,SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,added,PEN,"Penumbra, Inc.",SP400MidCap,Market capitalization changes
+"September 23, 2019",2019,removed,MNK,Mallinckrodt,SP400MidCap,Market capitalization changes
 "August 9, 2019",2019,added,GRUB,Grubhub,SP400MidCap,Market capitalization
 "August 9, 2019",2019,removed,LDOS,Leidos Holdings,SP400MidCap,Market capitalization
+"August 9, 2019",2019,added,FL,Foot Locker,SP400MidCap,Market capitalization
+"August 9, 2019",2019,removed,IEX,IDEX Corp.,SP400MidCap,Market capitalization
 "August 1, 2019",2019,added,TTEK,Tetra Tech,SP400MidCap,Chemical Financial Corp. (NASD: CHFC) acquired TCF Financial Corporation and was renamed TCF Financial Corporation
 "August 1, 2019",2019,removed,CHFC,Chemical Financial,SP400MidCap,Chemical Financial Corp. (NASD: CHFC) acquired TCF Financial Corporation and was renamed TCF Financial Corporation
 "July 9, 2019",2019,added,SRC,Spirit Realty,SP400MidCap,Market capitalization
@@ -595,6 +645,8 @@ date,year,action,ticker,company,index_name,reason
 "May 7, 2019",2019,removed,ULTI,Ultimate Software Group,SP400MidCap,Hellman & Friedman acquired Ultimate Software Group.
 "April 11, 2019",2019,added,SMTC,Semtech,SP400MidCap,CommScope Holding Company Inc.(NASD:COMM) acquired ARRIS International.
 "April 11, 2019",2019,removed,ARRS,Arris International,SP400MidCap,CommScope Holding Company Inc.(NASD:COMM) acquired ARRIS International.
+"April 11, 2019",2019,added,PSB,PS Business Parks,SP400MidCap,S&P MidCap 400 constituent Ensco plc (NYSE:ESV) is acquiring Rowan Companies.
+"April 11, 2019",2019,removed,RDC,Rowan Companies,SP400MidCap,S&P MidCap 400 constituent Ensco plc (NYSE:ESV) is acquiring Rowan Companies.
 "April 3, 2019",2019,added,BHF,Brighthouse Financial,SP400MidCap,Pitney Bowes will replace Carbo Ceramics Inc. (NYSE:CRR) in the S&P SmallCap 600.
 "April 3, 2019",2019,removed,PBI,Pitney Bowes,SP400MidCap,Pitney Bowes will replace Carbo Ceramics Inc. (NYSE:CRR) in the S&P SmallCap 600.
 "April 1, 2019",2019,added,TREX,"Trex Company, Inc.",SP400MidCap,Renesas Electronics Corp. acquired Integrated Device Technology.
@@ -603,6 +655,10 @@ date,year,action,ticker,company,index_name,reason
 "March 22, 2019",2019,removed,MBFI,MB Financial,SP400MidCap,Fifth Third Bancorp (NASD: FITB) is acquiring MB Financial.
 "March 18, 2019",2019,added,CFX,Colfax,SP400MidCap,Colfax Corp. (NYSE:CFX) will replace and Big Lots Inc. (NYSE:BIG) in the S&P MidCap 400.
 "March 18, 2019",2019,removed,BIG,Big Lots,SP400MidCap,Colfax Corp. (NYSE:CFX) will replace and Big Lots Inc. (NYSE:BIG) in the S&P MidCap 400.
+"March 18, 2019",2019,added,NGVT,Ingevity,SP400MidCap,TransDigm Group Inc. (NYSE:TDG) is acquiring Esterline Technologies.
+"March 18, 2019",2019,removed,ESL,Esterline Technologies,SP400MidCap,TransDigm Group Inc. (NYSE:TDG) is acquiring Esterline Technologies.
+"March 18, 2019",2019,added,XPO,"XPO, Inc.",SP400MidCap,Diamond Offshore Drilling will replace Maiden Holding Ltd. (NASD:MHLD) in the S&P SmallCap 600.
+"March 18, 2019",2019,removed,DO,Diamond Offshore Drilling,SP400MidCap,Diamond Offshore Drilling will replace Maiden Holding Ltd. (NASD:MHLD) in the S&P SmallCap 600.
 "February 27, 2019",2019,added,GT,Goodyear Tire & Rubber,SP400MidCap,The Goodyear Tire & Rubber will replace Wabtec in the S&P MidCap 400.
 "February 27, 2019",2019,removed,WAB,Wabtec,SP400MidCap,The Goodyear Tire & Rubber will replace Wabtec in the S&P MidCap 400.
 "February 21, 2019",2019,added,AMED,Amedisys,SP400MidCap,Apollo Global Management (NYSE: APO) is acquiring Aspen Insurance Holdings.
@@ -621,9 +677,16 @@ date,year,action,ticker,company,index_name,reason
 "December 10, 2018",2018,removed,NBR,Nabors Industries,SP400MidCap,Nabors Industries Ltd. (NYSE: NBR) will replace Sonic Corp. (NASD: SONC) in the S&P SmallCap 600.
 "December 3, 2018",2018,added,PEB,Pebblebrook Hotel Trust,SP400MidCap,Pebblebrook Hotel Trust is acquiring LaSalle Hotel Properties.
 "December 3, 2018",2018,removed,LHO,LaSalle Hotel Properties,SP400MidCap,Pebblebrook Hotel Trust is acquiring LaSalle Hotel Properties.
+"December 3, 2018",2018,added,SRCL,Stericycle,SP400MidCap,Stericycle replaced Energen Corp. (NYSE:EGN) in the S&P MidCap 400.
+"December 3, 2018",2018,removed,EGN,Energen,SP400MidCap,Stericycle replaced Energen Corp. (NYSE:EGN) in the S&P MidCap 400.
+"December 3, 2018",2018,added,CACI,CACI International,SP400MidCap,CACI International Inc. replaced Lamb Weston Holdings in the S&P MidCap 400.
+"December 3, 2018",2018,removed,LW,Lamb Weston Holdings,SP400MidCap,CACI International Inc. replaced Lamb Weston Holdings in the S&P MidCap 400.
 "November 14, 2018",2018,removed,SPN,Superior Energy Services,SP400MidCap,Superior Energy Services Inc. (NYSE: SPN) was removed from the S&P MidCap 400 and added to the S&P SmallCap 600.
 "November 13, 2018",2018,added,LGND,Ligand Pharmaceuticals,SP400MidCap,Keysight replaced CA Inc. in the S&P 500.
 "November 13, 2018",2018,removed,KEYS,Keysight Technologies,SP400MidCap,Keysight replaced CA Inc. in the S&P 500.
+"November 13, 2018",2018,added,EQT,EQT Corporation,SP400MidCap,EQT replaced Jack Henry & Associates in the S&P MidCap 400.
+"November 13, 2018",2018,removed,JKHY,Jack Henry & Associates,SP400MidCap,EQT replaced Jack Henry & Associates in the S&P MidCap 400.
+"November 13, 2018",2018,added,ETRN,Equitrans Midstream,SP400MidCap,Equitrans Midstream Corp. was added to the S&P MidCap 400.
 "November 12, 2018",2018,added,MTZ,MasTec,SP400MidCap,United Natural Foods will replace MiMedx Group Inc. (NASD: MDXG) in the S&P SmallCap 600.
 "November 12, 2018",2018,removed,UNFI,United Natural Foods,SP400MidCap,United Natural Foods will replace MiMedx Group Inc. (NASD: MDXG) in the S&P SmallCap 600.
 "November 6, 2018",2018,added,NSP,Insperity,SP400MidCap,Insperity will replace LifePointHealth Inc.
@@ -652,14 +715,26 @@ date,year,action,ticker,company,index_name,reason
 "July 2, 2018",2018,removed,CPRT,Copart,SP400MidCap,Copart replaced Dr Pepper Snapple Group Inc. (NYSE: DPS) in the S&P 500.
 "June 18, 2018",2018,added,AYI,Acuity Brands,SP400MidCap,Market capitalization changes
 "June 18, 2018",2018,removed,HFC,HollyFrontier,SP400MidCap,Market capitalization changes
+"June 18, 2018",2018,added,RRC,Range Resources,SP400MidCap,Market capitalization changes
+"June 18, 2018",2018,removed,BR,Broadridge Financial Solutions,SP400MidCap,Market capitalization changes
+"June 18, 2018",2018,added,CHE,Chemed Corp.,SP400MidCap,Market capitalization changes
+"June 18, 2018",2018,removed,ENDP,Endo International,SP400MidCap,Market capitalization changes
+"June 18, 2018",2018,added,HAE,Haemonetics,SP400MidCap,Market capitalization changes
+"June 18, 2018",2018,removed,CTB,Cooper Tire & Rubber Co.,SP400MidCap,Market capitalization changes
 "June 11, 2018",2018,added,OLLI,Ollie's Bargain Outlet,SP400MidCap,S&P 500 constituent Northrop Grumman Corp. (NYSE: NOC) acquired Orbital ATK.
 "June 11, 2018",2018,removed,OA,Orbital ATK,SP400MidCap,S&P 500 constituent Northrop Grumman Corp. (NYSE: NOC) acquired Orbital ATK.
 "June 5, 2018",2018,added,NAVI,Navient Corp.,SP400MidCap,Navient had a market capitalization closer to the mid-cap market space.
 "June 5, 2018",2018,removed,WR,Westar Energy (renamed Evergy),SP400MidCap,Navient had a market capitalization closer to the mid-cap market space.
+"June 5, 2018",2018,added,IART,Integra LifeSciences,SP400MidCap,Westar Energy acquired Great Plains Energy which moved the combined company to the S&P 500.
+"June 5, 2018",2018,removed,GXP,Great Plains Energy,SP400MidCap,Westar Energy acquired Great Plains Energy which moved the combined company to the S&P 500.
 "May 31, 2018",2018,added,WYND,Wyndham Destinations,SP400MidCap,S&P 500 constituent Microchip Technology Inc. (NASD:MCHP) acquired Microsemi.
 "May 31, 2018",2018,removed,MSCC,Microsemi,SP400MidCap,S&P 500 constituent Microchip Technology Inc. (NASD:MCHP) acquired Microsemi.
+"May 31, 2018",2018,added,PRAH,PRA Health Sciences,SP400MidCap,ABIOMED Inc. replaced Wyndham Worldwide Corp. (NYSE:WYN) in the S&P 500.
+"May 31, 2018",2018,removed,ABMD,Abiomed,SP400MidCap,ABIOMED Inc. replaced Wyndham Worldwide Corp. (NYSE:WYN) in the S&P 500.
 "May 10, 2018",2018,added,APY,Apergy Corp.,SP400MidCap,S&P 500 constituent Dover Corp. (NYSE: DOV) spun off Apergy.
 "May 10, 2018",2018,removed,DDD,3D Systems,SP400MidCap,S&P 500 constituent Dover Corp. (NYSE: DOV) spun off Apergy.
+"May 10, 2018",2018,added,MDR,McDermott International,SP400MidCap,McDermott International merged with Chicago Bridge & Iron Company N.V. (NYSE: CBI).
+"May 10, 2018",2018,removed,DBD,Diebold Nixdorf,SP400MidCap,McDermott International merged with Chicago Bridge & Iron Company N.V. (NYSE: CBI).
 "May 2, 2018",2018,added,NVT,nVent Electric,SP400MidCap,S&P 500 constituent Pentair plc (NYSE: PNR) spun off nVent Electric.
 "May 2, 2018",2018,removed,KN,Knowles Corporation,SP400MidCap,S&P 500 constituent Pentair plc (NYSE: PNR) spun off nVent Electric.
 "May 1, 2018",2018,added,OAS,Oasis Petroleum,SP400MidCap,Market capitalization changes
@@ -672,6 +747,14 @@ date,year,action,ticker,company,index_name,reason
 "March 26, 2018",2018,removed,LNCE,Snyder's-Lance,SP400MidCap,S&P 500 constituent Campbell Soup Company (NYSE:CPB) acquired Snyder's-Lance.
 "March 19, 2018",2018,added,SIG,Signet Jewelers,SP400MidCap,Market capitalization changes
 "March 19, 2018",2018,removed,TTWO,Take-Two Interactive,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,added,PDCO,Patterson Companies,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,removed,SIVB,SVB Financial,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,added,CHK,Chesapeake Energy,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,removed,DF,Dean Foods,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,added,CMD,Cantel Medical,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,removed,AVP,Avon Products,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,added,ICUI,ICU Medical,SP400MidCap,Market capitalization changes
+"March 19, 2018",2018,removed,OMI,Owens & Minor,SP400MidCap,Market capitalization changes
 "March 8, 2018",2018,added,TREE,LendingTree,SP400MidCap,Sanofi acquired Bioverativ.
 "March 8, 2018",2018,removed,BIVV,Bioverativ,SP400MidCap,Sanofi acquired Bioverativ.
 "March 7, 2018",2018,added,ALE,ALLETE Inc.,SP400MidCap,IPG Photonics Corp. replaced Scripps Networks Interactive Inc. (NASD: SNI) in the S&P 500.
@@ -692,10 +775,16 @@ date,year,action,ticker,company,index_name,reason
 "November 22, 2017",2017,removed,BRCD,Brocade Communications,SP400MidCap,S&P 500 constituent Broadcom Limited acquired Brocade Communications Systems.
 "October 2, 2017",2017,added,SIX,Six Flags,SP400MidCap,Pamplona Capital Management acquired PAREXEL.
 "October 2, 2017",2017,removed,PRXL,PAREXEL,SP400MidCap,Pamplona Capital Management acquired PAREXEL.
+"October 2, 2017",2017,added,STL,Sterling Bancorp,SP400MidCap,Sterling Bancorp acquired Astoria Financial.
+"October 2, 2017",2017,removed,OIS,Oil States International,SP400MidCap,Sterling Bancorp acquired Astoria Financial.
 "September 26, 2017",2017,added,SAFM,Sanderson Farms,SP400MidCap,Bass Pro Shops acquired Cabela's.
 "September 26, 2017",2017,removed,CAB,Cabela's,SP400MidCap,Bass Pro Shops acquired Cabela's.
 "September 18, 2017",2017,added,ILG,"ILG, Inc.",SP400MidCap,Cadence Design Systems replaced Staples Inc. in the S&P 500.
 "September 18, 2017",2017,removed,CDNS,Cadence Design Systems,SP400MidCap,Cadence Design Systems replaced Staples Inc. in the S&P 500.
+"September 18, 2017",2017,added,BCO,Brink's,SP400MidCap,Mars Inc. acquired VCA.
+"September 18, 2017",2017,removed,WOOF,VCA Inc.,SP400MidCap,Mars Inc. acquired VCA.
+"September 18, 2017",2017,added,CPE,Callon Petroleum,SP400MidCap,Internet Brands acquired WebMD Health.
+"September 18, 2017",2017,removed,WBMD,WebMD,SP400MidCap,Internet Brands acquired WebMD Health.
 "August 17, 2017",2017,added,SBRA,Sabra Health Care REIT,SP400MidCap,Sabra Health Care REIT acquired Care Capital Properties.
 "August 17, 2017",2017,removed,CCP,Care Capital Properties,SP400MidCap,Sabra Health Care REIT acquired Care Capital Properties.
 "August 10, 2017",2017,added,COR,CoreSite Realty,SP400MidCap,NeuStar was acquired by a private investment group led by Golden Gate Capital.
@@ -704,10 +793,18 @@ date,year,action,ticker,company,index_name,reason
 "August 8, 2017",2017,removed,FCN,FTI Consulting,SP400MidCap,Brighthouse Financial Inc. (NASD: BHF) replaced AutoNation in the S&P 500.
 "July 26, 2017",2017,added,MNK,Mallinckrodt,SP400MidCap,Market capitalization changes
 "July 26, 2017",2017,removed,RMD,ResMed,SP400MidCap,Market capitalization changes
+"July 26, 2017",2017,added,MUR,Murphy Oil,SP400MidCap,Market capitalization changes
+"July 26, 2017",2017,removed,PKG,Packaging Corporation of America,SP400MidCap,Market capitalization changes
+"July 26, 2017",2017,added,BBBY,Bed Bath & Beyond,SP400MidCap,Market capitalization changes
+"July 26, 2017",2017,removed,AOS,A.O. Smith,SP400MidCap,Market capitalization changes
+"July 26, 2017",2017,added,RIG,Transocean,SP400MidCap,Market capitalization changes
+"July 26, 2017",2017,removed,DRE,Duke Realty,SP400MidCap,Market capitalization changes
 "July 19, 2017",2017,added,JBGS,JBG Smith,SP400MidCap,S&P 500 constituent Vornado Realty Trust (NYSE:VNO) spun off JBG SMITH Properties.
 "July 19, 2017",2017,removed,CHS,Chico's FAS,SP400MidCap,S&P 500 constituent Vornado Realty Trust (NYSE:VNO) spun off JBG SMITH Properties.
 "July 12, 2017",2017,added,KNX,Knight Transportation,SP400MidCap,"S&P 500 constituent Coach, Inc. (NYSE:COH) acquired Kate Spade."
 "July 12, 2017",2017,removed,KATE,Kate Spade & Company,SP400MidCap,"S&P 500 constituent Coach, Inc. (NYSE:COH) acquired Kate Spade."
+"July 12, 2017",2017,added,CLB,Core Laboratories,SP400MidCap,JAB Holdings B.V. acquired Panera Bread.
+"July 12, 2017",2017,removed,PNRA,Panera Bread,SP400MidCap,JAB Holdings B.V. acquired Panera Bread.
 "June 29, 2017",2017,added,BLKB,Blackbaud,SP400MidCap,Alimentation Couche-Tard acquired CST Brands.
 "June 29, 2017",2017,removed,CST,CST Brands,SP400MidCap,Alimentation Couche-Tard acquired CST Brands.
 "June 26, 2017",2017,added,MDSO,Medidata Solutions,SP400MidCap,Canadian Imperial Bank of Commerce acquired PrivateBancorp.
@@ -716,8 +813,16 @@ date,year,action,ticker,company,index_name,reason
 "June 19, 2017",2017,removed,RE,Everest Re,SP400MidCap,Everest Re Group Ltd replaced Mead Johnson Nutrition Co. in the S&P 500.
 "June 19, 2017",2017,added,TDC,Teradata,SP400MidCap,Market capitalization changes
 "June 19, 2017",2017,removed,ALGN,Align Technology,SP400MidCap,Market capitalization changes
+"June 19, 2017",2017,added,R,Ryder System,SP400MidCap,Market capitalization changes
+"June 19, 2017",2017,removed,ANSS,ANSYS Inc,SP400MidCap,Market capitalization changes
 "June 2, 2017",2017,added,CARS,Cars.com,SP400MidCap,TEGNA spun off Cars.com.
 "June 2, 2017",2017,removed,TIME,Time Inc.,SP400MidCap,TEGNA spun off Cars.com.
+"June 2, 2017",2017,added,TGNA,"Tegna, Inc.",SP400MidCap,IHS Markit Ltd. (NASD:INFO) replaced TEGNA Inc. in the S&P 500.
+"June 2, 2017",2017,removed,JCP,J. C. Penney,SP400MidCap,IHS Markit Ltd. (NASD:INFO) replaced TEGNA Inc. in the S&P 500.
+"June 2, 2017",2017,added,MTDR,Matador Resources,SP400MidCap,S&P 500 constituent Tesoro Corp. (NYSE:TSO) acquired Western Refining.
+"June 2, 2017",2017,removed,WNR,Western Refining,SP400MidCap,S&P 500 constituent Tesoro Corp. (NYSE:TSO) acquired Western Refining.
+"June 2, 2017",2017,added,HOMB,Home BancShares,SP400MidCap,S&P 500 constituent The Sherwin-Williams Co. (NYSE:SHW) acquired Valspar.
+"June 2, 2017",2017,removed,VAL,Valspar,SP400MidCap,S&P 500 constituent The Sherwin-Williams Co. (NYSE:SHW) acquired Valspar.
 "May 16, 2017",2017,added,VVV,Valvoline Inc,SP400MidCap,S&P MidCap 400 constituent Ashland Global Holdings Inc. (NYSE:ASH) spun off its remaining stake in Valvoline.
 "May 16, 2017",2017,removed,NE,Noble Corporation,SP400MidCap,S&P MidCap 400 constituent Ashland Global Holdings Inc. (NYSE:ASH) spun off its remaining stake in Valvoline.
 "April 28, 2017",2017,added,PBF,PBF Energy,SP400MidCap,Waddell & Reed Financial replaced Stillwater Mining Co. (NYSE: SWC) in the S&P SmallCap 600.
@@ -730,20 +835,38 @@ date,year,action,ticker,company,index_name,reason
 "April 6, 2017",2017,removed,JOY,Joy Global,SP400MidCap,Komatsu Limited acquired Joy Global.
 "April 5, 2017",2017,added,DNB,Dun & Bradstreet,SP400MidCap,Gartner Inc. replaced The Dun & Bradstreet Corp. in the S&P 500.
 "April 5, 2017",2017,removed,IT,Gartner,SP400MidCap,Gartner Inc. replaced The Dun & Bradstreet Corp. in the S&P 500.
+"April 5, 2017",2017,added,INCR,INC Research,SP400MidCap,Gartner acquired CEB.
+"April 5, 2017",2017,removed,CEB,CEB Inc.,SP400MidCap,Gartner acquired CEB.
 "April 4, 2017",2017,added,SWN,Southwestern Energy,SP400MidCap,Computer Sciences Corp. replaced Southwestern Energy Co. in the S&P 500.
 "April 4, 2017",2017,removed,CSC,Computer Sciences Corp.,SP400MidCap,Computer Sciences Corp. replaced Southwestern Energy Co. in the S&P 500.
 "April 3, 2017",2017,added,WTFC,Wintrust Financial,SP400MidCap,Siemens Industry Inc. acquired Mentor Graphics.
 "April 3, 2017",2017,removed,MENT,Mentor Graphics,SP400MidCap,Siemens Industry Inc. acquired Mentor Graphics.
 "March 29, 2017",2017,added,TCBI,Texas Capital Bancshares,SP400MidCap,SOMPO Holdings Inc. acquired Endurance Specialty Holdings.
 "March 29, 2017",2017,removed,ENH,Endurance Specialty Holdings,SP400MidCap,SOMPO Holdings Inc. acquired Endurance Specialty Holdings.
+"March 29, 2017",2017,added,MIK,The Michaels Companies,SP400MidCap,WisdomTree Investments moved to the S&P SmallCap 600.
+"March 29, 2017",2017,removed,WETF,WisdomTree Investments,SP400MidCap,WisdomTree Investments moved to the S&P SmallCap 600.
 "March 20, 2017",2017,added,URBN,Urban Outfitters,SP400MidCap,Market capitalization changes
 "March 20, 2017",2017,removed,AMD,Advanced Micro Devices,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,added,FTR,Frontier Communications,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,removed,RJF,Raymond James Financial,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,added,FSLR,First Solar,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,removed,ARE,Alexandria Real Estate Equities,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,added,TTWO,Take-Two Interactive,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,removed,FOSL,Fossil Group,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,added,MASI,Masimo,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,removed,DNR,Denbury Resources,SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,added,COHR,"Coherent, Inc.",SP400MidCap,Market capitalization changes
+"March 20, 2017",2017,removed,VSTO,Vista Outdoor,SP400MidCap,Market capitalization changes
 "March 16, 2017",2017,added,GEO,GEO Group,SP400MidCap,Synopsys Inc. replaced Harman International Industries Inc. (NYSE:HAR) in the S&P 500.
 "March 16, 2017",2017,removed,SNPS,Synopsys,SP400MidCap,Synopsys Inc. replaced Harman International Industries Inc. (NYSE:HAR) in the S&P 500.
 "March 2, 2017",2017,added,ENDP,Endo International,SP400MidCap,Regency Centers acquired Equity One. S&P MidCap 400 constituent Regency Centers Corp. (NYSE:REG) replaced Endo International plc (NASD:ENDP) in the S&P 500.
 "March 2, 2017",2017,removed,REG,Regency Centers,SP400MidCap,Regency Centers acquired Equity One. S&P MidCap 400 constituent Regency Centers Corp. (NYSE:REG) replaced Endo International plc (NASD:ENDP) in the S&P 500.
+"March 2, 2017",2017,added,NUS,Nu Skin,SP400MidCap,Equity One acquired by Regency Centers.
+"March 2, 2017",2017,removed,EQY,Equity One,SP400MidCap,Equity One acquired by Regency Centers.
 "March 1, 2017",2017,added,PBI,Pitney Bowes,SP400MidCap,"CBOE acquired Bats Global Markets Inc. (BATS:BATS). Post acquisition, CBOE Holdings Inc. (NASD:CBOE) will replace Pitney Bowes Inc. (NYSE:PBI) in the S&P 500."
 "March 1, 2017",2017,removed,CBOE,CBOE Holdings,SP400MidCap,"CBOE acquired Bats Global Markets Inc. (BATS:BATS). Post acquisition, CBOE Holdings Inc. (NASD:CBOE) will replace Pitney Bowes Inc. (NYSE:PBI) in the S&P 500."
+"March 1, 2017",2017,added,CONE,CyrusOne,SP400MidCap,S&P 500 constituent Parker-Hannifin Corp. (NYSE:PH) acquired CLARCOR.
+"March 1, 2017",2017,removed,CLC,CLARCOR Inc.,SP400MidCap,S&P 500 constituent Parker-Hannifin Corp. (NYSE:PH) acquired CLARCOR.
 "February 28, 2017",2017,added,DDS,Dillard's,SP400MidCap,Renesas Electronics acquired Intersil.
 "February 28, 2017",2017,removed,ISIL,Intersil,SP400MidCap,Renesas Electronics acquired Intersil.
 "February 13, 2017",2017,added,CTB,Cooper Tire & Rubber,SP400MidCap,NASDAQ announced that comScore will be delisted from its exchange due to non-compliance.
@@ -756,8 +879,14 @@ date,year,action,ticker,company,index_name,reason
 "January 4, 2017",2017,removed,IDXX,IDEXX Laboratories,SP400MidCap,"S&P 100 & 500 constituent Abbott Laboratories (NYSE:ABT) acquired St. Jude Medical. S&P MidCap 400 constituent IDEXX Laboratories, Inc. (NASD:IDXX) replaced St. Jude Medical, Inc. (NYSE:STJ) in the S&P 500."
 "December 6, 2016",2016,added,UMBF,UMB Financial,SP400MidCap,Tianjin Tianhai Investment Company Ltd acquired Ingram Micro.
 "December 6, 2016",2016,removed,IM,Ingram Micro,SP400MidCap,Tianjin Tianhai Investment Company Ltd acquired Ingram Micro.
+"December 6, 2016",2016,added,GMED,Globus Medical,SP400MidCap,Riverstone Holdings LLC acquired Talen Energy.
+"December 6, 2016",2016,removed,TLN,Talen Energy,SP400MidCap,Riverstone Holdings LLC acquired Talen Energy.
 "December 1, 2016",2016,added,OI,Owens-Illinois,SP400MidCap,OI replaces MAA. Owens-Illinois is ranked near the bottom of the S&P 500 and has a market capitalization more representative of the mid-cap market space.
 "December 1, 2016",2016,removed,MAA,Mid-America Apartments,SP400MidCap,OI replaces MAA. Owens-Illinois is ranked near the bottom of the S&P 500 and has a market capitalization more representative of the mid-cap market space.
+"December 1, 2016",2016,added,PZZA,Papa John's Intl,SP400MidCap,"S&P SmallCap 600 constituent Papa John's International Inc. (NASD: PZZA) will replace Post Properties Inc. (NYSE: PPS) in the S&P MidCap 400, and Wingstop Inc. (NASD: WING) will replace Papa John's International in the S&P SmallCap 600. Mid-America Apartment Communities is acquiring Post Properties"
+"December 1, 2016",2016,removed,PPS,Post Properties,SP400MidCap,"S&P SmallCap 600 constituent Papa John's International Inc. (NASD: PZZA) will replace Post Properties Inc. (NYSE: PPS) in the S&P MidCap 400, and Wingstop Inc. (NASD: WING) will replace Papa John's International in the S&P SmallCap 600. Mid-America Apartment Communities is acquiring Post Properties"
+"December 1, 2016",2016,added,LM,Legg Mason,SP400MidCap,"AmSurg Corp. (NASD: AMSG) will replace Legg Mason Inc. (NYSE: LM) in the S&P 500, and Legg Mason will replace AmSurg in the S&P MidCap 400. AmSurg is acquiring Envision Healthcare Holdings Inc. (NYSE: EVHC). Post merger, AmSurg will change its name to Envision Healthcare Corporation. Legg Mason is ranked near the bottom of the S&P 500 and has a market capitalization more representative of the mid-cap market space."
+"December 1, 2016",2016,removed,AMSG,AmSurg Corp,SP400MidCap,"AmSurg Corp. (NASD: AMSG) will replace Legg Mason Inc. (NYSE: LM) in the S&P 500, and Legg Mason will replace AmSurg in the S&P MidCap 400. AmSurg is acquiring Envision Healthcare Holdings Inc. (NYSE: EVHC). Post merger, AmSurg will change its name to Envision Healthcare Corporation. Legg Mason is ranked near the bottom of the S&P 500 and has a market capitalization more representative of the mid-cap market space."
 "November 28, 2016",2016,added,LFUS,Littelfuse,SP400MidCap,Apex Technology and PAG Asia Capital acquired Lexmark International.
 "November 28, 2016",2016,removed,LXK,Lexmark International,SP400MidCap,Apex Technology and PAG Asia Capital acquired Lexmark International.
 "November 10, 2016",2016,added,LW,Lamb Weston Holdings,SP400MidCap,S&P 500 constituent ConAgra Foods Inc. (NYSE: CAG) spun off Lamb Weston Holdings.
@@ -776,6 +905,8 @@ date,year,action,ticker,company,index_name,reason
 "September 27, 2016",2016,removed,RRD,RR Donnelley,SP400MidCap,"R.R. Donnelly & Sons is spinning off certain operations and assets. Post spin-offs, the R.R. Donnelly & Sons stub will be more representative of the small-cap market space."
 "September 22, 2016",2016,added,NWE,NorthWestern,SP400MidCap,The Cooper Companies Inc. (NYSE: COO) replaces Starwood Hotels & Resorts Worldwide Inc. (NYSE: HOT) in the S&P 500. S&P 500 constituent Marriott International Inc. (NASD: MAR) acquires Starwood.
 "September 22, 2016",2016,removed,COO,The Cooper Companies,SP400MidCap,The Cooper Companies Inc. (NYSE: COO) replaces Starwood Hotels & Resorts Worldwide Inc. (NYSE: HOT) in the S&P 500. S&P 500 constituent Marriott International Inc. (NASD: MAR) acquires Starwood.
+"September 22, 2016",2016,added,NUVA,NuVasive,SP400MidCap,S&P 500 constituent Thermo Fisher Scientific Inc. (NYSE: TMO) acquired FEI.
+"September 22, 2016",2016,removed,FEIC,FEI Company,SP400MidCap,S&P 500 constituent Thermo Fisher Scientific Inc. (NYSE: TMO) acquired FEI.
 "September 21, 2016",2016,added,CRUS,Cirrus Logic,SP400MidCap,ON Semiconductor (NASD: ON) acquired Fairchild Semiconductor.
 "September 21, 2016",2016,removed,FCS,Fairchild Semiconductor,SP400MidCap,ON Semiconductor (NASD: ON) acquired Fairchild Semiconductor.
 "September 16, 2016",2016,added,CAR,Avis Budget Group,SP400MidCap,"S&P 500 constituent Dominion Resources, Inc. (NYSE: D) is acquiring Questar in a deal expected to be completed soon pending final approvals."
@@ -792,10 +923,14 @@ date,year,action,ticker,company,index_name,reason
 "July 29, 2016",2016,removed,FNFG,First Niagara Bank,SP400MidCap,S&P 500 constituent KeyCorp acquired First Niagara Bank.
 "June 30, 2016",2016,added,EME,Emcor,SP400MidCap,Emera Inc. (TSX: EMA) is acquiring TECO Energy in a deal expected to be completed on or about that date pending final conditions.
 "June 30, 2016",2016,removed,ALB,Albemarle Corporation,SP400MidCap,Emera Inc. (TSX: EMA) is acquiring TECO Energy in a deal expected to be completed on or about that date pending final conditions.
+"June 30, 2016",2016,added,SWX,Southwest Gas,SP400MidCap,S&P 100 & 500 constituent Southern Co. (NYSE:SO) is acquiring AGL Resources.
+"June 30, 2016",2016,removed,LNT,Alliant Energy,SP400MidCap,S&P 100 & 500 constituent Southern Co. (NYSE:SO) is acquiring AGL Resources.
 "June 24, 2016",2016,added,CHDN,Churchill Downs,SP400MidCap,S&P MidCap 400 constituent Fortune Brands Home & Security Inc. (NYSE:FBHS) replaced Cablevision Systems Corp. (NYSE:CVC) in the S&P 500 index. Altice NV acquired Cablevision.
 "June 24, 2016",2016,removed,FBHS,Fortune Brands Home & Security,SP400MidCap,S&P MidCap 400 constituent Fortune Brands Home & Security Inc. (NYSE:FBHS) replaced Cablevision Systems Corp. (NYSE:CVC) in the S&P 500 index. Altice NV acquired Cablevision.
 "May 31, 2016",2016,added,HELE,Helen of Troy,SP400MidCap,"Progressive Waste Solutions Ltd. (TSX:BIN, NYSE: BIN) and Waste Connections are merging to form a new company called Waste Connections. ""New"" Waste Connections will be considered to be domiciled in Canada for index purposes and will be ineligible for continued inclusion in the S&P MidCap 400."
 "May 31, 2016",2016,removed,WCN,Waste Connections,SP400MidCap,"Progressive Waste Solutions Ltd. (TSX:BIN, NYSE: BIN) and Waste Connections are merging to form a new company called Waste Connections. ""New"" Waste Connections will be considered to be domiciled in Canada for index purposes and will be ineligible for continued inclusion in the S&P MidCap 400."
+"May 31, 2016",2016,added,BRCD,Brocade Communications,SP400MidCap,Brocade Communications Systems is acquiring Ruckus Wireless. MDC has a market capitalization more representative of the small-cap market space.
+"May 31, 2016",2016,removed,MDC,MDC Holdings,SP400MidCap,Brocade Communications Systems is acquiring Ruckus Wireless. MDC has a market capitalization more representative of the small-cap market space.
 "May 27, 2016",2016,added,EDR,Education Realty Trust,SP400MidCap,Coca-Cola Enterprises has merged with Coca-Cola Iberian Partners SA and Coca-Cola Erfrischungsgetränke AG to form a new company called Coca-Cola European Partners Plc.
 "May 27, 2016",2016,removed,AJG,Arthur J. Gallagher & Co.,SP400MidCap,Coca-Cola Enterprises has merged with Coca-Cola Iberian Partners SA and Coca-Cola Erfrischungsgetränke AG to form a new company called Coca-Cola European Partners Plc.
 "May 23, 2016",2016,added,MPW,Medical Properties Trust,SP400MidCap,S&P MidCap 400 constituent LKQ Corp. (NASD:LKQ) will replace Airgas Inc. (NYSE:ARG) in the S&P 500. Air Liquide SA acquired Airgas.
@@ -814,8 +949,14 @@ date,year,action,ticker,company,index_name,reason
 "April 6, 2016",2016,removed,ATML,Atmel,SP400MidCap,S&P 500 constituent Microchip Technology Inc. (NASD: MCHP) acquired Atmel.
 "April 4, 2016",2016,added,WBMD,webMD Health,SP400MidCap,SunEdison has a market capitalization that is no longer representative of the mid-cap market space.
 "April 4, 2016",2016,removed,SUNE,SunEdison,SP400MidCap,SunEdison has a market capitalization that is no longer representative of the mid-cap market space.
+"April 4, 2016",2016,added,DCT,DCT Industrial Trust,SP400MidCap,S&P MidCap 400 constituent Foot Locker Inc. (NYSE:FL) replaced Cameron International Corp. (NYSE:CAM) in the S&P 500. S&P 100 & 500 constituent Schlumberger Ltd (NYSE:SLB) acquired Cameron International.
+"April 4, 2016",2016,removed,FL,Foot Locker,SP400MidCap,S&P MidCap 400 constituent Foot Locker Inc. (NYSE:FL) replaced Cameron International Corp. (NYSE:CAM) in the S&P 500. S&P 100 & 500 constituent Schlumberger Ltd (NYSE:SLB) acquired Cameron International.
 "March 30, 2016",2016,added,ABMD,Abiomed,SP400MidCap,Exelon acquired Pepco Holdings. Hologic moved to S&P 500 to replace Pepco Holdings.
 "March 30, 2016",2016,removed,HOLX,Hologic,SP400MidCap,Exelon acquired Pepco Holdings. Hologic moved to S&P 500 to replace Pepco Holdings.
+"March 30, 2016",2016,added,ESV,Ensco plc,SP400MidCap,S&P MidCap 400 constituent Centene Corp. (NYSE: CNC) replaced Ensco plc (NYSE: ESV) in the S&P 500.
+"March 30, 2016",2016,removed,CNC,Centene,SP400MidCap,S&P MidCap 400 constituent Centene Corp. (NYSE: CNC) replaced Ensco plc (NYSE: ESV) in the S&P 500.
+"March 30, 2016",2016,added,FR,First Industrial Realty Trust,SP400MidCap,Centene acquired Health Net.
+"March 30, 2016",2016,removed,HNT,Health Net,SP400MidCap,Centene acquired Health Net.
 "March 8, 2016",2016,added,NJR,New Jersey Resources,SP400MidCap,Meiji Yasuda Life Insurance Co. acquired StanCorp Financial.
 "March 8, 2016",2016,removed,SFG,StanCorp Financial,SP400MidCap,Meiji Yasuda Life Insurance Co. acquired StanCorp Financial.
 "March 7, 2016",2016,added,HR,Healthcare Realty Trust,SP400MidCap,S&P MidCap 400 constituent UDR Inc. (NYSE: UDR) replaced Keurig Green Mountain Inc. (NASD:GMCR) in the S&P 500. JAB Holding Company acquired Keurig Green Mountain.
@@ -856,10 +997,16 @@ date,year,action,ticker,company,index_name,reason
 "July 30, 2015",2015,removed,TMST,TimkenSteel,SP400MidCap,Endurance Specialty Holdings acquired Montpelier Re Holdings.
 "July 8, 2015",2015,added,JACK,Jack in the Box,SP400MidCap,Dollar Tree has acquired Family Dollar Stores. Advance Auto Parts moves to S&P 500 to replace Family Dollar Stores.
 "July 8, 2015",2015,removed,AAP,Advance Auto Parts,SP400MidCap,Dollar Tree has acquired Family Dollar Stores. Advance Auto Parts moves to S&P 500 to replace Family Dollar Stores.
+"July 8, 2015",2015,added,WST,West Pharmaceutical Services,SP400MidCap,SS&C Technologies Holdings Inc. (NASD:SSNC) has acquired Advent Software.
+"July 8, 2015",2015,removed,ADVS,Advent Software,SP400MidCap,SS&C Technologies Holdings Inc. (NASD:SSNC) has acquired Advent Software.
 "July 1, 2015",2015,added,ATI,Allegheny Technologies,SP400MidCap,S&P 500 constituent NiSource Inc. (NYSE: NI) spun off Columbia Pipeline Group. NiSource will remain in the S&P 500 and Columbia Pipeline will join the S&P 500. Allegheny Technologies and Unit were ranked near or at the bottom of their current indices.
 "July 1, 2015",2015,removed,UNT,Unit Corp,SP400MidCap,S&P 500 constituent NiSource Inc. (NYSE: NI) spun off Columbia Pipeline Group. NiSource will remain in the S&P 500 and Columbia Pipeline will join the S&P 500. Allegheny Technologies and Unit were ranked near or at the bottom of their current indices.
 "June 30, 2015",2015,added,CC,Chemours,SP400MidCap,S&P 100 & 500 constituent E. I. du Pont de Nemours and Co. (NYSE: DD) spins off Chemours.
 "June 30, 2015",2015,removed,SMTC,Semtech,SP400MidCap,S&P 100 & 500 constituent E. I. du Pont de Nemours and Co. (NYSE: DD) spins off Chemours.
+"June 30, 2015",2015,added,CABO,Cable One,SP400MidCap,S&P MidCap 400 constituent Graham Holdings Company (NYSE: GHC) spins off Cable One. Graham Holdings remains in the S&P MidCap 400 following the distribution.
+"June 30, 2015",2015,removed,BTU,Peabody Energy,SP400MidCap,S&P MidCap 400 constituent Graham Holdings Company (NYSE: GHC) spins off Cable One. Graham Holdings remains in the S&P MidCap 400 following the distribution.
+"June 30, 2015",2015,added,EPC,Edgewell Personal Care,SP400MidCap,"S&P MidCap 400 constituent Energizer Inc. (NYSE: ENR) spins off ""new"" Energizer. Post spin, the parent company will change its name to Edgewell Personal Care Co. and trade under the symbol ""EPC"". It will remain in the S&P MidCap 400 following the distribution."
+"June 30, 2015",2015,removed,HSC,Harsco,SP400MidCap,"S&P MidCap 400 constituent Energizer Inc. (NYSE: ENR) spins off ""new"" Energizer. Post spin, the parent company will change its name to Edgewell Personal Care Co. and trade under the symbol ""EPC"". It will remain in the S&P MidCap 400 following the distribution."
 "June 25, 2015",2015,added,CASY,Casey's General Stores,SP400MidCap,S&P 100 & 500 constituent Verizon Corp. (NYSE: VZ) acquired AOL.
 "June 25, 2015",2015,removed,AOL,AOL Inc,SP400MidCap,S&P 100 & 500 constituent Verizon Corp. (NYSE: VZ) acquired AOL.
 "June 11, 2015",2015,added,WETF,WisdomTree Investments,SP400MidCap,Qorvo Inc. replaced Lorillard Inc. in the S&P 500 due to Lorillard being acquired by Reynolds American Inc.
@@ -1128,7 +1275,6 @@ date,year,action,ticker,company,index_name,reason
 "December 26, 2025",2025,removed,KAR,"OPENLANE, Inc.",SP600SmallCap,"Ticker symbol for OPENLANE, Inc. changed from KAR to OPLN."
 "December 22, 2025",2025,added,PRIM,Primoris Services Corporation,SP600SmallCap,"PRIM replaced SPXC, which replaced Comfort Systems USA in the S&P 400 after it was moved to the S&P 500."
 "December 22, 2025",2025,removed,SPXC,SPX Corporation,SP600SmallCap,"PRIM replaced SPXC, which replaced Comfort Systems USA in the S&P 400 after it was moved to the S&P 500."
-"December 22, 2025",2025,added,UA/UAA,Under Armour (Class A & C),SP600SmallCap,UA/UAA were moved from the S&P 400 as they were more representative of the small cap market space. DY was moved to the S&P 400 as it was more representative of the mid-cap market space.
 "December 22, 2025",2025,removed,DY,Dycom Industries,SP600SmallCap,UA/UAA were moved from the S&P 400 as they were more representative of the small cap market space. DY was moved to the S&P 400 as it was more representative of the mid-cap market space.
 "December 22, 2025",2025,added,POWI,Power Integrations,SP600SmallCap,POWI was moved from the S&P 400 as it was more representative of the small cap market space. HL was moved to the S&P 400 as it was more representative of the mid-cap market space.
 "December 22, 2025",2025,removed,HL,Hecla Mining,SP600SmallCap,POWI was moved from the S&P 400 as it was more representative of the small cap market space. HL was moved to the S&P 400 as it was more representative of the mid-cap market space.
@@ -1444,7 +1590,6 @@ date,year,action,ticker,company,index_name,reason
 "December 18, 2023",2023,removed,JRVR,James River Group Holdings,SP600SmallCap,PJT replaced JRVR as it was no longer representative of the small-cap market space.
 "December 4, 2023",2023,added,WS,Worthington Steel,SP600SmallCap,"WS was spun off from Worthington Industries, and replaced SNBR which was no longer representative of the small-cap market space. Post spin-off Worthington Industries was renamed Worthington Enterprises."
 "December 4, 2023",2023,removed,SNBR,Sleep Number,SP600SmallCap,"WS was spun off from Worthington Industries, and replaced SNBR which was no longer representative of the small-cap market space. Post spin-off Worthington Industries was renamed Worthington Enterprises."
-"November 30, 2023",2023,added,"CWEN, CWEN.A","Clearway, Inc.",SP600SmallCap,"CWEN replaced VRTV after it was acquired by Clayton, Dubilier & Rice."
 "November 30, 2023",2023,removed,VRTV,Veritiv,SP600SmallCap,"CWEN replaced VRTV after it was acquired by Clayton, Dubilier & Rice."
 "November 30, 2023",2023,added,WOR,Worthington Industries,SP600SmallCap,"AVTA was acquired by Aretec Group, Inc. WOR was moved from the S&P 400 to replace it as it was more representative of the small cap market space."
 "November 30, 2023",2023,removed,AVTA,Avantax,SP600SmallCap,"AVTA was acquired by Aretec Group, Inc. WOR was moved from the S&P 400 to replace it as it was more representative of the small cap market space."

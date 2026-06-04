@@ -34,6 +34,19 @@ from html.parser import HTMLParser
 
 _REF = re.compile(r"\[\d+\]")          # footnote markers like [2]
 _YEAR = re.compile(r"(19|20)\d{2}")
+_DATE_RX = re.compile(
+    r"(January|February|March|April|May|June|July|August|September|October|"
+    r"November|December)\s+\d{1,2},\s*(19|20)\d{2}", re.IGNORECASE)
+_TICKER_RX = re.compile(r"^[A-Za-z0-9.\-]{1,8}$")
+
+
+def _is_date(s):
+    return bool(_DATE_RX.search(s or ""))
+
+
+def _valid_ticker(t):
+    t = (t or "").strip()
+    return bool(_TICKER_RX.match(t))
 
 
 # --- HTML table extraction --------------------------------------------------
@@ -69,11 +82,21 @@ class _TableParser(HTMLParser):
 
 
 def _html_from(path):
-    """Return page HTML from a .webarchive, .html, or text file."""
+    """Return page HTML from a .webarchive, .mhtml/.mht, .html, or text file."""
     if path.endswith(".webarchive"):
         with open(path, "rb") as f:
             pl = plistlib.load(f)
         return pl["WebMainResource"]["WebResourceData"].decode("utf-8", "replace")
+    if path.endswith((".mhtml", ".mht")):
+        # MIME archive: find the HTML part and let email decode its transfer
+        # encoding (quoted-printable / base64), which removes '=' soft breaks.
+        import email
+        with open(path, "rb") as f:
+            msg = email.message_from_binary_file(f)
+        parts = [p for p in msg.walk() if p.get_content_type() == "text/html"]
+        if parts:
+            biggest = max(parts, key=lambda p: len(p.get_payload(decode=True) or b""))
+            return (biggest.get_payload(decode=True) or b"").decode("utf-8", "replace")
     with open(path, encoding="utf-8") as f:
         return f.read()
 
@@ -112,24 +135,39 @@ def changes_from_tables(tables, index_name):
     for t in tables:
         if not t or t[0] != ["Date", "Added", "Removed", "Reason"]:
             continue
+        # The Date (and often Reason) cells use rowspan to group several changes
+        # under one date, so continuation rows arrive with 4 or 5 cells instead
+        # of 6. Carry the last seen date/reason down to reconstruct them.
+        last_date, last_reason = None, None
         for r in t[1:]:
-            if not r or r[0] in ("Ticker", "Date") or not _YEAR.search(r[0]):
+            if not r or r[:2] == ["Ticker", "Security"]:
                 continue
-            date = r[0]
+            if len(r) >= 6:
+                date, add_t, add_s, rem_t, rem_s, reason = r[0], r[1], r[2], r[3], r[4], r[5]
+            elif len(r) == 5:
+                if _is_date(r[0]):          # date present, reason rowspanned
+                    date, add_t, add_s, rem_t, rem_s, reason = r[0], r[1], r[2], r[3], r[4], last_reason
+                else:                        # date rowspanned, reason present
+                    date, add_t, add_s, rem_t, rem_s, reason = last_date, r[0], r[1], r[2], r[3], r[4]
+            elif len(r) == 4:               # both date and reason rowspanned
+                date, add_t, add_s, rem_t, rem_s, reason = last_date, r[0], r[1], r[2], r[3], last_reason
+            else:
+                continue
+            if _is_date(date):
+                last_date = date
+            if reason:
+                last_reason = reason
+            if not _is_date(date):
+                continue
             year = int(_YEAR.search(date).group())
-            add_t = r[1] if len(r) > 1 else ""
-            add_s = r[2] if len(r) > 2 else ""
-            rem_t = r[3] if len(r) > 3 else ""
-            rem_s = r[4] if len(r) > 4 else ""
-            reason = r[5] if len(r) > 5 else ""
-            if add_t:
+            if _valid_ticker(add_t):
                 events.append({"date": date, "year": year, "action": "added",
-                               "ticker": add_t, "company": add_s,
-                               "index_name": index_name, "reason": reason})
-            if rem_t:
+                               "ticker": add_t.strip(), "company": add_s,
+                               "index_name": index_name, "reason": reason or ""})
+            if _valid_ticker(rem_t):
                 events.append({"date": date, "year": year, "action": "removed",
-                               "ticker": rem_t, "company": rem_s,
-                               "index_name": index_name, "reason": reason})
+                               "ticker": rem_t.strip(), "company": rem_s,
+                               "index_name": index_name, "reason": reason or ""})
         break
     return events
 

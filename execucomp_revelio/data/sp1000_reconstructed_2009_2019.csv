@@ -1,0 +1,1313 @@
+ticker,company,cik,index_name,from_year,thru_year
+AAP,Advance Auto Parts,,SP400MidCap,2012,2014
+ABMD,Abiomed,,SP400MidCap,2016,2017
+ACC,American Campus Communities,,SP400MidCap,2012,2019
+ACHC,Acadia Healthcare,,SP400MidCap,2017,2019
+ACI,Albertsons,,SP400MidCap,2012,2012
+ACIW,ACI Worldwide,,SP400MidCap,2012,2019
+ACM,AECOM,,SP400MidCap,2012,2019
+ADNT,Adient,,SP400MidCap,2018,2019
+ADS,Alliance Data Systems,,SP400MidCap,2012,2012
+ADTN,ADTRAN,,SP400MidCap,2012,2013
+ADVS,Advent Software,,SP400MidCap,2012,2014
+AEO,American Eagle Outfitters,,SP400MidCap,2012,2019
+AFG,American Financial Group,,SP400MidCap,2012,2019
+AGCO,AGCO,,SP400MidCap,2012,2019
+AHL,Aspen Insurance Holdings,,SP400MidCap,2012,2018
+AINV,Apollo Investment,,SP400MidCap,2012,2013
+AJG,Arthur J. Gallagher & Co.,,SP400MidCap,2012,2015
+ALB,Albemarle Corporation,,SP400MidCap,2012,2015
+ALE,"Allete, Inc.",,SP400MidCap,2018,2019
+ALEX,Alexander & Baldwin,,SP400MidCap,2012,2019
+ALGN,Align Technology,,SP400MidCap,2014,2016
+ALK,Alaska Air Group,,SP400MidCap,2012,2015
+AM,Antero Midstream,,SP400MidCap,2019,2019
+AMCX,AMC Networks,,SP400MidCap,2012,2019
+AMD,Advanced Micro Devices,,SP400MidCap,2013,2016
+AME,Ametek,,SP400MidCap,2012,2012
+AMED,Amedisys,,SP400MidCap,2019,2019
+AMG,Affiliated Managers Group,,SP400MidCap,2012,2013
+AMG,Affiliated Managers Group,,SP400MidCap,2019,2019
+AMSG,AmSurg Corp,,SP400MidCap,2012,2015
+AN,AutoNation,,SP400MidCap,2017,2019
+ANF,Abercrombie & Fitch,,SP400MidCap,2013,2015
+ANR,Alpha Natural Resources,,SP400MidCap,2012,2013
+ANSS,ANSYS Inc,,SP400MidCap,2012,2016
+AOL,AOL Inc,,SP400MidCap,2012,2014
+AOS,A.O. Smith,,SP400MidCap,2013,2016
+APOL,Apollo Education,,SP400MidCap,2013,2014
+ARE,Alexandria Real Estate Equities,,SP400MidCap,2012,2016
+ARRS,Arris International,,SP400MidCap,2014,2018
+ARW,Arrow Electronics,,SP400MidCap,2012,2019
+ARWR,Arrowhead Pharmaceuticals,,SP400MidCap,2019,2019
+ASB,Associated Bank,,SP400MidCap,2012,2019
+ASGN,ASGN Inc.,,SP400MidCap,2018,2019
+ASH,Ashland Global,,SP400MidCap,2012,2019
+ASNA,Ascena Retail Group,,SP400MidCap,2012,2015
+ATGE,Adtalem Global Education,,SP400MidCap,2012,2019
+ATI,ATI Inc.,,SP400MidCap,2015,2019
+ATML,Atmel,,SP400MidCap,2012,2015
+ATR,AptarGroup,,SP400MidCap,2012,2019
+ATW,Atwood Oceanics,,SP400MidCap,2012,2015
+AVNS,Avanos Medical,,SP400MidCap,2012,2019
+AVNT,Avient,,SP400MidCap,2012,2019
+AVP,Avon Products,,SP400MidCap,2012,2017
+AVT,Avnet,,SP400MidCap,2012,2019
+AXON,Axon Enterprise,,SP400MidCap,2012,2019
+AYI,Acuity Brands,,SP400MidCap,2012,2015
+AYI,Acuity Brands,,SP400MidCap,2018,2019
+AZTA,Azenta,,SP400MidCap,2012,2019
+BBBY,Bed Bath & Beyond,,SP400MidCap,2017,2019
+BBG,Bill Barrett Corporation,,SP400MidCap,2012,2013
+BC,Brunswick,,SP400MidCap,2013,2019
+BCO,Brink's,,SP400MidCap,2012,2013
+BCO,Brink's,,SP400MidCap,2017,2019
+BDC,Belden Inc.,,SP400MidCap,2014,2019
+BEAV,B/E Aerospace,,SP400MidCap,2012,2016
+BFH,Bread Financial,,SP400MidCap,2012,2019
+BGC,General Cable,,SP400MidCap,2012,2013
+BHF,Brighthouse Financial,,SP400MidCap,2019,2019
+BID,Sotheby's,,SP400MidCap,2012,2018
+BIG,Big Lots,,SP400MidCap,2012,2018
+BIO,Bio-Rad Laboratories,,SP400MidCap,2012,2019
+BIVV,Bioverativ,,SP400MidCap,2017,2017
+BJ,BJ's Wholesale Club,,SP400MidCap,2019,2019
+BKH,Black Hills Corporation,,SP400MidCap,2012,2019
+BKS,Barnes & Noble,,SP400MidCap,2012,2012
+BLKB,Blackbaud,,SP400MidCap,2017,2019
+BMR,BioMed Realty Trust,,SP400MidCap,2012,2015
+BMS,Bemis Company,,SP400MidCap,2014,2018
+BOBE,Bob Evans Farms,,SP400MidCap,2012,2013
+BOH,Bank of Hawaii,,SP400MidCap,2012,2019
+BR,Broadridge Financial Solutions,,SP400MidCap,2012,2017
+BRCD,Brocade Communications,,SP400MidCap,2016,2016
+BRE,BRE Properties,,SP400MidCap,2012,2013
+BRO,Brown & Brown,,SP400MidCap,2012,2019
+BRX,Brixmor Property Group,,SP400MidCap,2019,2019
+BTU,Peabody Energy,,SP400MidCap,2014,2014
+BWLD,Buffalo Wild Wings,,SP400MidCap,2012,2017
+BYD,Boyd Gaming,,SP400MidCap,2018,2019
+BYI,Bally Technologies,,SP400MidCap,2012,2013
+CAA,CalAtlantic Homes,,SP400MidCap,2012,2017
+CAB,Cabela's,,SP400MidCap,2012,2016
+CABO,Cable One,,SP400MidCap,2015,2019
+CACI,CACI International,,SP400MidCap,2018,2019
+CADE,Cadence Bank,,SP400MidCap,2012,2019
+CAKE,Cheesecake Factory,,SP400MidCap,2012,2019
+CAR,Avis Budget Group,,SP400MidCap,2016,2019
+CARS,Cars.com,,SP400MidCap,2017,2018
+CASY,Casey's,,SP400MidCap,2015,2019
+CATY,Cathay Bank,,SP400MidCap,2012,2019
+CBOE,CBOE Holdings,,SP400MidCap,2012,2016
+CBRL,Cracker Barrel,,SP400MidCap,2015,2019
+CBSH,Commerce Bancshares,,SP400MidCap,2012,2019
+CBT,Cabot Corp,,SP400MidCap,2012,2019
+CC,Chemours,,SP400MidCap,2015,2015
+CC,Chemours,,SP400MidCap,2017,2019
+CCMP,CMC Materials,,SP400MidCap,2019,2019
+CCP,Care Capital Properties,,SP400MidCap,2012,2016
+CDAY,Ceridian,,SP400MidCap,2019,2019
+CDK,CDK Global,,SP400MidCap,2014,2019
+CDNS,Cadence Design Systems,,SP400MidCap,2012,2016
+CDP,COPT Defense Properties,,SP400MidCap,2012,2019
+CEB,CEB Inc.,,SP400MidCap,2012,2016
+CFR,Frost Bank,,SP400MidCap,2012,2019
+CGNX,Cognex,,SP400MidCap,2014,2019
+CHD,Church & Dwight,,SP400MidCap,2012,2014
+CHDN,Churchill Downs Inc.,,SP400MidCap,2016,2019
+CHE,Chemed Corp.,,SP400MidCap,2018,2019
+CHFC,Chemical Financial,,SP400MidCap,2016,2018
+CHH,Choice Hotels,,SP400MidCap,2019,2019
+CHK,Chesapeake Energy,,SP400MidCap,2018,2019
+CHS,Chico's FAS,,SP400MidCap,2012,2016
+CHX,ChampionX,,SP400MidCap,2012,2019
+CIEN,Ciena,,SP400MidCap,2012,2019
+CLB,Core Laboratories,,SP400MidCap,2017,2019
+CLC,CLARCOR Inc.,,SP400MidCap,2012,2016
+CLF,Cleveland-Cliffs,,SP400MidCap,2014,2014
+CLGX,CoreLogic,,SP400MidCap,2012,2019
+CLH,Clean Harbors,,SP400MidCap,2012,2019
+CLI,Mack-Cali Realty,,SP400MidCap,2012,2019
+CMC,Commercial Metals,,SP400MidCap,2012,2019
+CMD,Cantel Medical Corporation,,SP400MidCap,2018,2019
+CMP,Compass Minerals,,SP400MidCap,2012,2019
+CNC,Centene,,SP400MidCap,2014,2015
+CNK,Cinemark Holdings,,SP400MidCap,2012,2019
+CNL,CLECO,,SP400MidCap,2012,2015
+CNO,CNO Financial Group,,SP400MidCap,2015,2019
+CNQR,Concur Technologies,,SP400MidCap,2012,2013
+CNVR,Conversant,,SP400MidCap,2012,2013
+CNX,CNX Resources,,SP400MidCap,2016,2019
+COHR,Coherent Corp.,,SP400MidCap,2017,2019
+COLM,Columbia Sportswear,,SP400MidCap,2019,2019
+CONE,CyrusOne,,SP400MidCap,2017,2019
+COO,The Cooper Companies,,SP400MidCap,2012,2015
+COR,CoreSite,,SP400MidCap,2017,2019
+CPE,Callon Petroleum,,SP400MidCap,2017,2018
+CPRT,Copart,,SP400MidCap,2012,2017
+CPT,Camden,,SP400MidCap,2012,2019
+CPWR,Compuware,,SP400MidCap,2012,2013
+CRC,California Resources,,SP400MidCap,2014,2015
+CRI,Carter's,,SP400MidCap,2012,2019
+CRL,Charles River Laboratories,,SP400MidCap,2012,2019
+CRS,Carpenter Technology,,SP400MidCap,2012,2019
+CRUS,Cirrus Logic,,SP400MidCap,2016,2019
+CSC,Computer Sciences Corp.,,SP400MidCap,2015,2016
+CSL,Carlisle Companies,,SP400MidCap,2012,2019
+CST,CST Brands,,SP400MidCap,2013,2016
+CTB,Cooper Tire & Rubber Co.,,SP400MidCap,2017,2017
+CTLT,Catalent,,SP400MidCap,2012,2019
+CUZ,Cousins Properties,,SP400MidCap,2016,2019
+CVG,Convergys,,SP400MidCap,2012,2017
+CVLT,CommVault Systems,,SP400MidCap,2012,2019
+CW,Curtiss-Wright,,SP400MidCap,2016,2019
+CXT,Crane NXT,,SP400MidCap,2012,2019
+CXW,CoreCivic,,SP400MidCap,2012,2019
+CY,Cypress Semiconductor,,SP400MidCap,2012,2019
+CYH,Community Health Systems,,SP400MidCap,2012,2015
+CYN,City National Corp,,SP400MidCap,2012,2014
+CYT,Cytec Industries,,SP400MidCap,2012,2014
+CZR,Caesars Entertainment,,SP400MidCap,2019,2019
+DAN,Dana Incorporated,,SP400MidCap,2012,2019
+DBD,Diebold Nixdorf,,SP400MidCap,2012,2017
+DCI,Donaldson Company,,SP400MidCap,2012,2019
+DCT,DCT Industrial Trust,,SP400MidCap,2016,2017
+DDD,3D Systems,,SP400MidCap,2013,2017
+DDS,Dillard's,,SP400MidCap,2017,2019
+DECK,Deckers Brands,,SP400MidCap,2012,2019
+DEI,Douglas Emmett,,SP400MidCap,2012,2019
+DF,Dean Foods,,SP400MidCap,2013,2017
+DHC,Diversified Healthcare Trust,,SP400MidCap,2012,2019
+DINO,HF Sinclair,,SP400MidCap,2012,2019
+DKS,Dick's Sporting Goods,,SP400MidCap,2012,2019
+DLPH,Delphi Technologies,,SP400MidCap,2017,2019
+DLX,Deluxe Corporation,,SP400MidCap,2012,2019
+DNB,Dun & Bradstreet Corp,,SP400MidCap,2017,2018
+DNKN,Dunkin' Brands,,SP400MidCap,2015,2019
+DNOW,DNOW Inc.,,SP400MidCap,2014,2019
+DNR,Denbury Resources,,SP400MidCap,2012,2016
+DO,Diamond Offshore Drilling,,SP400MidCap,2016,2018
+DPZ,Domino's Pizza,,SP400MidCap,2013,2019
+DRC,Dresser-Rand Group,,SP400MidCap,2012,2014
+DRE,Duke Realty,,SP400MidCap,2012,2016
+DRQ,Dril-Quip,,SP400MidCap,2012,2018
+DST,DST Systems,,SP400MidCap,2012,2017
+DWA,DreamWorks Animation,,SP400MidCap,2012,2015
+DY,Dycom Industries,,SP400MidCap,2016,2019
+EAT,Brinker International,,SP400MidCap,2012,2019
+EDR,Education Realty Trust,,SP400MidCap,2016,2017
+EGN,Energen,,SP400MidCap,2012,2017
+EGP,EastGroup Properties,,SP400MidCap,2019,2019
+EHC,Encompass Health,,SP400MidCap,2018,2019
+EME,Emcor,,SP400MidCap,2016,2019
+ENDP,Endo International,,SP400MidCap,2017,2017
+ENH,Endurance Specialty Holdings,,SP400MidCap,2015,2016
+ENOV,Enovis,,SP400MidCap,2012,2019
+ENR,Energizer,,SP400MidCap,2012,2019
+ENS,EnerSys,,SP400MidCap,2016,2019
+EPC,Edgewell Personal Care,,SP400MidCap,2015,2019
+EPR,EPR Properties,,SP400MidCap,2016,2019
+EQT,EQT Corporation,,SP400MidCap,2018,2019
+EQY,Equity One,,SP400MidCap,2012,2016
+ESL,Esterline Technologies,,SP400MidCap,2012,2018
+ESS,Essex Property,,SP400MidCap,2012,2013
+ETRN,Equitrans Midstream,,SP400MidCap,2018,2019
+ETSY,Etsy,,SP400MidCap,2019,2019
+EV,Eaton Vance,,SP400MidCap,2012,2019
+EVR,Evercore,,SP400MidCap,2018,2019
+EWBC,East West Bancorp,,SP400MidCap,2012,2019
+EXE,Expand Energy,,SP400MidCap,2012,2019
+EXEL,Exelixis,,SP400MidCap,2018,2019
+EXP,Eagle Materials,,SP400MidCap,2013,2019
+EXR,Extra Space Storage,,SP400MidCap,2013,2015
+FAF,First American Financial Corporation,,SP400MidCap,2012,2019
+FBHS,Fortune Brands Home & Security,,SP400MidCap,2012,2015
+FCFS,FirstCash,,SP400MidCap,2019,2019
+FCN,FTI Consulting,,SP400MidCap,2012,2016
+FCN,FTI Consulting,,SP400MidCap,2019,2019
+FCS,Fairchild Semiconductor,,SP400MidCap,2012,2015
+FDS,FactSet,,SP400MidCap,2012,2019
+FEIC,FEI Company,,SP400MidCap,2014,2015
+FFIN,First Financial Bankshares,,SP400MidCap,2019,2019
+FHI,Federated Hermes,,SP400MidCap,2012,2019
+FHN,First Horizon,,SP400MidCap,2013,2019
+FICO,Fair Isaac,,SP400MidCap,2012,2019
+FIVE,Five Below,,SP400MidCap,2018,2019
+FL,Foot Locker,,SP400MidCap,2012,2015
+FL,Foot Locker,,SP400MidCap,2019,2019
+FLG,Flagstar Bank,,SP400MidCap,2012,2019
+FLO,Flowers Foods,,SP400MidCap,2012,2019
+FLR,Fluor,,SP400MidCap,2019,2019
+FMER,FirstMerit,,SP400MidCap,2012,2015
+FNB,FNB Corporation,,SP400MidCap,2016,2019
+FNF,Fidelity National Financial,,SP400MidCap,2012,2013
+FNFG,First Niagara Bank,,SP400MidCap,2012,2015
+FOSL,Fossil Group,,SP400MidCap,2016,2016
+FR,First Industrial Realty Trust,,SP400MidCap,2016,2019
+FRT,Federal Realty Investment Trust,,SP400MidCap,2012,2015
+FSLR,First Solar,,SP400MidCap,2017,2019
+FST,Forest Oil,,SP400MidCap,2012,2012
+FTNT,Fortinet,,SP400MidCap,2014,2017
+FULT,Fulton Financial Corporation,,SP400MidCap,2012,2019
+GAP,Gap Inc.,,SP400MidCap,2012,2019
+GATX,GATX,,SP400MidCap,2012,2019
+GDI,Gardner Denver,,SP400MidCap,2012,2012
+GDOT,Green Dot Corp,,SP400MidCap,2019,2019
+GEF,"Greif, Inc.",,SP400MidCap,2012,2019
+GEO,GEO Group,,SP400MidCap,2017,2019
+GES,Guess? Inc,,SP400MidCap,2012,2015
+GGG,Graco Inc.,,SP400MidCap,2012,2019
+GHC,Graham Holdings,,SP400MidCap,2014,2019
+GHL,Greenhill & Co.,,SP400MidCap,2012,2013
+GMCR,Keurig Green Mountain,,SP400MidCap,2012,2013
+GMED,Globus Medical,,SP400MidCap,2016,2019
+GNTX,Gentex,,SP400MidCap,2012,2019
+GNW,Genworth Financial,,SP400MidCap,2015,2019
+GPN,Global Payments Inc,,SP400MidCap,2012,2015
+GPOR,Gulfport Energy Corp,,SP400MidCap,2012,2017
+GRUB,Grubhub,,SP400MidCap,2019,2019
+GT,Goodyear Tire & Rubber,,SP400MidCap,2019,2019
+GTM,ZoomInfo,,SP400MidCap,2012,2019
+GVA,Granite Construction,,SP400MidCap,2012,2018
+GWR,Genesee & Wyoming,,SP400MidCap,2012,2018
+GXP,Great Plains Energy,,SP400MidCap,2012,2017
+HAE,Haemonetics,,SP400MidCap,2018,2019
+HAIN,Hain Celestial Group,,SP400MidCap,2013,2019
+HCSG,Healthcare Services Group,,SP400MidCap,2018,2019
+HE,Hawaiian Electric Industries,,SP400MidCap,2012,2019
+HELE,Helen of Troy Limited,,SP400MidCap,2016,2019
+HFC,HollyFrontier,,SP400MidCap,2012,2017
+HII,Huntington Ingalls,,SP400MidCap,2012,2017
+HIW,Highwoods Properties,,SP400MidCap,2012,2019
+HLS,HealthSouth,,SP400MidCap,2016,2017
+HMA,Health Management Associates,,SP400MidCap,2012,2013
+HNI,HNI Corporation,,SP400MidCap,2012,2019
+HNT,Health Net,,SP400MidCap,2012,2015
+HOLX,Hologic,,SP400MidCap,2012,2015
+HOMB,Home BancShares,,SP400MidCap,2017,2019
+HQY,HealthEquity,,SP400MidCap,2018,2019
+HR,Healthcare Realty Trust,,SP400MidCap,2016,2019
+HRC,Hillrom,,SP400MidCap,2012,2019
+HSC,Harsco,,SP400MidCap,2012,2014
+HSH,The Hillshire Brands,,SP400MidCap,2012,2013
+HSNI,HSN Inc,,SP400MidCap,2012,2017
+HTSI,Harris Teeter Supermarkets,,SP400MidCap,2012,2013
+HUBB,Hubbell Incorporated,,SP400MidCap,2012,2019
+HWC,Hancock Whitney,,SP400MidCap,2012,2019
+IART,Integra LifeSciences,,SP400MidCap,2018,2019
+IBKR,Interactive Brokers,,SP400MidCap,2018,2019
+IBOC,Intl Bancshares Corp,,SP400MidCap,2012,2019
+ICUI,ICU Medical,,SP400MidCap,2018,2019
+IDA,Idacorp,,SP400MidCap,2012,2019
+IDCC,InterDigital,,SP400MidCap,2012,2019
+IDTI,Integrated Device Technology,,SP400MidCap,2012,2018
+IDXX,IDEXX Laboratories,,SP400MidCap,2012,2016
+IEX,IDEX Corp.,,SP400MidCap,2012,2018
+ILG,"ILG, Inc.",,SP400MidCap,2017,2017
+IM,Ingram Micro,,SP400MidCap,2012,2015
+INGN,Inogen,,SP400MidCap,2012,2018
+INGR,Ingredion,,SP400MidCap,2012,2019
+INT,World Fuel Services,,SP400MidCap,2012,2019
+IPGP,IPG Photonics,,SP400MidCap,2014,2017
+IPI,Intrepid Potash,,SP400MidCap,2012,2013
+ISCA,International Speedway,,SP400MidCap,2012,2018
+ISIL,Intersil,,SP400MidCap,2012,2016
+IT,Gartner,,SP400MidCap,2012,2016
+ITT,ITT Inc.,,SP400MidCap,2012,2019
+JACK,Jack in the Box,,SP400MidCap,2015,2019
+JAH,Jarden,,SP400MidCap,2012,2015
+JBGS,JBG Smith,,SP400MidCap,2017,2019
+JBL,Jabil,,SP400MidCap,2014,2019
+JBLU,JetBlue,,SP400MidCap,2012,2019
+JCP,J. C. Penney,,SP400MidCap,2012,2016
+JEF,Jefferies,,SP400MidCap,2012,2012
+JEF,Jefferies,,SP400MidCap,2019,2019
+JHG,Janus Henderson,,SP400MidCap,2012,2019
+JKHY,Jack Henry & Associates,,SP400MidCap,2012,2017
+JLL,Jones Lang LaSalle,,SP400MidCap,2012,2019
+JOY,Joy Global,,SP400MidCap,2012,2016
+KAR,KAR Auction Services,,SP400MidCap,2019,2019
+KATE,Kate Spade & Company,,SP400MidCap,2014,2016
+KBH,KB Home,,SP400MidCap,2012,2019
+KBR,"KBR, Inc.",,SP400MidCap,2012,2019
+KEX,Kirby Corporation,,SP400MidCap,2012,2019
+KEYS,Keysight Technologies,,SP400MidCap,2014,2017
+KLXI,KLX Inc.,,SP400MidCap,2014,2017
+KMPR,Kemper Corporation,,SP400MidCap,2012,2019
+KMT,Kennametal,,SP400MidCap,2012,2019
+KN,Knowles Corporation,,SP400MidCap,2014,2017
+KNX,Knight-Swift,,SP400MidCap,2017,2019
+KRC,Kilroy Realty Corp,,SP400MidCap,2013,2019
+KSU,Kansas City Southern,,SP400MidCap,2012,2012
+KWK,Quicksilver Resources,,SP400MidCap,2012,2012
+LAMR,Lamar Advertising Company,,SP400MidCap,2012,2019
+LDOS,Leidos Holdings,,SP400MidCap,2012,2018
+LEA,Lear,,SP400MidCap,2019,2019
+LECO,Lincoln Electric,,SP400MidCap,2012,2019
+LFUS,Littelfuse,,SP400MidCap,2016,2019
+LGND,Ligand Pharmaceuticals,,SP400MidCap,2018,2019
+LHO,LaSalle Hotel Properties,,SP400MidCap,2014,2017
+LII,Lennox International,,SP400MidCap,2012,2019
+LITE,Lumentum,,SP400MidCap,2018,2019
+LIVN,LivaNova,,SP400MidCap,2012,2019
+LKQ,LKQ Corp,,SP400MidCap,2012,2015
+LM,Legg Mason,,SP400MidCap,2016,2019
+LNCE,Snyder's-Lance,,SP400MidCap,2016,2017
+LNT,Alliant Energy,,SP400MidCap,2012,2015
+LNW,Light & Wonder,,SP400MidCap,2012,2019
+LOGM,LogMeIn,,SP400MidCap,2017,2019
+LOPE,Grand Canyon Education,,SP400MidCap,2019,2019
+LPNT,LifePoint Health Inc.,,SP400MidCap,2012,2017
+LPS,Lender Processing Services,,SP400MidCap,2012,2013
+LPT,Liberty Property Trust,,SP400MidCap,2012,2019
+LPX,Louisiana-Pacific,,SP400MidCap,2012,2019
+LSI,Life Storage,,SP400MidCap,2012,2019
+LSTR,Landstar System,,SP400MidCap,2012,2019
+LTM,Life Time Fitness Inc.,,SP400MidCap,2012,2014
+LW,Lamb Weston Holdings,,SP400MidCap,2016,2017
+LXK,Lexmark International,,SP400MidCap,2012,2015
+LYV,Live Nation Entertainment,,SP400MidCap,2014,2018
+MAA,Mid-America Apartments,,SP400MidCap,2012,2015
+MAC,Macerich,,SP400MidCap,2012,2012
+MAC,Macerich,,SP400MidCap,2019,2019
+MAN,ManpowerGroup,,SP400MidCap,2012,2019
+MANH,Manhattan Associates,,SP400MidCap,2015,2019
+MASI,Masimo,,SP400MidCap,2012,2013
+MASI,Masimo,,SP400MidCap,2017,2019
+MAT,Mattel,,SP400MidCap,2019,2019
+MATW,Matthews International,,SP400MidCap,2012,2013
+MATX,Matson,,SP400MidCap,2012,2013
+MBFI,MB Financial,,SP400MidCap,2016,2018
+MCRS,MICROS Systems,,SP400MidCap,2012,2013
+MCY,Mercury General,,SP400MidCap,2012,2019
+MD,Mednax,,SP400MidCap,2012,2019
+MDC,MDC Holdings,,SP400MidCap,2012,2015
+MDP,Meredith Corp,,SP400MidCap,2012,2019
+MDR,McDermott International,,SP400MidCap,2018,2018
+MDRX,Allscripts Healthcare Solutions,,SP400MidCap,2012,2019
+MDSO,Medidata Solutions,,SP400MidCap,2017,2018
+MDU,MDU Resources,,SP400MidCap,2012,2019
+MENT,Mentor Graphics,,SP400MidCap,2012,2016
+MHK,Mohawk Industries,,SP400MidCap,2012,2012
+MIK,The Michaels Companies,,SP400MidCap,2017,2018
+MKSI,MKS Instruments,,SP400MidCap,2017,2019
+MKTX,MarketAxess,,SP400MidCap,2015,2018
+MLKN,MillerKnoll,,SP400MidCap,2012,2019
+MLM,Martin Marietta Materials,,SP400MidCap,2012,2013
+MMS,Maximus Inc.,,SP400MidCap,2012,2019
+MNK,Mallinckrodt,,SP400MidCap,2013,2013
+MNK,Mallinckrodt,,SP400MidCap,2017,2018
+MODG,Topgolf Callaway Brands,,SP400MidCap,2012,2019
+MOH,Molina Healthcare,,SP400MidCap,2012,2019
+MPW,Medical Properties Trust,,SP400MidCap,2016,2019
+MPWR,Monolithic Power Systems,,SP400MidCap,2016,2019
+MRCY,Mercury Systems,,SP400MidCap,2019,2019
+MSA,MSA Safety,,SP400MidCap,2012,2019
+MSCC,Microsemi,,SP400MidCap,2016,2017
+MSCI,MSCI Inc,,SP400MidCap,2012,2017
+MSM,MSC Industrial Direct,,SP400MidCap,2012,2019
+MTD,Mettler-Toledo,,SP400MidCap,2012,2015
+MTDR,Matador Resources,,SP400MidCap,2017,2019
+MTX,Minerals Technologies,,SP400MidCap,2012,2019
+MTZ,MasTec,,SP400MidCap,2018,2019
+MUR,Murphy Oil,,SP400MidCap,2017,2019
+MUSA,Murphy USA,,SP400MidCap,2013,2019
+MZTI,The Marzetti Company,,SP400MidCap,2012,2019
+NATI,National Instruments,,SP400MidCap,2012,2019
+NAVI,Navient,,SP400MidCap,2018,2019
+NBR,Nabors Industries,,SP400MidCap,2012,2017
+NDSN,Nordson,,SP400MidCap,2012,2019
+NE,Noble Corporation,,SP400MidCap,2012,2016
+NEU,NewMarket Corporation,,SP400MidCap,2012,2019
+NFG,National Fuel Gas,,SP400MidCap,2012,2019
+NGVT,Ingevity Corp.,,SP400MidCap,2019,2019
+NJR,New Jersey Resources,,SP400MidCap,2016,2019
+NKTR,Nektar Therapeutics,,SP400MidCap,2019,2019
+NNN,NNN Reit,,SP400MidCap,2012,2019
+NOG,Northern Oil & Gas,,SP400MidCap,2012,2012
+NSP,Insperity,,SP400MidCap,2018,2019
+NSR,Neustar,,SP400MidCap,2012,2016
+NTCT,NetScout Systems,,SP400MidCap,2012,2019
+NUS,Nu Skin Enterprises,,SP400MidCap,2017,2019
+NUVA,NuVasive,,SP400MidCap,2016,2019
+NVE,NV Energy,,SP400MidCap,2012,2012
+NVR,NVR,,SP400MidCap,2012,2018
+NVT,nVent Electric plc,,SP400MidCap,2018,2019
+NWE,NorthWestern Energy,,SP400MidCap,2016,2019
+NYT,New York Times Company,,SP400MidCap,2012,2019
+OA,Orbital ATK,,SP400MidCap,2012,2017
+OAS,Oasis Petroleum,,SP400MidCap,2018,2018
+OC,Owens Corning,,SP400MidCap,2019,2019
+ODFL,Old Dominion Freight Line,,SP400MidCap,2013,2018
+OGE,OGE Energy,,SP400MidCap,2012,2019
+OGS,One Gas,,SP400MidCap,2014,2019
+OHI,Omega Healthcare Investors,,SP400MidCap,2012,2019
+OI,O-I Glass,,SP400MidCap,2016,2019
+OII,Oceaneering International,,SP400MidCap,2012,2018
+OIS,Oil States International,,SP400MidCap,2012,2016
+OLED,Universal Display,,SP400MidCap,2018,2019
+OLLI,Ollie's Bargain Outlet,,SP400MidCap,2018,2019
+OLN,Olin Corporation,,SP400MidCap,2012,2019
+OMI,Owens & Minor,,SP400MidCap,2012,2017
+ORI,Old Republic International,,SP400MidCap,2012,2019
+OSK,Oshkosh,,SP400MidCap,2012,2019
+OZK,Bank OZK,,SP400MidCap,2012,2019
+P,Everpure,,SP400MidCap,2012,2019
+PACW,PacWest Bancorp,,SP400MidCap,2012,2019
+PAY,VeriFone,,SP400MidCap,2012,2017
+PB,Prosperity Bancshares,,SP400MidCap,2012,2019
+PBF,PBF Energy,,SP400MidCap,2017,2019
+PBH,Prestige Brands,,SP400MidCap,2016,2019
+PBI,Pitney Bowes,,SP400MidCap,2017,2018
+PCH,PotlatchDeltic,,SP400MidCap,2012,2019
+PDCO,Patterson Companies,,SP400MidCap,2018,2019
+PEB,Pebblebrook Hotel Trust,,SP400MidCap,2018,2019
+PEN,"Penumbra, Inc.",,SP400MidCap,2019,2019
+PENN,Penn Entertainment,,SP400MidCap,2018,2019
+PII,Polaris,,SP400MidCap,2012,2019
+PK,Park Hotels & Resorts,,SP400MidCap,2019,2019
+PKG,Packaging Corporation of America,,SP400MidCap,2012,2016
+PLCM,Polycom,,SP400MidCap,2012,2015
+PLT,Plantronics,,SP400MidCap,2012,2018
+PNFP,Pinnacle Financial Partners,,SP400MidCap,2017,2019
+PNRA,Panera Bread,,SP400MidCap,2012,2016
+POOL,Pool Corporation,,SP400MidCap,2016,2019
+POST,Post Holdings,,SP400MidCap,2012,2019
+PPC,Pilgrim's Pride,,SP400MidCap,2019,2019
+PPS,Post Properties,,SP400MidCap,2012,2015
+PRAH,PRA Health Sciences,,SP400MidCap,2018,2019
+PRG,PROG Holdings,,SP400MidCap,2012,2019
+PRI,Primerica,,SP400MidCap,2013,2019
+PRSP,Perspecta Inc.,,SP400MidCap,2012,2019
+PRXL,PAREXEL,,SP400MidCap,2012,2016
+PSB,PS Business Parks,,SP400MidCap,2019,2019
+PTC,PTC Inc.,,SP400MidCap,2012,2019
+PTEN,Patterson-UTI Energy,,SP400MidCap,2012,2019
+PVTB,PrivateBancorp,,SP400MidCap,2016,2016
+PXP,Plains Exploration & Production,,SP400MidCap,2012,2012
+PZZA,Papa John's,,SP400MidCap,2016,2019
+QCP,Quality Care Properties,,SP400MidCap,2016,2017
+QEP,QEP Resources,,SP400MidCap,2012,2018
+QLGC,QLogic,,SP400MidCap,2012,2012
+QRVO,Qorvo,,SP400MidCap,2012,2014
+R,Ryder,,SP400MidCap,2017,2019
+RAH,Ralcorp,,SP400MidCap,2012,2012
+RAMP,LiveRamp,,SP400MidCap,2012,2019
+RAX,Rackspace,,SP400MidCap,2012,2015
+RCII,Rent-A-Center,,SP400MidCap,2012,2015
+RDC,Rowan Companies,,SP400MidCap,2014,2018
+RE,Everest Re,,SP400MidCap,2012,2016
+REG,Regency Centers,,SP400MidCap,2012,2016
+REGN,Regeneron Pharmaceuticals,,SP400MidCap,2012,2012
+REZI,Resideo Technologies,,SP400MidCap,2012,2019
+RGA,Reinsurance Group of America,,SP400MidCap,2012,2019
+RGEN,Repligen,,SP400MidCap,2019,2019
+RGLD,Royal Gold,,SP400MidCap,2012,2019
+RGS,Regis,,SP400MidCap,2012,2012
+RH,RH,,SP400MidCap,2016,2016
+RH,RH,,SP400MidCap,2019,2019
+RIG,Transocean,,SP400MidCap,2017,2019
+RJF,Raymond James Financial,,SP400MidCap,2012,2016
+RLGY,Realogy,,SP400MidCap,2018,2018
+RLI,RLI Corp.,,SP400MidCap,2019,2019
+RMD,ResMed,,SP400MidCap,2012,2016
+RNR,RenaissanceRe,,SP400MidCap,2014,2019
+ROVI,Rovi,,SP400MidCap,2012,2014
+RPM,RPM International,,SP400MidCap,2012,2019
+RRC,Range Resources,,SP400MidCap,2018,2018
+RRD,RR Donnelley,,SP400MidCap,2012,2015
+RRX,Regal Rexnord,,SP400MidCap,2012,2019
+RS,"Reliance, Inc.",,SP400MidCap,2012,2019
+RVBD,Riverbed Technology Inc,,SP400MidCap,2012,2014
+RYN,Rayonier,,SP400MidCap,2012,2019
+SABR,Sabre,,SP400MidCap,2017,2019
+SAFM,Sanderson Farms,,SP400MidCap,2017,2019
+SAIC,Science Applications Intl Corp,,SP400MidCap,2013,2019
+SAM,Boston Beer Company,,SP400MidCap,2012,2019
+SBH,Sally Beauty Holdings,,SP400MidCap,2016,2019
+SBNY,Signature Bank,,SP400MidCap,2012,2019
+SBRA,Sabra Health Care REIT,,SP400MidCap,2017,2019
+SCHL,Scholastic,,SP400MidCap,2012,2012
+SCI,Service Corp Intl,,SP400MidCap,2012,2019
+SCOR,comScore,,SP400MidCap,2016,2016
+SEDG,SolarEdge,,SP400MidCap,2019,2019
+SEIC,SEI Investments Company,,SP400MidCap,2012,2019
+SF,Stifel,,SP400MidCap,2012,2019
+SFD,Smithfield Foods,,SP400MidCap,2012,2012
+SFG,StanCorp Financial,,SP400MidCap,2012,2015
+SFM,Sprouts Farmers Market,,SP400MidCap,2016,2019
+SGI,Somnigroup International,,SP400MidCap,2012,2019
+SGMS,Scientific Games,,SP400MidCap,2012,2013
+SHAW,The Shaw Group,,SP400MidCap,2012,2012
+SIG,Signet Jewelers Ltd,,SP400MidCap,2018,2018
+SIGI,Selective Insurance Group,,SP400MidCap,2019,2019
+SIRO,Sirona Dental Systems,,SP400MidCap,2014,2015
+SIVB,SVB Financial,,SP400MidCap,2012,2017
+SIX,Six Flags,,SP400MidCap,2017,2019
+SKS,Saks,,SP400MidCap,2012,2012
+SKT,Tanger Factory Outlet Centers,,SP400MidCap,2014,2019
+SKX,Skechers,,SP400MidCap,2012,2019
+SLAB,Silicon Labs,,SP400MidCap,2012,2019
+SLGN,Silgan Holdings,,SP400MidCap,2012,2019
+SLH,Solera Holdings,,SP400MidCap,2012,2015
+SLM,SLM Corp,,SP400MidCap,2014,2019
+SLXP,Salix Pharmaceuticals,,SP400MidCap,2013,2014
+SM,SM Energy,,SP400MidCap,2012,2018
+SMG,Scotts Miracle-Gro Company,,SP400MidCap,2012,2019
+SMTC,Semtech,,SP400MidCap,2012,2014
+SMTC,Semtech,,SP400MidCap,2019,2019
+SNPS,Synopsys,,SP400MidCap,2012,2016
+SNV,Synovus,,SP400MidCap,2012,2019
+SNX,TD Synnex,,SP400MidCap,2015,2019
+SON,Sonoco,,SP400MidCap,2012,2019
+SPN,Superior Energy Services,,SP400MidCap,2012,2017
+SR,Spire,,SP400MidCap,2012,2019
+SRC,Spirit Realty,,SP400MidCap,2019,2019
+SRCL,Stericycle,,SP400MidCap,2018,2019
+STE,STERIS plc,,SP400MidCap,2012,2018
+STL,Sterling Bancorp,,SP400MidCap,2017,2019
+STLD,Steel Dynamics,,SP400MidCap,2012,2019
+STR,Questar,,SP400MidCap,2012,2015
+STRA,"Strategic Education, Inc.",,SP400MidCap,2012,2012
+SUNE,SunEdison,,SP400MidCap,2012,2015
+SVC,Service Properties Trust,,SP400MidCap,2012,2019
+SVU,SuperValu,,SP400MidCap,2012,2015
+SWI,SolarWinds,,SP400MidCap,2012,2015
+SWN,Southwestern Energy,,SP400MidCap,2017,2018
+SWX,Southwest Gas Corp,,SP400MidCap,2016,2019
+SXT,Sensient Technologies,,SP400MidCap,2012,2019
+SYNA,Synaptics,,SP400MidCap,2012,2019
+SYNH,Syneos Health,,SP400MidCap,2012,2019
+TCBI,Texas Capital Bancshares,,SP400MidCap,2017,2019
+TCF,TCF Financial Corporation,,SP400MidCap,2012,2019
+TCO,Taubman Centers,,SP400MidCap,2012,2019
+TDC,Teradata,,SP400MidCap,2017,2019
+TDS,Telephone and Data Systems,,SP400MidCap,2012,2019
+TDY,Teledyne Technologies,,SP400MidCap,2012,2019
+TECD,Tech Data,,SP400MidCap,2012,2019
+TECH,Bio-Techne,,SP400MidCap,2012,2019
+TER,Teradyne,,SP400MidCap,2013,2019
+TEX,Terex,,SP400MidCap,2012,2019
+TFX,Teleflex,,SP400MidCap,2012,2018
+TGI,Triumph Group,,SP400MidCap,2012,2016
+TGNA,Tegna Inc.,,SP400MidCap,2017,2019
+THC,Tenet Health,,SP400MidCap,2016,2019
+THG,Hanover Insurance,,SP400MidCap,2012,2019
+THO,Thor Industries,,SP400MidCap,2012,2019
+THS,TreeHouse Foods,,SP400MidCap,2014,2019
+TIBX,TIBCO Software,,SP400MidCap,2012,2013
+TIME,Time Inc.,,SP400MidCap,2014,2016
+TKO,TKO Group Holdings,,SP400MidCap,2012,2019
+TKR,Timken,,SP400MidCap,2012,2019
+TLAB,Tellabs,,SP400MidCap,2012,2012
+TLN,Talen Energy,,SP400MidCap,2015,2015
+TMST,TimkenSteel,,SP400MidCap,2014,2014
+TNL,Travel + Leisure Co.,,SP400MidCap,2012,2019
+TOL,Toll Brothers,,SP400MidCap,2012,2019
+TPH,Tri Pointe Homes,,SP400MidCap,2012,2019
+TR,Tootsie Roll,,SP400MidCap,2012,2019
+TREE,LendingTree,,SP400MidCap,2018,2019
+TREX,Trex,,SP400MidCap,2019,2019
+TRIP,Tripadvisor,,SP400MidCap,2019,2019
+TRMB,Trimble Inc.,,SP400MidCap,2012,2019
+TRMK,Trustmark Corporation,,SP400MidCap,2012,2019
+TRN,Trinity Industries,,SP400MidCap,2012,2019
+TSCO,Tractor Supply,,SP400MidCap,2012,2013
+TTC,Toro,,SP400MidCap,2012,2019
+TTEK,Tetra Tech,,SP400MidCap,2019,2019
+TTWO,Take-Two Interactive,,SP400MidCap,2017,2017
+TUP,Tupperware Brands Corp,,SP400MidCap,2012,2018
+TW,Towers Watson,,SP400MidCap,2012,2015
+TWTC,TW Telecom,,SP400MidCap,2012,2013
+TXNM,TXNM Energy,,SP400MidCap,2012,2019
+TXRH,Texas Roadhouse,,SP400MidCap,2016,2019
+TYL,Tyler Technologies,,SP400MidCap,2014,2019
+UAA,Under Armour,,SP400MidCap,2012,2013
+UBSI,United Bankshares,,SP400MidCap,2017,2019
+UDR,"UDR, Inc.",,SP400MidCap,2012,2015
+UE,Urban Edge Properties,,SP400MidCap,2012,2019
+UFS,Domtar,,SP400MidCap,2012,2019
+UGI,UGI Corp,,SP400MidCap,2012,2019
+UHS,Universal Health Services,,SP400MidCap,2012,2013
+ULTI,Ultimate Software Group,,SP400MidCap,2014,2018
+UMBF,UMB Financial Corp.,,SP400MidCap,2016,2019
+UMPQ,Umpqua Bank,,SP400MidCap,2014,2019
+UNFI,United Natural Foods,,SP400MidCap,2012,2017
+UNIT,Uniti Group,,SP400MidCap,2012,2018
+UNT,Unit Corp,,SP400MidCap,2012,2014
+URBN,Urban Outfitters,,SP400MidCap,2017,2019
+URI,United Rentals,,SP400MidCap,2012,2013
+URS,URS,,SP400MidCap,2012,2013
+UTHR,United Therapeutics,,SP400MidCap,2012,2019
+UTIW,UTi Worldwide,,SP400MidCap,2012,2013
+UVV,Universal,,SP400MidCap,2012,2013
+VAC,Marriott Vacations Worldwide,,SP400MidCap,2018,2019
+VAL,Valaris,,SP400MidCap,2012,2018
+VC,Visteon,,SP400MidCap,2018,2019
+VCI,Valassis Communications,,SP400MidCap,2012,2013
+VLY,Valley Bank,,SP400MidCap,2012,2019
+VMI,Valmont Industries,,SP400MidCap,2012,2019
+VRTX,Vertex Pharmaceuticals,,SP400MidCap,2012,2012
+VSAT,Viasat,,SP400MidCap,2016,2019
+VSH,Vishay Intertechnology,,SP400MidCap,2012,2019
+VSM,Versum Materials,,SP400MidCap,2016,2018
+VSTO,Vista Outdoor,,SP400MidCap,2012,2016
+VVC,Vectren,,SP400MidCap,2012,2018
+VVV,Valvoline,,SP400MidCap,2017,2019
+VYX,NCR Voyix,,SP400MidCap,2012,2019
+WAB,Wabtec,,SP400MidCap,2012,2018
+WABC,Westamerica Bancorporation,,SP400MidCap,2012,2013
+WAFD,"WaFd, Inc.",,SP400MidCap,2012,2019
+WBMD,WebMD,,SP400MidCap,2016,2016
+WBS,Webster Bank,,SP400MidCap,2012,2019
+WCG,WellCare,,SP400MidCap,2012,2017
+WCN,Waste Connections,,SP400MidCap,2012,2015
+WDR,Waddell & Reed,,SP400MidCap,2012,2016
+WEN,Wendy's,,SP400MidCap,2012,2019
+WERN,Werner Enterprises,,SP400MidCap,2012,2019
+WETF,WisdomTree Investments,,SP400MidCap,2015,2016
+WEX,WEX Inc.,,SP400MidCap,2012,2019
+WGL,WGL Holdings,,SP400MidCap,2012,2017
+WH,Wyndham Hotels & Resorts,,SP400MidCap,2012,2019
+WIN,Windstream,,SP400MidCap,2012,2014
+WLY,John Wiley & Sons,,SP400MidCap,2012,2019
+WNR,Western Refining,,SP400MidCap,2014,2016
+WOLF,Wolfspeed,,SP400MidCap,2012,2019
+WOOF,VCA Inc.,,SP400MidCap,2012,2016
+WOR,Worthington Industries,,SP400MidCap,2012,2019
+WPG,Washington Prime Group,,SP400MidCap,2014,2017
+WPX,WPX Energy,,SP400MidCap,2014,2019
+WR,Westar Energy (renamed Evergy),,SP400MidCap,2012,2017
+WRB,W.R. Berkley,,SP400MidCap,2012,2018
+WRI,Weingarten Realty,,SP400MidCap,2012,2019
+WSM,"Williams-Sonoma, Inc.",,SP400MidCap,2012,2019
+WSO,Watsco,,SP400MidCap,2012,2019
+WST,West Pharmaceutical Services,,SP400MidCap,2015,2019
+WTFC,Wintrust Financial,,SP400MidCap,2017,2019
+WTRG,Essential Utilities,,SP400MidCap,2012,2019
+WW,WW International,,SP400MidCap,2012,2019
+WWAV,WhiteWave Foods,,SP400MidCap,2013,2016
+WWD,"Woodward, Inc.",,SP400MidCap,2012,2019
+X,U.S. Steel,,SP400MidCap,2014,2019
+XEC,Cimarex Energy,,SP400MidCap,2012,2013
+XLS,Exelis,,SP400MidCap,2012,2014
+XPO,"XPO, Inc.",,SP400MidCap,2019,2019
+Y,Alleghany,,SP400MidCap,2012,2019
+YELP,Yelp,,SP400MidCap,2018,2019
+ZBRA,Zebra Technologies,,SP400MidCap,2012,2018
+ZD,Ziff Davis,,SP400MidCap,2012,2019
+AAMI,Acadian Asset Management Inc.,0001748824,SP600SmallCap,2019,2019
+AAOI,Applied Optoelectronics,,SP600SmallCap,2019,2019
+AAON,AAON,,SP600SmallCap,2019,2019
+AAT,American Assets Trust,0001500217,SP600SmallCap,2019,2019
+AAWW,Atlas Air Worldwide Holdings,,SP600SmallCap,2019,2019
+ABCB,Ameris Bancorp,0000351569,SP600SmallCap,2019,2019
+ABG,Asbury Automotive Group,0001144980,SP600SmallCap,2019,2019
+ABM,"ABM Industries, Inc.",0000771497,SP600SmallCap,2019,2019
+ABTX,Allegiance Bancshares,,SP600SmallCap,2019,2019
+ACA,"Arcosa, Inc.",0001739445,SP600SmallCap,2019,2019
+ACLS,"Axcelis Technologies, Inc.",0001113232,SP600SmallCap,2019,2019
+ACOR,Acorda Therapeutics,,SP600SmallCap,2019,2019
+ADC,Agree Realty Corp.,,SP600SmallCap,2019,2019
+ADEA,"Adeia, Inc.",0001803696,SP600SmallCap,2019,2019
+ADTN,ADTRAN,,SP600SmallCap,2019,2019
+ADUS,Addus HomeCare Corp.,0001468328,SP600SmallCap,2019,2019
+AEGN,Aegion Corp.,,SP600SmallCap,2019,2019
+AEIS,Advanced Energy,,SP600SmallCap,2019,2019
+AEL,American Equity Investment Life Holding Co.,,SP600SmallCap,2019,2019
+AGYS,"Agilysys, Inc.",0000078749,SP600SmallCap,2019,2019
+AHRT,AH Realty Trust,,SP600SmallCap,2019,2019
+AIN,Albany International Corp.,0000819793,SP600SmallCap,2019,2019
+AIR,AAR CORP.,0000001750,SP600SmallCap,2019,2019
+AIT,Applied Industrial Technologies,,SP600SmallCap,2019,2019
+AJRD,Aerojet Rocketdyne,,SP600SmallCap,2019,2019
+AKR,Acadia Realty Trust,0000899629,SP600SmallCap,2019,2019
+AKRX,Akorn,,SP600SmallCap,2019,2019
+ALG,Alamo Group,0000897077,SP600SmallCap,2019,2019
+ALGT,Allegiant Travel Company,0001362468,SP600SmallCap,2019,2019
+ALK,Alaska Air Group,,SP600SmallCap,2019,2019
+ALRM,"Alarm.Com, Inc.",0001459200,SP600SmallCap,2019,2019
+AMAG,AMAG Pharmaceuticals,,SP600SmallCap,2019,2019
+AMBC,Ambac Financial Group,,SP600SmallCap,2019,2019
+AMN,"Amn Healthcare Services, Inc.",0001142750,SP600SmallCap,2019,2019
+AMPH,"Amphstar Pharmaceuticals, Inc.",0001297184,SP600SmallCap,2019,2019
+AMSF,"Amerisafe, Inc.",0001018979,SP600SmallCap,2019,2019
+AMWD,American Woodmark Corp.,0000794619,SP600SmallCap,2019,2019
+ANDE,"The Andersons, Inc.",0000821026,SP600SmallCap,2019,2019
+ANF,Abercrombie & Fitch Company,,SP600SmallCap,2019,2019
+ANGO,AngioDynamics,,SP600SmallCap,2019,2019
+ANIP,"ANI Pharmaceuticals, Inc.",0001023024,SP600SmallCap,2019,2019
+AORT,Artivion,0000784199,SP600SmallCap,2019,2019
+APEI,American Public Education,,SP600SmallCap,2019,2019
+APOG,"Apogee Enterprises, Inc.",0000006845,SP600SmallCap,2019,2019
+ARCB,ArcBest Corp.,0000894405,SP600SmallCap,2019,2019
+ARI,Apollo Commercial Real Estate Finance,0001467760,SP600SmallCap,2019,2019
+ARLO,Arlo Technologies,0001736946,SP600SmallCap,2019,2019
+ARNC,Arconic,,SP600SmallCap,2019,2019
+AROC,"Archrock, Inc.",0001389050,SP600SmallCap,2019,2019
+ARR,Armour Residential REIT,0001428205,SP600SmallCap,2019,2019
+ASIX,AdvanSix,,SP600SmallCap,2019,2019
+ASTE,"Astec Industries, Inc.",0000792987,SP600SmallCap,2019,2019
+ASTH,"Astrana Health, Inc.",0001083446,SP600SmallCap,2019,2019
+ATNI,ATN International,,SP600SmallCap,2019,2019
+AVA,Avista Corporation,0000104918,SP600SmallCap,2019,2019
+AVAV,AeroVironment,,SP600SmallCap,2019,2019
+AVD,American Vanguard Corporation,,SP600SmallCap,2019,2019
+AVTA,Avantax,,SP600SmallCap,2019,2019
+AWR,American States Water Company,0001056903,SP600SmallCap,2019,2019
+AX,"Axos Financial, Inc.",0001299709,SP600SmallCap,2019,2019
+AXE,Anixter,,SP600SmallCap,2019,2019
+AZZ,"AZZ, Inc.",0000008947,SP600SmallCap,2019,2019
+B,Barnes Group,,SP600SmallCap,2019,2019
+BANC,"Banc Of California, Inc.",0001169770,SP600SmallCap,2019,2019
+BANR,Banner Corporation,0000946673,SP600SmallCap,2019,2019
+BBT,Beacon Financial Corp.,0001108134,SP600SmallCap,2019,2019
+BCC,Boise Cascade,0001328581,SP600SmallCap,2019,2019
+BCPC,Balchem Corporation,0000009326,SP600SmallCap,2019,2019
+BEAT,"BioTelemetry, Inc.",,SP600SmallCap,2019,2019
+BELFB,"Bel Fuse, Inc.",,SP600SmallCap,2019,2019
+BFS,"Saul Centers, Inc.",0000907254,SP600SmallCap,2019,2019
+BGG,Briggs & Stratton,,SP600SmallCap,2019,2019
+BGS,B&G Foods,,SP600SmallCap,2019,2019
+BHE,"Benchmark Electronics, Inc.",0000863436,SP600SmallCap,2019,2019
+BIG,Big Lots,,SP600SmallCap,2019,2019
+BJRI,"BJ's Restaurants, Inc.",0001013488,SP600SmallCap,2019,2019
+BKE,"The Buckle, Inc.",0000885245,SP600SmallCap,2019,2019
+BLD,TopBuild,,SP600SmallCap,2019,2019
+BLMN,Bloomin' Brands,,SP600SmallCap,2019,2019
+BMI,"Badger Meter, Inc.",0000009092,SP600SmallCap,2019,2019
+BNED,"Barnes & Noble Education, Inc.",,SP600SmallCap,2019,2019
+BOOM,Dynamic Materials Corporation,,SP600SmallCap,2019,2019
+BOOT,"Boot Barn Holdings, Inc.",0001610250,SP600SmallCap,2019,2019
+BPFH,Boston Private Financial Holdings,,SP600SmallCap,2019,2019
+BRC,Brady Corporation,0000746598,SP600SmallCap,2019,2019
+BRKL,Brookline Bancorp,,SP600SmallCap,2019,2019
+BRKS,"Brooks Automation, Inc.",,SP600SmallCap,2019,2019
+CADE,Cadence Bank,,SP600SmallCap,2019,2019
+CAL,Caleres,,SP600SmallCap,2019,2019
+CALM,"Cal-Maine Foods, Inc.",0000016160,SP600SmallCap,2019,2019
+CALY,Callaway Golf Company,0000837465,SP600SmallCap,2019,2019
+CAMP,CalAmp,,SP600SmallCap,2019,2019
+CASH,"Pathward Financial, Inc.",0000907471,SP600SmallCap,2019,2019
+CATM,Cardtronics,,SP600SmallCap,2019,2019
+CATO,Cato Corporation,,SP600SmallCap,2019,2019
+CBB,Cincinnati Bell,,SP600SmallCap,2019,2019
+CBL,CBL & Associates Properties,,SP600SmallCap,2019,2019
+CBU,"Community Bank System, Inc.",0000723188,SP600SmallCap,2019,2019
+CCOI,"Cogent Communications Holdings, Inc.",0001158324,SP600SmallCap,2019,2019
+CCRN,Cross Country Healthcare,,SP600SmallCap,2019,2019
+CCS,"Century Communities, Inc.",0001576940,SP600SmallCap,2019,2019
+CDR,Cedar Realty Trust,,SP600SmallCap,2019,2019
+CENT,Central Garden & Pet Company,0000887733,SP600SmallCap,2019,2019
+CENTA,Central Garden & Pet Company (Class A),0000887733,SP600SmallCap,2019,2019
+CENX,Century Aluminum Company,0000949157,SP600SmallCap,2019,2019
+CEVA,"CEVA, Inc.",,SP600SmallCap,2019,2019
+CHCO,City Holding Company,0000726854,SP600SmallCap,2019,2019
+CHCT,Community Healthcare Trust,,SP600SmallCap,2019,2019
+CHEF,"Chefs' Warehouse, Inc.",0001517175,SP600SmallCap,2019,2019
+CHS,Chico's FAS,,SP600SmallCap,2019,2019
+CHUY,Chuy's,,SP600SmallCap,2019,2019
+CIR,CIRCOR International,,SP600SmallCap,2019,2019
+CIVI,Civitas Resources,,SP600SmallCap,2019,2019
+CKH,SEACOR Holdings,,SP600SmallCap,2019,2019
+CLDT,Chatham Lodging Trust,,SP600SmallCap,2019,2019
+CLF,Cleveland-Cliffs,,SP600SmallCap,2019,2019
+CLW,Clearwater Paper Corporation,,SP600SmallCap,2019,2019
+CMO,Capstead Mortgage Corporation,,SP600SmallCap,2019,2019
+CMTL,Comtech Telecommunications Corp.,,SP600SmallCap,2019,2019
+CNMD,CONMED Corporation,0000816956,SP600SmallCap,2019,2019
+CNR,"Core Natural Resources, Inc.",0001710366,SP600SmallCap,2019,2019
+CNSL,Consolidated Communications,,SP600SmallCap,2019,2019
+CNXN,"PC Connection, Inc.",0001050377,SP600SmallCap,2019,2019
+COHU,"Cohu, Inc.",0000021535,SP600SmallCap,2019,2019
+COKE,Coca-Cola Bottling Co. Consolidated,,SP600SmallCap,2019,2019
+COLB,Columbia Banking System,,SP600SmallCap,2019,2019
+CONN,Conn's,,SP600SmallCap,2019,2019
+CORE,"Core-Mark Holding Company, Inc.",,SP600SmallCap,2019,2019
+CORT,Corcept Therapeutics Incorporated,0001088856,SP600SmallCap,2019,2019
+CPE,Callon Petroleum,,SP600SmallCap,2019,2019
+CPF,Central Pacific Financial Corp.,0000701347,SP600SmallCap,2019,2019
+CPS,"Cooper-Standard Holdings, Inc.",,SP600SmallCap,2019,2019
+CPSI,Computer Programs and Systems,,SP600SmallCap,2019,2019
+CRCM,Care.com,,SP600SmallCap,2019,2019
+CROX,"Crocs, Inc.",,SP600SmallCap,2019,2019
+CRVL,CorVel Corporation,0000874866,SP600SmallCap,2019,2019
+CSGS,"CSG Systems International, Inc.",,SP600SmallCap,2019,2019
+CSII,Cardiovascular Systems,,SP600SmallCap,2019,2019
+CSR,Centerspace Trust,0000798359,SP600SmallCap,2019,2019
+CTB,Cooper Tire & Rubber Company,,SP600SmallCap,2019,2019
+CTRE,CareTrust REIT,,SP600SmallCap,2019,2019
+CTS,CTS Corporation,0000026058,SP600SmallCap,2019,2019
+CUB,Cubic Corporation,,SP600SmallCap,2019,2019
+CUBI,"Customers Bancorp, Inc.",0001488813,SP600SmallCap,2019,2019
+CUTR,"Cutera, Inc.",,SP600SmallCap,2019,2019
+CVBF,CVB Financial Corp.,0000354647,SP600SmallCap,2019,2019
+CVCO,"Cavco Industries, Inc.",0000278166,SP600SmallCap,2019,2019
+CVET,Covetrus,,SP600SmallCap,2019,2019
+CVGW,"Calavo Growers, Inc.",,SP600SmallCap,2019,2019
+CVSA,Covista Inc.,0000730464,SP600SmallCap,2019,2019
+CWEN,"Clearway Energy, Inc. (Class C)",0001567683,SP600SmallCap,2019,2019
+CWEN.A,"Clearway Energy, Inc. (Class A)",0001567683,SP600SmallCap,2019,2019
+CWT,California Water Service Group,0001035201,SP600SmallCap,2019,2019
+CYH,"Community Health Systems, Inc.",,SP600SmallCap,2019,2019
+CYTK,Cytokinetics,,SP600SmallCap,2019,2019
+DAKT,"Daktronics, Inc.",,SP600SmallCap,2019,2019
+DAR,Darling Ingredients,,SP600SmallCap,2019,2019
+DBD,Diebold Nixdorf,0000028823,SP600SmallCap,2019,2019
+DBI,Designer Brands,,SP600SmallCap,2019,2019
+DCH,Dauch Corporation,0001062231,SP600SmallCap,2019,2019
+DCOM,"Dime Community Bancshares, Inc.",0000846617,SP600SmallCap,2019,2019
+DDD,3D Systems Corporation,,SP600SmallCap,2019,2019
+DEA,"Easterly Government Properties, Inc.",0001622194,SP600SmallCap,2019,2019
+DFIN,"Donnelley Financial Solutions, Inc.",0001669811,SP600SmallCap,2019,2019
+DGII,Digi International Inc.,0000854775,SP600SmallCap,2019,2019
+DIN,Dine Brands Global,,SP600SmallCap,2019,2019
+DIOD,Diodes Incorporated,0000029002,SP600SmallCap,2019,2019
+DO,Diamond Offshore Drilling,,SP600SmallCap,2019,2019
+DORM,"Dorman Products, Inc.",0000868780,SP600SmallCap,2019,2019
+DPLO,Diplomat Pharmacy,,SP600SmallCap,2019,2019
+DRH,DiamondRock Hospitality Company,0001298946,SP600SmallCap,2019,2019
+DRQ,"Dril-Quip, Inc.",,SP600SmallCap,2019,2019
+DSPG,DSP Group,,SP600SmallCap,2019,2019
+DXPE,"DXP Enterprises, Inc.",0001020710,SP600SmallCap,2019,2019
+EBIX,Ebix,,SP600SmallCap,2019,2019
+EBS,Emergent BioSolutions,,SP600SmallCap,2019,2019
+ECHO,Echo Global Logistics,,SP600SmallCap,2019,2019
+ECOL,US Ecology,,SP600SmallCap,2019,2019
+ECPG,"Encore Capital Group, Inc.",0001084961,SP600SmallCap,2019,2019
+EE,El Paso Electric,,SP600SmallCap,2019,2019
+EGBN,Eagle Bancorp Inc,0001050441,SP600SmallCap,2019,2019
+EGHT,8x8,,SP600SmallCap,2019,2019
+EGOV,NIC Inc.,,SP600SmallCap,2019,2019
+EGRX,"Eagle Pharmaceuticals, Inc.",,SP600SmallCap,2019,2019
+EHTH,eHealth,,SP600SmallCap,2019,2019
+EIG,"Employers Holdings, Inc.",0001379041,SP600SmallCap,2019,2019
+ELME,Elme Communities,,SP600SmallCap,2019,2019
+ELY,Callaway Golf Company,,SP600SmallCap,2019,2019
+ENDP,Endo International,,SP600SmallCap,2019,2019
+ENSG,Ensign Group,,SP600SmallCap,2019,2019
+ENVA,"Enova International, Inc.",0001529864,SP600SmallCap,2019,2019
+EPAC,Enerpac Tool Group,0000006955,SP600SmallCap,2019,2019
+EPAY,Bottomline Technologies,,SP600SmallCap,2019,2019
+EPRT,"Essential Properties Realty Trust, Inc.",0001728951,SP600SmallCap,2019,2019
+ESE,ESCO Technologies Inc.,0000866706,SP600SmallCap,2019,2019
+ETD,"Ethan Allen Interiors, Inc.",0000896156,SP600SmallCap,2019,2019
+EVTC,"EVERTEC, Inc.",0001559865,SP600SmallCap,2019,2019
+EXLS,EXL Service Holdings,,SP600SmallCap,2019,2019
+EXPO,Exponent,,SP600SmallCap,2019,2019
+EXPR,"Express, Inc.",,SP600SmallCap,2019,2019
+EXTN,Exterran Corporation,,SP600SmallCap,2019,2019
+EXTR,"Extreme Networks, Inc.",0001078271,SP600SmallCap,2019,2019
+EZPW,"EZCORP, Inc.",0000876523,SP600SmallCap,2019,2019
+FARO,FARO Technologies,,SP600SmallCap,2019,2019
+FBC,Flagstar Bancorp,,SP600SmallCap,2019,2019
+FBP,First BanCorp (Puerto Rico),0001057706,SP600SmallCap,2019,2019
+FCF,"First Commonwealth Financial, Corp.",0000712537,SP600SmallCap,2019,2019
+FCPT,"Four Corners Property Trust, Inc.",0001650132,SP600SmallCap,2019,2019
+FDP,"Fresh Del Monte Produce, Inc.",0001047340,SP600SmallCap,2019,2019
+FELE,Franklin Electric,0000038725,SP600SmallCap,2019,2019
+FF,FutureFuel,,SP600SmallCap,2019,2019
+FFBC,First Financial Bancorp,0000708955,SP600SmallCap,2019,2019
+FG,"F&G Annuities & Life, Inc.",0001934850,SP600SmallCap,2019,2019
+FIX,Comfort Systems USA,,SP600SmallCap,2019,2019
+FIZZ,National Beverage Corp.,0000069891,SP600SmallCap,2019,2019
+FL,Foot Locker,,SP600SmallCap,2019,2019
+FLOW,"SPX FLOW, Inc.",,SP600SmallCap,2019,2019
+FMBI,First Midwest Bancorp,,SP600SmallCap,2019,2019
+FN,Fabrinet,,SP600SmallCap,2019,2019
+FOE,Ferro Corporation,,SP600SmallCap,2019,2019
+FORM,"FormFactor, Inc.",0001039399,SP600SmallCap,2019,2019
+FORR,Forrester Research,,SP600SmallCap,2019,2019
+FOSL,Fossil Group,,SP600SmallCap,2019,2019
+FOXF,Fox Factory,0001424929,SP600SmallCap,2019,2019
+FRGI,Fiesta Restaurant Group,,SP600SmallCap,2019,2019
+FSB,Franklin Financial Network,,SP600SmallCap,2019,2019
+FSP,Franklin Street Properties Corp.,,SP600SmallCap,2019,2019
+FSS,Federal Signal Corporation,0000277509,SP600SmallCap,2019,2019
+FUL,H.B. Fuller Company,0000039368,SP600SmallCap,2019,2019
+FUN,Six Flags,0001999001,SP600SmallCap,2019,2019
+FWRD,Forward Air Corp.,0000912728,SP600SmallCap,2019,2019
+GBCI,Glacier Bancorp,,SP600SmallCap,2019,2019
+GBX,"The Greenbrier Companies, Inc.",0000923120,SP600SmallCap,2019,2019
+GCI,Gannett,,SP600SmallCap,2019,2019
+GCO,Genesco,,SP600SmallCap,2019,2019
+GCP,GCP Applied Technologies,,SP600SmallCap,2019,2019
+GEAR,Revelyst,,SP600SmallCap,2019,2019
+GEOS,Geospace Technologies,,SP600SmallCap,2019,2019
+GES,"Guess, Inc.",,SP600SmallCap,2019,2019
+GFF,Griffon Corporation,0000050725,SP600SmallCap,2019,2019
+GHL,Greenhill & Co.,,SP600SmallCap,2019,2019
+GIII,"G-III Apparel Group, Ltd.",0000821002,SP600SmallCap,2019,2019
+GKOS,Glaukos Corp.,0001192448,SP600SmallCap,2019,2019
+GLT,Glatfelter,,SP600SmallCap,2019,2019
+GLUU,Glu Mobile,,SP600SmallCap,2019,2019
+GME,GameStop Corp.,,SP600SmallCap,2019,2019
+GMS,"GMS, Inc.",,SP600SmallCap,2019,2019
+GNL,"Global Net Lease, Inc.",0001526113,SP600SmallCap,2019,2019
+GPI,"Group 1 Automotive, Inc.",0001031203,SP600SmallCap,2019,2019
+GPMT,Granite Point Mortgage Trust,,SP600SmallCap,2019,2019
+GPOR,Gulfport Energy,,SP600SmallCap,2019,2019
+GPRE,Green Plains Inc.,,SP600SmallCap,2019,2019
+GTLS,"Chart Industries, Inc.",,SP600SmallCap,2019,2019
+GTX,Garrett Motion,,SP600SmallCap,2019,2019
+GTY,Getty Realty Corp.,0001052752,SP600SmallCap,2019,2019
+GVA,"Granite Construction, Inc.",0000861459,SP600SmallCap,2019,2019
+GWB,"Great Western Bancorp, Inc.",,SP600SmallCap,2019,2019
+HA,Hawaiian Holdings,,SP600SmallCap,2019,2019
+HAFC,Hanmi Financial Corporation,0001109242,SP600SmallCap,2019,2019
+HAYN,Haynes International,,SP600SmallCap,2019,2019
+HCC,"Warrior Met Coal, Inc.",0001691303,SP600SmallCap,2019,2019
+HCI,"HCI Group, Inc.",0001400810,SP600SmallCap,2019,2019
+HFWA,Heritage Financial Corporation,0001046025,SP600SmallCap,2019,2019
+HI,Hillenbrand,,SP600SmallCap,2019,2019
+HIBB,Hibbett Sports,,SP600SmallCap,2019,2019
+HLIT,Harmonic Inc.,0000851310,SP600SmallCap,2019,2019
+HLX,"Helix Energy Solutions Group, Inc.",0000866829,SP600SmallCap,2019,2019
+HMN,Horace Mann Educators Corporation,0000850141,SP600SmallCap,2019,2019
+HMST,HomeStreet Bank,,SP600SmallCap,2019,2019
+HMSY,HMS Holdings,,SP600SmallCap,2019,2019
+HNGR,"Hanger, Inc.",,SP600SmallCap,2019,2019
+HOPE,"Hope Bancorp, Inc.",0001128361,SP600SmallCap,2019,2019
+HOUS,Anywhere Real Estate,,SP600SmallCap,2019,2019
+HPR,HighPoint Resources,,SP600SmallCap,2019,2019
+HSII,Heidrick & Struggles International,,SP600SmallCap,2019,2019
+HSKA,Heska Corporation,,SP600SmallCap,2019,2019
+HSTM,"HealthStream, Inc.",0001095565,SP600SmallCap,2019,2019
+HT,Hersha Hospitality Trust,,SP600SmallCap,2019,2019
+HTLD,"Heartland Express, Inc.",0000799233,SP600SmallCap,2019,2019
+HUBG,"Hub Group, Inc.",0000940942,SP600SmallCap,2019,2019
+HVT,Havertys,,SP600SmallCap,2019,2019
+HWKN,"Hawkins, Inc.",0000046250,SP600SmallCap,2019,2019
+HZO,"MarineMax, Inc.",0001057060,SP600SmallCap,2019,2019
+IBP,"Installed Building Products, Inc.",0001580905,SP600SmallCap,2019,2019
+IBTX,Independent Bank Group,,SP600SmallCap,2019,2019
+ICHR,"Ichor Holdings, Ltd.",0001652535,SP600SmallCap,2019,2019
+IIIN,"Insteel Industries, Inc.",0000764401,SP600SmallCap,2019,2019
+IIPR,"Innovative Industrial Properties, Inc.",0001677576,SP600SmallCap,2019,2019
+ILPT,Industrial Logistics Properties Trust,,SP600SmallCap,2019,2019
+INDB,Independent Bank Corp.,0000776901,SP600SmallCap,2019,2019
+INGN,Inogen,,SP600SmallCap,2019,2019
+INN,Summit Hotel Properties,,SP600SmallCap,2019,2019
+INVA,"Innoviva, Inc.",0001080014,SP600SmallCap,2019,2019
+IOSP,"Innospec, Inc.",0001054905,SP600SmallCap,2019,2019
+IPAR,"Inter Parfums, Inc.",0000822663,SP600SmallCap,2019,2019
+IRBT,iRobot,,SP600SmallCap,2019,2019
+IRDM,Iridium Communications,0001418819,SP600SmallCap,2019,2019
+IRT,Independence Realty Trust,,SP600SmallCap,2019,2019
+ITGR,Integer Holdings Corporation,0001114483,SP600SmallCap,2019,2019
+ITRI,"Itron, Inc.",0000780571,SP600SmallCap,2019,2019
+IVC,Invacare Corporation,,SP600SmallCap,2019,2019
+IVR,Invesco Mortgage Capital,,SP600SmallCap,2019,2019
+JBSS,"John B. Sanfilippo & Son, Inc.",0000880117,SP600SmallCap,2019,2019
+JBT,John Bean Technologies Corporation,,SP600SmallCap,2019,2019
+JCP,JCPenney,,SP600SmallCap,2019,2019
+JJSF,J&J Snack Foods Corp.,0000785956,SP600SmallCap,2019,2019
+JOE,St. Joe Company,0000745308,SP600SmallCap,2019,2019
+JRVR,James River Group Holdings,,SP600SmallCap,2019,2019
+KALU,Kaiser Aluminum Corporation,0000811596,SP600SmallCap,2019,2019
+KAMN,Kaman Corporation,,SP600SmallCap,2019,2019
+KELYA,Kelly Services,,SP600SmallCap,2019,2019
+KFY,Korn/Ferry International,0000056679,SP600SmallCap,2019,2019
+KLIC,"Kulicke and Soffa Industries, Inc.",0000056978,SP600SmallCap,2019,2019
+KN,Knowles Corporation,0001587523,SP600SmallCap,2019,2019
+KNSL,Kinsale Capital Group,,SP600SmallCap,2019,2019
+KOP,"Koppers Holdings, Inc.",0001315257,SP600SmallCap,2019,2019
+KRA,Kraton,,SP600SmallCap,2019,2019
+KREF,KKR Real Estate Finance Trust,,SP600SmallCap,2019,2019
+KRG,Kite Realty Group Trust,,SP600SmallCap,2019,2019
+KTB,Kontoor Brands,0001760965,SP600SmallCap,2019,2019
+KWR,Quaker Chemical Corporation,0000081362,SP600SmallCap,2019,2019
+LAD,Lithia Motors,,SP600SmallCap,2019,2019
+LCI,"Lannett Company, Inc.",,SP600SmallCap,2019,2019
+LCII,LCI Industries,0000763744,SP600SmallCap,2019,2019
+LDL,"Lydall, Inc.",,SP600SmallCap,2019,2019
+LGIH,LGI Homes,0001580670,SP600SmallCap,2019,2019
+LHCG,LHC Group,,SP600SmallCap,2019,2019
+LL,LL Flooring,,SP600SmallCap,2019,2019
+LMAT,LeMaitre Vascular,0001158895,SP600SmallCap,2019,2019
+LMNX,Luminex Corporation,,SP600SmallCap,2019,2019
+LNN,Lindsay Corporation,0000836157,SP600SmallCap,2019,2019
+LNTH,Lantheus Holdings,,SP600SmallCap,2019,2019
+LOCO,El Pollo Loco,,SP600SmallCap,2019,2019
+LPG,Dorian LPG Ltd.,0001596993,SP600SmallCap,2019,2019
+LPSN,LivePerson,,SP600SmallCap,2019,2019
+LQDT,"Liquidity Services, Inc.",0001235468,SP600SmallCap,2019,2019
+LTC,"LTC Properties, Inc.",0000887905,SP600SmallCap,2019,2019
+LTHM,Livent Corp.,,SP600SmallCap,2019,2019
+LXP,Lexington Realty Trust,0000910108,SP600SmallCap,2019,2019
+LXU,LSB Industries,,SP600SmallCap,2019,2019
+LZB,"La-Z-Boy, Inc.",0000057131,SP600SmallCap,2019,2019
+M,"Macy's, Inc.",,SP600SmallCap,2019,2019
+MANT,ManTech International,,SP600SmallCap,2019,2019
+MATV,Mativ Holdings,,SP600SmallCap,2019,2019
+MATW,Matthews International Corporation,0000063296,SP600SmallCap,2019,2019
+MATX,"Matson, Inc.",0000003453,SP600SmallCap,2019,2019
+MCRI,"Monarch Casino & Resort, Inc.",0000907242,SP600SmallCap,2019,2019
+MCS,Marcus Corporation,,SP600SmallCap,2019,2019
+MDC,MDC Holdings,,SP600SmallCap,2019,2019
+MDR,McDermott International,,SP600SmallCap,2019,2019
+MED,Medifast,,SP600SmallCap,2019,2019
+MEDP,Medpace,,SP600SmallCap,2019,2019
+MEI,Methode Electronics,,SP600SmallCap,2019,2019
+MERC,Mercer International,,SP600SmallCap,2019,2019
+MGLN,Magellan Health,,SP600SmallCap,2019,2019
+MGPI,MGP Ingredients,,SP600SmallCap,2019,2019
+MHO,"M/I Homes, Inc.",0000799292,SP600SmallCap,2019,2019
+MIK,The Michaels Companies,,SP600SmallCap,2019,2019
+MLAB,Mesa Laboratories,,SP600SmallCap,2019,2019
+MLI,Mueller Industries,,SP600SmallCap,2019,2019
+MMI,"Marcus & Millichap, Inc.",0001578732,SP600SmallCap,2019,2019
+MMSI,"Merit Medical Systems, Inc.",0000856982,SP600SmallCap,2019,2019
+MNRO,"Monro, Inc.",0000876427,SP600SmallCap,2019,2019
+MNTA,Momenta Pharmaceuticals,,SP600SmallCap,2019,2019
+MODV,ModivCare,,SP600SmallCap,2019,2019
+MOG.A,Moog Inc.,,SP600SmallCap,2019,2019
+MOV,Movado,,SP600SmallCap,2019,2019
+MPAA,Motorcar Parts of America,,SP600SmallCap,2019,2019
+MPT,Medical Properties Trust,0001287865,SP600SmallCap,2019,2019
+MRTN,"Marten Transport, Ltd.",0000799167,SP600SmallCap,2019,2019
+MSTR,"MicroStrategy, Inc.",,SP600SmallCap,2019,2019
+MTH,Meritage Homes Corporation,0000833079,SP600SmallCap,2019,2019
+MTOR,Meritor,,SP600SmallCap,2019,2019
+MTRN,Materion Corp.,0001104657,SP600SmallCap,2019,2019
+MTRX,Matrix Service Company,,SP600SmallCap,2019,2019
+MTSC,MTS Systems Corporation,,SP600SmallCap,2019,2019
+MTUS,Metallus Inc,0001598428,SP600SmallCap,2019,2019
+MXL,"MaxLinear, Inc.",0001288469,SP600SmallCap,2019,2019
+MYE,Myers Industries,,SP600SmallCap,2019,2019
+MYGN,Myriad Genetics,,SP600SmallCap,2019,2019
+MYRG,"MYR Group, Inc.",0000700923,SP600SmallCap,2019,2019
+NBHC,National Bank Holdings Corporation,0001475841,SP600SmallCap,2019,2019
+NBR,Nabors Industries,,SP600SmallCap,2019,2019
+NBTB,"NBT Bancorp, Inc.",0000790359,SP600SmallCap,2019,2019
+NE,Noble Corporation,0000072207,SP600SmallCap,2019,2019
+NEO,"NeoGenomics Laboratories, Inc.",0001077183,SP600SmallCap,2019,2019
+NEOG,Neogen,0000711377,SP600SmallCap,2019,2019
+NFBK,"Northfield Bancorp,",,SP600SmallCap,2019,2019
+NMIH,"NMI Holdings, Inc.",0001547903,SP600SmallCap,2019,2019
+NP,"Neenah, Inc.",,SP600SmallCap,2019,2019
+NPK,"National Presto Industries, Inc.",0000080172,SP600SmallCap,2019,2019
+NPO,"EnPro Industries, Inc.",0001164863,SP600SmallCap,2019,2019
+NR,"Newpark Resources, Inc.",,SP600SmallCap,2019,2019
+NSA,National Storage Affiliates Trust,,SP600SmallCap,2019,2019
+NSIT,"Insight Enterprises, Inc.",0000932696,SP600SmallCap,2019,2019
+NTGR,Netgear,,SP600SmallCap,2019,2019
+NTUS,Natus Medical,,SP600SmallCap,2019,2019
+NVRI,Enviri Corporation,0000045876,SP600SmallCap,2019,2019
+NWBI,"Northwest Bancshares, Inc.",0001471265,SP600SmallCap,2019,2019
+NWN,NW Natural,0001733998,SP600SmallCap,2019,2019
+NX,Quanex Building Products Corporation,0001423221,SP600SmallCap,2019,2019
+NXGN,NextGen Healthcare,,SP600SmallCap,2019,2019
+NXRT,"NexPoint Residential Trust, Inc.",0001620393,SP600SmallCap,2019,2019
+NYMT,"New York Mortgage Trust, Inc.",,SP600SmallCap,2019,2019
+OAS,Oasis Petroleum,,SP600SmallCap,2019,2019
+ODP,The ODP Corporation,,SP600SmallCap,2019,2019
+OFG,OFG Bancorp,0001030469,SP600SmallCap,2019,2019
+OFIX,Orthofix Medical,,SP600SmallCap,2019,2019
+OII,"Oceaneering International, Inc.",0000073756,SP600SmallCap,2019,2019
+OIS,Oil States International,,SP600SmallCap,2019,2019
+OMCL,Omnicell,0000926326,SP600SmallCap,2019,2019
+OMI,Owens & Minor,,SP600SmallCap,2019,2019
+ONB,Old National Bancorp,,SP600SmallCap,2019,2019
+ONTO,Onto Innovation,,SP600SmallCap,2019,2019
+OPB,Opus Bank,,SP600SmallCap,2019,2019
+OPI,Office Properties Income Trust,,SP600SmallCap,2019,2019
+OSIS,"OSI Systems, Inc.",0001039065,SP600SmallCap,2019,2019
+OSPN,OneSpan,,SP600SmallCap,2019,2019
+OSUR,OraSure Technologies,,SP600SmallCap,2019,2019
+OXM,"Oxford Industries, Inc.",0000075288,SP600SmallCap,2019,2019
+PAHC,Phibro Animal Health,0001069899,SP600SmallCap,2019,2019
+PARR,"Par Pacific Holdings, Inc.",0000821483,SP600SmallCap,2019,2019
+PATK,"Patrick Industries, Inc.",0000076605,SP600SmallCap,2019,2019
+PBI,"Pitney Bowes, Inc.",0000078814,SP600SmallCap,2019,2019
+PCRX,"Pacira BioSciences, Inc.",0001396814,SP600SmallCap,2019,2019
+PDCE,"PDC Energy, Inc.",,SP600SmallCap,2019,2019
+PDFS,"PDF Solutions, Inc.",0001120914,SP600SmallCap,2019,2019
+PEI,Pennsylvania Real Estate,,SP600SmallCap,2019,2019
+PETS,PetMed Express,,SP600SmallCap,2019,2019
+PFBC,Preferred Bank,0001492165,SP600SmallCap,2019,2019
+PFS,"Provident Financial Services, Inc.",0001178970,SP600SmallCap,2019,2019
+PGTI,PGT Innovations,,SP600SmallCap,2019,2019
+PINC,Premier,,SP600SmallCap,2019,2019
+PIPR,Piper Sandler Companies,0001230245,SP600SmallCap,2019,2019
+PKE,Park Aerospace Corp,,SP600SmallCap,2019,2019
+PLAB,"Photronics, Inc.",0000810136,SP600SmallCap,2019,2019
+PLAY,Dave & Buster's,,SP600SmallCap,2019,2019
+PLCE,The Children's Place,,SP600SmallCap,2019,2019
+PLUS,"ePlus, Inc.",0001022408,SP600SmallCap,2019,2019
+PLXS,Plexus Corp.,0000785786,SP600SmallCap,2019,2019
+PMT,PennyMac Mortgage Investment Trust,0001464423,SP600SmallCap,2019,2019
+PNTG,Pennant Group,,SP600SmallCap,2019,2019
+POLY,Plantronics,,SP600SmallCap,2019,2019
+POWI,Power Integrations,0000833640,SP600SmallCap,2019,2019
+POWL,"Powell Industries, Inc.",0000080420,SP600SmallCap,2019,2019
+PPBI,Pacific Premier Bancorp,,SP600SmallCap,2019,2019
+PRA,ProAssurance Corporation,0001127703,SP600SmallCap,2019,2019
+PRAA,"PRA Group, Inc.",0001185348,SP600SmallCap,2019,2019
+PRDO,Perdoceo Education Corp.,0001046568,SP600SmallCap,2019,2019
+PRFT,Perficient,,SP600SmallCap,2019,2019
+PRGS,Progress Software Corporation,0000876167,SP600SmallCap,2019,2019
+PRK,Park National Corp.,0000805676,SP600SmallCap,2019,2019
+PRLB,Protolabs,0001443669,SP600SmallCap,2019,2019
+PRSU,"Pursuit Attractions & Hospitality, Inc.",0000884219,SP600SmallCap,2019,2019
+PSMT,PriceSmart,0001041803,SP600SmallCap,2019,2019
+PUMP,ProPetro Holding,,SP600SmallCap,2019,2019
+QEP,QEP Resources,,SP600SmallCap,2019,2019
+QLYS,Qualys,,SP600SmallCap,2019,2019
+QNST,"QuinStreet, Inc.",0001117297,SP600SmallCap,2019,2019
+RAVN,Raven Industries,,SP600SmallCap,2019,2019
+RC,Ready Capital Corp,,SP600SmallCap,2019,2019
+RDNT,"RadNet, Inc.",0000790526,SP600SmallCap,2019,2019
+REGI,Renewable Energy Group,,SP600SmallCap,2019,2019
+REI,Ring Energy,,SP600SmallCap,2019,2019
+RES,"RPC, Inc.",0000742278,SP600SmallCap,2019,2019
+REX,REX American Resources Corporation,0000744187,SP600SmallCap,2019,2019
+RGNX,REGENXBIO,,SP600SmallCap,2019,2019
+RGP,Resources Connection,,SP600SmallCap,2019,2019
+RGR,"Sturm, Ruger & Co.",,SP600SmallCap,2019,2019
+RGS,Regis Corporation,,SP600SmallCap,2019,2019
+RH,RH,,SP600SmallCap,2019,2019
+RMAX,RE/MAX,,SP600SmallCap,2019,2019
+RMBS,Rambus,,SP600SmallCap,2019,2019
+ROCC,Ranger Oil,,SP600SmallCap,2019,2019
+ROCK,"Gibraltar Industries, Inc.",0000912562,SP600SmallCap,2019,2019
+ROG,Rogers Corporation,0000084748,SP600SmallCap,2019,2019
+ROIC,Retail Opportunity Investments,,SP600SmallCap,2019,2019
+RPT,RPT Realty,,SP600SmallCap,2019,2019
+RRC,Range Resources,,SP600SmallCap,2019,2019
+RRD,R.R. Donnelley & Sons,,SP600SmallCap,2019,2019
+RRGB,Red Robin,,SP600SmallCap,2019,2019
+RUTH,Ruth's Hospitality Group,,SP600SmallCap,2019,2019
+RWT,"Redwood Trust, Inc.",0000930236,SP600SmallCap,2019,2019
+RYAM,Rayonier Advanced Materials,,SP600SmallCap,2019,2019
+SAFE,"Safehold, Inc.",0001095651,SP600SmallCap,2019,2019
+SAFT,"Safety Insurance Group, Inc.",0001172052,SP600SmallCap,2019,2019
+SAH,"Sonic Automotive, Inc.",0001043509,SP600SmallCap,2019,2019
+SAIA,"Saia, Inc.",,SP600SmallCap,2019,2019
+SANM,Sanmina Corporation,0000897723,SP600SmallCap,2019,2019
+SBCF,Seacoast Banking Corporation of Florida,0000730708,SP600SmallCap,2019,2019
+SBSI,"Southside Bancshares, Inc.",0000705432,SP600SmallCap,2019,2019
+SCHL,Scholastic Corporation,0000866729,SP600SmallCap,2019,2019
+SCL,Stepan Company,0000094049,SP600SmallCap,2019,2019
+SCSC,"ScanSource, Inc.",0000918965,SP600SmallCap,2019,2019
+SCVL,Shoe Carnival,,SP600SmallCap,2019,2019
+SEM,"Select Medical Holdings, Corp.",0001320414,SP600SmallCap,2019,2019
+SENEA,Seneca Foods,,SP600SmallCap,2019,2019
+SFBS,"ServisFirst Bancshares, Inc.",0001430723,SP600SmallCap,2019,2019
+SFNC,Simmons First National Corporation,0000090498,SP600SmallCap,2019,2019
+SGH,"Smart Global Holdings, Inc.",,SP600SmallCap,2019,2019
+SHAK,"Shake Shack, Inc.",0001620533,SP600SmallCap,2019,2019
+SHEN,Shenandoah Telecommunications Co,0000354963,SP600SmallCap,2019,2019
+SHOO,"Steven Madden, Ltd.",0000913241,SP600SmallCap,2019,2019
+SIG,Signet Jewelers,0000832988,SP600SmallCap,2019,2019
+SITC,SITE Centers,,SP600SmallCap,2019,2019
+SJI,South Jersey Industries,,SP600SmallCap,2019,2019
+SKYW,"SkyWest, Inc.",0000793733,SP600SmallCap,2019,2019
+SLCA,U.S. Silica Holdings,,SP600SmallCap,2019,2019
+SM,SM Energy Company,0000893538,SP600SmallCap,2019,2019
+SMP,"Standard Motor Products, Inc.",0000093389,SP600SmallCap,2019,2019
+SNBR,Sleep Number,,SP600SmallCap,2019,2019
+SNEX,StoneX Group Inc.,0000913760,SP600SmallCap,2019,2019
+SPNT,SiriusPoint Ltd.,0001576018,SP600SmallCap,2019,2019
+SPOK,"Spok Holdings, Inc.",,SP600SmallCap,2019,2019
+SPPI,Spectrum Pharmaceuticals,,SP600SmallCap,2019,2019
+SPSC,"SPS Commerce, Inc.",0001092699,SP600SmallCap,2019,2019
+SPTN,SpartanNash,,SP600SmallCap,2019,2019
+SPXC,SPX Corporation,,SP600SmallCap,2019,2019
+SRDX,Surmodics,,SP600SmallCap,2019,2019
+SSD,Simpson Manufacturing Company,,SP600SmallCap,2019,2019
+SSP,E. W. Scripps Company,,SP600SmallCap,2019,2019
+SSTK,"Shutterstock, Inc.",0001549346,SP600SmallCap,2019,2019
+STAR,iStar,,SP600SmallCap,2019,2019
+STBA,"S&T Bancorp, Inc.",0000719220,SP600SmallCap,2019,2019
+STC,Stewart Information Services Corporation,0000094344,SP600SmallCap,2019,2019
+STMP,"Stamps.com, Inc.",,SP600SmallCap,2019,2019
+STRA,"Strategic Education, Inc.",0001013934,SP600SmallCap,2019,2019
+SUPN,"Supernus Pharmaceuticals, Inc.",0001356576,SP600SmallCap,2019,2019
+SWN,Southwestern Energy,,SP600SmallCap,2019,2019
+SXC,SunCoke Energy,,SP600SmallCap,2019,2019
+SXI,Standex International Corporation,0000310354,SP600SmallCap,2019,2019
+SYKE,Sykes Enterprises,,SP600SmallCap,2019,2019
+TALO,"Talos Energy, Inc.",0001724965,SP600SmallCap,2019,2019
+TBI,TrueBlue,,SP600SmallCap,2019,2019
+TCMD,Tactile Systems Technology,,SP600SmallCap,2019,2019
+TFIN,"Triumph Bancorp, Inc.",0001539638,SP600SmallCap,2019,2019
+TG,Tredegar Corporation,,SP600SmallCap,2019,2019
+TGI,Triumph Group,,SP600SmallCap,2019,2019
+THRM,Gentherm Incorporated,0000903129,SP600SmallCap,2019,2019
+TILE,"Interface, Inc.",0000715787,SP600SmallCap,2019,2019
+TISI,"Team, Inc",,SP600SmallCap,2019,2019
+TIVO,TiVo Inc.,,SP600SmallCap,2019,2019
+TLRD,Tailored Brands,,SP600SmallCap,2019,2019
+TMP,Tompkins Financial Corporation,0001005817,SP600SmallCap,2019,2019
+TNC,Tennant Company,0000097134,SP600SmallCap,2019,2019
+TRHC,Tabula Rasa HealthCare,,SP600SmallCap,2019,2019
+TRST,TrustCo Bank Corp NY,0000357301,SP600SmallCap,2019,2019
+TSE,Trinseo,,SP600SmallCap,2019,2019
+TTEC,TTEC Holdings,,SP600SmallCap,2019,2019
+TTGT,Techtarget,,SP600SmallCap,2019,2019
+TTI,TETRA Technologies,,SP600SmallCap,2019,2019
+TTMI,TTM Technologies,,SP600SmallCap,2019,2019
+TUP,Tupperware Brands,,SP600SmallCap,2019,2019
+TVTY,Tivity Health,,SP600SmallCap,2019,2019
+TWI,"Titan International, Inc.",,SP600SmallCap,2019,2019
+UA,Under Armour (Class C),0001336917,SP600SmallCap,2019,2019
+UAA,Under Armour (Class A),0001336917,SP600SmallCap,2019,2019
+UBA,Urstadt Biddle Properties,,SP600SmallCap,2019,2019
+UCB,"United Community Banks, Inc.",0000857855,SP600SmallCap,2019,2019
+UCTT,"Ultra Clean Holdings, Inc.",0001275014,SP600SmallCap,2019,2019
+UEIC,Universal Electronics Inc,,SP600SmallCap,2019,2019
+UFCS,"United Fire Group, Inc.",0000101199,SP600SmallCap,2019,2019
+UFI,Unifi,,SP600SmallCap,2019,2019
+UFPI,UFP Industries,,SP600SmallCap,2019,2019
+UHT,Universal Health Realty Income Trust,0000798783,SP600SmallCap,2019,2019
+UIHC,United Insurance Holdings Corp.,,SP600SmallCap,2019,2019
+UIS,Unisys,,SP600SmallCap,2019,2019
+UNF,UniFirst Corporation,0000717954,SP600SmallCap,2019,2019
+UNFI,United Natural Foods Inc,0001020859,SP600SmallCap,2019,2019
+UNIT,Uniti Group,0002020795,SP600SmallCap,2019,2019
+UPBD,"Upbound Group, Inc.",0000933036,SP600SmallCap,2019,2019
+USCR,U.S. Concrete,,SP600SmallCap,2019,2019
+USNA,USANA Health Sciences,,SP600SmallCap,2019,2019
+USPH,"U.S. Physical Therapy, Inc.",0000885978,SP600SmallCap,2019,2019
+UVE,Universal Insurance Holdings,,SP600SmallCap,2019,2019
+UVV,Universal Corporation,0000102037,SP600SmallCap,2019,2019
+VAL,Valaris,,SP600SmallCap,2019,2019
+VBTX,Veritex Holdings,,SP600SmallCap,2019,2019
+VECO,Veeco Instruments Inc.,0000103145,SP600SmallCap,2019,2019
+VG,Vonage,,SP600SmallCap,2019,2019
+VGR,Vector Group,,SP600SmallCap,2019,2019
+VIAV,VIAVI Solutions,0000912093,SP600SmallCap,2019,2019
+VICR,Vicor Corporation,,SP600SmallCap,2019,2019
+VIVO,Meridian Bioscience,,SP600SmallCap,2019,2019
+VNDA,Vanda Pharmaceuticals,,SP600SmallCap,2019,2019
+VRA,Vera Bradley,,SP600SmallCap,2019,2019
+VRE,"Veris Residential, Inc.",0000924901,SP600SmallCap,2019,2019
+VREX,Varex Imaging,,SP600SmallCap,2019,2019
+VRTS,"Virtus Investment Partners, Inc.",0000883237,SP600SmallCap,2019,2019
+VRTU,Virtusa Corporation,,SP600SmallCap,2019,2019
+VRTV,Veritiv,,SP600SmallCap,2019,2019
+VSXY,Victoria's Secret,0001856437,SP600SmallCap,2019,2019
+VTLE,Vital Energy,,SP600SmallCap,2019,2019
+VTOL,Bristow Group Inc.,0001525221,SP600SmallCap,2019,2019
+WABC,Westamerica Bank,0000311094,SP600SmallCap,2019,2019
+WD,"Walker & Dunlop, Inc.",0001497770,SP600SmallCap,2019,2019
+WDFC,WD-40 Company,0000105132,SP600SmallCap,2019,2019
+WDR,Waddell & Reed,,SP600SmallCap,2019,2019
+WGO,"Winnebago Industries, Inc.",0000107687,SP600SmallCap,2019,2019
+WING,Wingstop,,SP600SmallCap,2019,2019
+WIRE,Encore Wire Corporation,,SP600SmallCap,2019,2019
+WKC,World Kinect Corporation,0000789460,SP600SmallCap,2019,2019
+WLH,William Lyon Homes,,SP600SmallCap,2019,2019
+WNC,Wabash National,,SP600SmallCap,2019,2019
+WPG,Washington Prime Group,,SP600SmallCap,2019,2019
+WRLD,World Acceptance Corporation,0000108385,SP600SmallCap,2019,2019
+WSR,Whitestone REIT,0001175535,SP600SmallCap,2019,2019
+WT,"WisdomTree Investments, Inc.",0000880631,SP600SmallCap,2019,2019
+WTS,Watts Water Technologies,,SP600SmallCap,2019,2019
+WWW,"Wolverine World Wide, Inc.",0000110471,SP600SmallCap,2019,2019
+XHR,"Xenia Hotels & Resorts, Inc.",0001616000,SP600SmallCap,2019,2019
+XNCR,Xencor Inc,0001326732,SP600SmallCap,2019,2019
+ZEUS,Olympic Steel,,SP600SmallCap,2019,2019
+ZUMZ,Zumiez,,SP600SmallCap,2019,2019
+ZYXI,Zynex,,SP600SmallCap,2019,2019

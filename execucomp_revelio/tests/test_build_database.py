@@ -8,7 +8,7 @@ import sqlite3
 import tempfile
 import unittest
 
-from execucomp_revelio import build_database, mobility, schema, wiki_parse
+from execucomp_revelio import build_database, mobility, reconstruct, schema, wiki_parse
 from execucomp_revelio.build_database import DEFAULTS, SAMPLE_DIR, create_schema
 from execucomp_revelio.names import canonical, name_score
 
@@ -280,6 +280,64 @@ class WikiParseTest(unittest.TestCase):
         self.assertEqual(actions, {("added", "FG"), ("removed", "MCW")})
         self.assertEqual(chg[0]["year"], 2026)
         self.assertEqual(chg[0]["reason"], "Acquired.")  # footnote stripped
+
+    # A rowspanned Date/Reason: the continuation row has only 4 cells and must
+    # inherit the date from the row above.
+    ROWSPAN_HTML = (
+        "<table><tr><th>Date</th><th>Added</th><th>Removed</th><th>Reason</th></tr>"
+        "<tr><td>Ticker</td><td>Security</td><td>Ticker</td><td>Security</td></tr>"
+        "<tr><td>June 1, 2020</td><td>AAA</td><td>Acorp</td><td>BBB</td>"
+        "<td>Bcorp</td><td>Rebalance</td></tr>"
+        "<tr><td>CCC</td><td>Ccorp</td><td>DDD</td><td>Dcorp</td></tr></table>"
+    )
+
+    def test_changes_rowspan_continuation_inherits_date(self):
+        tables = wiki_parse._tables(self.ROWSPAN_HTML)
+        chg = wiki_parse.changes_from_tables(tables, "SP400MidCap")
+        self.assertEqual({(c["action"], c["ticker"]) for c in chg},
+                         {("added", "AAA"), ("removed", "BBB"),
+                          ("added", "CCC"), ("removed", "DDD")})
+        self.assertTrue(all(c["year"] == 2020 for c in chg))  # CCC/DDD inherit date
+
+
+class ReconstructTest(unittest.TestCase):
+    """Backward walk of the change log to historical membership."""
+
+    CONSTITUENTS = [
+        {"ticker": "A", "company": "Acorp", "cik": "", "index_name": "I"},
+        {"ticker": "B", "company": "Bcorp", "cik": "", "index_name": "I"},
+    ]
+    CHANGES = [
+        {"date": "March 1, 2014", "action": "added", "ticker": "A",
+         "company": "Acorp", "index_name": "I"},
+        {"date": "March 1, 2014", "action": "removed", "ticker": "X",
+         "company": "Xcorp", "index_name": "I"},
+        {"date": "March 1, 2016", "action": "added", "ticker": "B",
+         "company": "Bcorp", "index_name": "I"},
+        {"date": "March 1, 2016", "action": "removed", "ticker": "Y",
+         "company": "Ycorp", "index_name": "I"},
+    ]
+
+    def test_backward_walk_spans_and_coverage(self):
+        rows, coverage = reconstruct.reconstruct(
+            self.CONSTITUENTS, self.CHANGES, min_year=2013, max_year=2016)
+        spans = {}
+        for r in rows:
+            spans.setdefault(r["ticker"], []).append((r["from_year"], r["thru_year"]))
+        # A present throughout the covered window; B only from its 2016 add;
+        # Y (removed in 2016) was a member before that; X is out of range.
+        self.assertEqual(spans["A"], [(2014, 2016)])
+        self.assertEqual(spans["B"], [(2016, 2016)])
+        self.assertEqual(spans["Y"], [(2014, 2015)])
+        self.assertNotIn("X", spans)
+        cov = coverage["I"]
+        self.assertEqual(cov["floor_year"], 2014)
+        self.assertEqual(cov["covered_years"], [2014, 2015, 2016])
+        self.assertEqual(cov["missing_years"], [2013])
+
+    def test_spans_helper_splits_on_gaps(self):
+        self.assertEqual(reconstruct._spans([2012, 2013, 2015, 2016, 2019]),
+                         [(2012, 2013), (2015, 2016), (2019, 2019)])
 
 
 class MobilityLogicTest(unittest.TestCase):

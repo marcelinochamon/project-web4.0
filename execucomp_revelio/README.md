@@ -92,7 +92,33 @@ A snapshot is bundled in `data/`:
 | file | rows | notes |
 | ---- | ---- | ----- |
 | `data/sp1000_constituents_current.csv` | 1,003 | 400 MidCap + 603 SmallCap (all 603 with CIK) — **current** membership |
-| `data/sp1000_index_changes.csv` | ~1,959 | add/remove events, **2012→2026** |
+| `data/sp1000_index_changes.csv` | ~2,104 | add/remove events, **2012→2026** |
+| `data/sp1000_reconstructed_2009_2019.csv` | ~1,312 | backward-reconstructed membership spans (see below) |
+
+### Reconstructing historical membership
+
+`reconstruct` walks the change log backward from the *current* list to recover
+who was a member at each past year-end (a company "added" on date D was not a
+member before D; one "removed" on D was), emitting `from_year`/`thru_year`
+spans for `--constituents`:
+
+```bash
+python -m execucomp_revelio.reconstruct sp400.webarchive sp600.webarchive \
+    --min-year 2009 --max-year 2019 -o sp1000_reconstructed.csv
+```
+
+It prints a coverage report and only emits years at/after each index's oldest
+logged change (its "floor year"). For these captures that means:
+
+| index | reconstructable | **not** covered in 2009–2019 |
+| ----- | --------------- | ---------------------------- |
+| S&P 400 MidCap | 2012–2019 | 2009, 2010, 2011 |
+| S&P 600 SmallCap | 2019 only | 2009–2018 |
+
+> The reconstructed MidCap counts run slightly above 400/year (share-class
+> duplicates + one-sided index changes accumulating over the walk). Treat this
+> as a **best-effort proxy**, not ground truth — for the full, exact 2009–2019
+> universe use WRDS `idxcst_his`.
 
 > ⚠️ **The change log does not cover the early study years.** The S&P 400 log
 > starts ~2012 and the S&P 600 log ~2019, so it cannot reconstruct 2009–2011
@@ -275,7 +301,8 @@ execucomp_revelio/
 ├── loaders.py           # CSV readers with type coercion (expected headers)
 ├── names.py             # name normalization + similarity score
 ├── universe.py          # S&P 1000 / window / SIC filter (idxcst or list mode)
-├── wiki_parse.py        # Wikipedia S&P 400/600 dump -> constituent CSV
+├── wiki_parse.py        # Wikipedia S&P 400/600 page -> constituent / change CSV
+├── reconstruct.py       # backward-reconstruct historical membership from changes
 ├── crosswalk.py         # gvkey <-> rcid (Revelio gvkey + ticker/cusip fallback)
 ├── matching.py          # executive <-> Revelio person matcher (scored/tiered)
 ├── workhistory.py       # complete work history of matched executives
