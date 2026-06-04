@@ -202,20 +202,71 @@ def extract_mapping(db, gvkey_set):
     return df
 
 
-def extract_revelio(db, focal_rcids, focal_seniority_min):
-    """Senior people at focal firms -> their ENTIRE position history + profiles."""
-    # Stage 1: user_ids holding a senior position at a focal company.
+def _exec_name_keys(anncomp):
+    """'lastname|firstinitial' keys for every Execucomp executive."""
+    ln = anncomp["exec_lname"].astype(str).str.strip().str.lower()
+    fi = anncomp["exec_fname"].astype(str).str.strip().str.lower().str[:1]
+    keys = (ln + "|" + fi)[ln.ne("") & ~ln.isin(["nan", "none"])]
+    return sorted(set(keys))
+
+
+# SQL fragment that builds the same 'lastname|firstinitial' key from a Revelio
+# fullname, so it can be matched against the Execucomp keys.
+_REV_NAMEKEY = (
+    "lower(reverse(split_part(reverse(trim(u.fullname)), ' ', 1))) || '|' || "
+    "lower(left(split_part(trim(u.fullname), ' ', 1), 1))")
+
+
+def _seed_users(db, focal_rcids, seed, seniority_min, exec_keys):
+    """Stage 1: pick the candidate-executive user_ids at the focal firms.
+
+    seed='name' (default): Revelio people at a focal firm whose lastname+first
+    initial matches an Execucomp NEO -- ANY seniority, so no executive is lost
+    to a seniority mislabel. Falls back to 'seniority' if the temp-table join
+    isn't permitted. seed='seniority': senior positions only. seed='all': every
+    employee at the focal firms (complete but very large).
+    """
+    import pandas as pd
+    if seed == "name":
+        try:
+            pd.DataFrame({"rcid": [int(r) for r in focal_rcids]}).to_sql(
+                "tmp_er_rcid", db.engine, if_exists="replace", index=False)
+            pd.DataFrame({"namekey": exec_keys}).to_sql(
+                "tmp_er_key", db.engine, if_exists="replace", index=False)
+            try:
+                u = db.raw_sql(f"""
+                    SELECT DISTINCT p.user_id
+                    FROM {TABLES['rev_positions']} p
+                    JOIN tmp_er_rcid r ON r.rcid = p.rcid
+                    JOIN {TABLES['rev_individual']} u ON u.user_id = p.user_id
+                    JOIN tmp_er_key k ON k.namekey = {_REV_NAMEKEY}
+                """)
+            finally:
+                for t in ("tmp_er_rcid", "tmp_er_key"):
+                    db.connection.exec_driver_sql(f"DROP TABLE IF EXISTS {t}")
+            return sorted(_clean_ids(u["user_id"]))
+        except Exception as exc:                       # noqa: BLE001
+            print(f"  name-seed temp-table join failed ({exc}); "
+                  f"falling back to seniority>={seniority_min}")
+            seed = "seniority"
+
     users = set()
     for chunk in _chunks(focal_rcids):
-        u = db.raw_sql(f"""
-            SELECT DISTINCT user_id FROM {TABLES['rev_positions']}
-            WHERE seniority >= {focal_seniority_min}
-              AND rcid IN ({_in_list(chunk)})
-        """)
+        cond = f"AND seniority >= {seniority_min}" if seed == "seniority" else ""
+        u = db.raw_sql(f"SELECT DISTINCT user_id FROM {TABLES['rev_positions']} "
+                       f"WHERE rcid IN ({_in_list(chunk)}) {cond}")
         users.update(_clean_ids(u["user_id"]))
-    users = sorted(users)
+    return sorted(users)
 
-    # Stage 2: every position for those users + their individual records.
+
+def extract_revelio(db, focal_rcids, seed, seniority_min, exec_keys):
+    """Seed candidate executives, then pull their ENTIRE position history.
+
+    Stage 2 applies NO seniority filter, so each executive's junior/early-career
+    positions (seniority < 5) are included -- the full work history.
+    """
+    users = _seed_users(db, focal_rcids, seed, seniority_min, exec_keys)
+
     pos_frames, ind_frames = [], []
     for chunk in _chunks(users):
         pos_frames.append(db.raw_sql(f"""
@@ -265,7 +316,7 @@ def attach_company_names(db, positions):
 # --- Orchestration ---------------------------------------------------------
 
 def run(username, outdir, min_year, max_year, midcap, smallcap,
-        focal_seniority_min, do_list):
+        seed, focal_seniority_min, do_list):
     import wrds
     os.makedirs(outdir, exist_ok=True)
     db = wrds.Connection(wrds_username=username)
@@ -281,8 +332,10 @@ def run(username, outdir, min_year, max_year, midcap, smallcap,
 
         print("  ", _write(extract_funda(db, gvkeys, min_year, max_year),
                            "funda", outdir, "compustat_funda.csv"))
-        print("  ", _write(extract_anncomp(db, gvkeys, min_year, max_year),
-                           "anncomp", outdir, "execucomp_anncomp.csv"))
+        anncomp = extract_anncomp(db, gvkeys, min_year, max_year)
+        print("  ", _write(anncomp, "anncomp", outdir, "execucomp_anncomp.csv"))
+        exec_keys = _exec_name_keys(anncomp)
+        print(f"  executive name keys: {len(exec_keys)}")
 
         mapping = extract_mapping(db, gvkey_set)
         print("  ", _write(mapping, "mapping", outdir, "revelio_company_mapping.csv"))
@@ -290,9 +343,9 @@ def run(username, outdir, min_year, max_year, midcap, smallcap,
         print(f"  focal rcids: {len(focal_rcids)}")
 
         positions, individuals, n_users = extract_revelio(
-            db, focal_rcids, focal_seniority_min)
+            db, focal_rcids, seed, focal_seniority_min, exec_keys)
         positions = attach_company_names(db, positions)
-        print(f"  senior users at focal firms: {n_users}")
+        print(f"  candidate-executive users ({seed}-seeded): {n_users}")
         print("  ", _write(positions, "positions", outdir, "revelio_positions.csv"))
         print("  ", _write(individuals, "individual", outdir, "revelio_individual.csv"))
         print(f"\nDone -> {outdir}/  (now run `python -m execucomp_revelio ...`)")
@@ -308,15 +361,21 @@ def main(argv=None):
     p.add_argument("--max-year", type=int, default=2019)
     p.add_argument("--midcap-gvkeyx", default=DEFAULT_MIDCAP_GVKEYX)
     p.add_argument("--smallcap-gvkeyx", default=DEFAULT_SMALLCAP_GVKEYX)
+    p.add_argument("--seed", choices=["name", "seniority", "all"], default="name",
+                   help="How to pick candidate executives at the focal firms: "
+                        "'name' (default) = Execucomp name-match at ANY seniority "
+                        "(won't miss execs mislabeled below a seniority cutoff); "
+                        "'seniority' = senior positions only; 'all' = every "
+                        "employee (complete but very large). Stage 2 always "
+                        "pulls each selected person's FULL history.")
     p.add_argument("--focal-seniority-min", type=int, default=5,
-                   help="Min Revelio seniority (1-7) for the focal-firm pull "
-                        "that seeds the executive search (default 5).")
+                   help="Min Revelio seniority for --seed seniority (default 5).")
     p.add_argument("--list", action="store_true",
                    help="List libraries/tables/columns + index codes, then exit.")
     args = p.parse_args(argv)
     try:
         run(args.username, args.outdir, args.min_year, args.max_year,
-            args.midcap_gvkeyx, args.smallcap_gvkeyx,
+            args.midcap_gvkeyx, args.smallcap_gvkeyx, args.seed,
             args.focal_seniority_min, args.list)
     except ImportError:
         sys.exit("The 'wrds' package is required: pip install wrds pandas")

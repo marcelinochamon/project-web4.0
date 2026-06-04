@@ -71,8 +71,12 @@ python -m execucomp_revelio \
 ```
 
 It scopes Compustat/Execucomp to the S&P 1000 gvkeys and the window, and pulls
-Revelio in two stages — users at the focal companies, then *all* their
-positions — so each executive's complete work history is captured. The SQL is
+Revelio in two stages: **(1) seed** the candidate executives at the focal firms,
+then **(2)** pull *every* position for those people — **with no seniority
+filter**, so each executive's junior/early-career roles are included (the full
+work history). Seeding (`--seed`) defaults to **`name`** (Execucomp name-match
+at *any* seniority, so no executive is lost to a Revelio seniority mislabel);
+`seniority` (senior roles only) and `all` (every employee) are alternatives. The SQL is
 plain `db.raw_sql`, so you can also paste the queries into the WRDS web query
 tool. Run `--list` first and adjust the `TABLES` config at the top of the
 script if your schema names differ (Execucomp/Revelio table names drift).
