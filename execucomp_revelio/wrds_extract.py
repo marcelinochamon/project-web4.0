@@ -197,18 +197,57 @@ def extract_anncomp(db, gvkeys, min_year, max_year):
     return df
 
 
-def extract_mapping(db, gvkey_set):
-    """All company_mapping rows with a gvkey, normalised and filtered to universe."""
-    df = db.raw_sql(f"""
-        SELECT rcid, company, ticker, cusip, isin, gvkey, lei,
-               naics_code AS naics, NULL AS sic
-        FROM {TABLES['rev_company']} WHERE gvkey IS NOT NULL
-    """)
-    if len(df):
-        df["gvkey"] = _norm_gvkey(df["gvkey"])
-        df["rcid"] = _id_col(df["rcid"])
-        df = df[df["gvkey"].isin(gvkey_set)]
-    return df
+def extract_mapping(db, gvkey_set, funda):
+    """Revelio company mapping for the universe, with ticker/CUSIP fallback.
+
+    Primary link is Revelio's own ``gvkey``; for rcids whose mapping row has no
+    gvkey we recover the firm by matching ``ticker`` or 8-char ``cusip`` to
+    Compustat. One row per rcid (gvkey > ticker > cusip preference).
+    """
+    import pandas as pd  # noqa: F401
+    uf = funda[funda["gvkey"].isin(gvkey_set)]
+    tic2gv, cus2gv = {}, {}
+    for tic, cusip, gv in zip(uf.get("tic", []), uf.get("cusip", []), uf["gvkey"]):
+        t = str(tic).strip().upper() if tic is not None else ""
+        if t and t != "NAN":
+            tic2gv[t] = gv
+        c = (str(cusip).strip().upper()[:8]) if cusip is not None else ""
+        if c and c != "NAN":
+            cus2gv[c] = gv
+
+    cols = "rcid, company, ticker, cusip, isin, gvkey, lei, naics_code AS naics"
+
+    def pull(cond_col, vals):
+        frames = []
+        for ch in _chunks(sorted(vals)):
+            frames.append(db.raw_sql(f"SELECT {cols} FROM {TABLES['rev_company']} "
+                                     f"WHERE {cond_col} IN ({_in_list(ch)})"))
+        return _concat(frames)
+
+    mg = db.raw_sql(f"SELECT {cols} FROM {TABLES['rev_company']} WHERE gvkey IS NOT NULL")
+    if len(mg):
+        mg["gvkey"] = _norm_gvkey(mg["gvkey"])
+        mg["rcid"] = _id_col(mg["rcid"])
+        mg = mg[mg["gvkey"].isin(gvkey_set)]
+        mg["src"] = 0
+    mt = pull("upper(trim(ticker))", tic2gv)
+    if len(mt):
+        mt["rcid"] = _id_col(mt["rcid"])
+        mt["gvkey"] = mt["ticker"].astype(str).str.strip().str.upper().map(tic2gv)
+        mt = mt[mt["gvkey"].notna()]
+        mt["src"] = 1
+    mc = pull("left(upper(trim(cusip)),8)", cus2gv)
+    if len(mc):
+        mc["rcid"] = _id_col(mc["rcid"])
+        mc["gvkey"] = mc["cusip"].astype(str).str.strip().str.upper().str[:8].map(cus2gv)
+        mc = mc[mc["gvkey"].notna()]
+        mc["src"] = 2
+
+    allm = _concat([mg, mt, mc])
+    if len(allm):
+        allm = allm.sort_values("src").drop_duplicates("rcid", keep="first")
+        allm["sic"] = None
+    return allm
 
 
 def _exec_name_keys(anncomp):
@@ -368,14 +407,14 @@ def run(username, outdir, min_year, max_year, midcap, smallcap,
         print(f"S&P 1000 universe: {len(gvkeys)} gvkeys")
         print("  ", _write(idx, "idx", outdir, "compustat_idxcst_his.csv"))
 
-        print("  ", _write(extract_funda(db, gvkeys, min_year, max_year),
-                           "funda", outdir, "compustat_funda.csv"))
+        funda = extract_funda(db, gvkeys, min_year, max_year)
+        print("  ", _write(funda, "funda", outdir, "compustat_funda.csv"))
         anncomp = extract_anncomp(db, gvkeys, min_year, max_year)
         print("  ", _write(anncomp, "anncomp", outdir, "execucomp_anncomp.csv"))
         exec_keys = _exec_name_keys(anncomp)
         print(f"  executive name keys: {len(exec_keys)}")
 
-        mapping = extract_mapping(db, gvkey_set)
+        mapping = extract_mapping(db, gvkey_set, funda)
         print("  ", _write(mapping, "mapping", outdir, "revelio_company_mapping.csv"))
         focal_rcids = sorted(set(_clean_ids(mapping["rcid"])))
         print(f"  focal rcids: {len(focal_rcids)}")
