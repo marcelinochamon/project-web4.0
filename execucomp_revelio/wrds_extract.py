@@ -82,9 +82,10 @@ def _norm_gvkey(series):
 
 
 def _id_col(series):
-    """Integer-like id column as plain strings (NaN -> <NA>)."""
+    """Integer-like id column as plain strings (NaN/NA -> empty string)."""
     import pandas as pd
-    return pd.to_numeric(series, errors="coerce").astype("Int64").astype(str)
+    s = pd.to_numeric(series, errors="coerce")
+    return s.map(lambda x: "" if pd.isna(x) else str(int(x)))
 
 
 def _clean_ids(series):
@@ -333,7 +334,8 @@ def attach_company_names(db, positions):
     if not len(positions):
         positions["company"] = None
         return positions
-    rcids = sorted(positions["rcid"].dropna().unique())
+    rcids = sorted({r for r in positions["rcid"].unique()
+                    if r not in ("", "<NA>", "nan", "None")})
     frames = []
     for chunk in _chunks(rcids):
         frames.append(db.raw_sql(
