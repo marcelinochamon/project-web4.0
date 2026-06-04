@@ -39,6 +39,7 @@ TABLES = {
     "rev_individual": "revelio.individual_user",
     "rev_positions": "revelio.individual_positions",
     "rev_company": "revelio.company_mapping",
+    "rev_role_lookup": "revelio.individual_role_lookup_v2",
 }
 
 # Confirmed gvkeyx codes (comp.idx_index): S&P MidCap 400 / SmallCap 600.
@@ -58,8 +59,8 @@ COLS = {
     "individual": ["user_id", "fullname", "firstname", "lastname", "gender",
                    "ethnicity"],
     "positions": ["position_id", "user_id", "rcid", "company", "position_number",
-                  "role_raw", "role_k150", "role_k1500", "seniority", "salary",
-                  "startdate", "enddate", "location"],
+                  "role_raw", "role_k150", "role_k1500", "job_category",
+                  "seniority", "salary", "startdate", "enddate", "location"],
     "mapping": ["rcid", "company", "ticker", "cusip", "isin", "gvkey", "lei",
                 "naics", "sic"],
 }
@@ -131,6 +132,13 @@ def list_schema(db):
         print("\nIndex gvkeyx candidates:\n", allidx[mask].to_string(index=False))
     except Exception as exc:                           # noqa: BLE001
         print("idx_index lookup failed:", exc)
+    # Role lookup (role_k1500 -> job_category / role_k7) columns + sample.
+    try:
+        rl = db.raw_sql(f"SELECT * FROM {TABLES['rev_role_lookup']} LIMIT 5")
+        print(f"\n{TABLES['rev_role_lookup']} columns:\n", rl.columns.tolist())
+        print(rl.to_string(index=False))
+    except Exception as exc:                           # noqa: BLE001
+        print(f"{TABLES['rev_role_lookup']} sample failed:", exc)
 
 
 # --- Extraction steps ------------------------------------------------------
@@ -292,6 +300,40 @@ def extract_revelio(db, focal_rcids, seed, seniority_min, exec_keys):
     return positions, individuals, len(users)
 
 
+def attach_job_category(db, positions):
+    """Map each position's role_k1500 code to the 7-value job family (role_k7).
+
+    Auto-detects the key (``*k1500*``) and category (``*k7*`` label) columns in
+    the role-lookup table; leaves ``job_category`` null with a note if they
+    can't be found (run ``--list`` to see the lookup's actual columns).
+    """
+    if not len(positions):
+        positions["job_category"] = None
+        return positions
+    try:
+        cols = db.raw_sql(
+            f"SELECT * FROM {TABLES['rev_role_lookup']} LIMIT 0").columns.tolist()
+    except Exception as exc:                           # noqa: BLE001
+        print(f"  role lookup unavailable ({exc}); job_category left null")
+        positions["job_category"] = None
+        return positions
+    key_col = next((c for c in cols if "k1500" in c), None)
+    cat_col = (next((c for c in cols if "k7" in c and ("label" in c or "name" in c)), None)
+               or next((c for c in cols if "k7" in c), None)
+               or next((c for c in cols if "category" in c.lower()), None))
+    if not key_col or not cat_col:
+        print(f"  couldn't find k1500/k7 columns in {TABLES['rev_role_lookup']} "
+              f"({cols}); job_category left null -- run --list and tell me the names")
+        positions["job_category"] = None
+        return positions
+    lk = db.raw_sql(f"SELECT DISTINCT {key_col}, {cat_col} "
+                    f"FROM {TABLES['rev_role_lookup']}")
+    lookup = dict(zip(lk[key_col].astype(str), lk[cat_col]))
+    positions["job_category"] = positions["role_k1500"].astype(str).map(lookup)
+    print(f"  job_category mapped via {key_col} -> {cat_col}")
+    return positions
+
+
 def attach_company_names(db, positions):
     """Fill positions.company by mapping every rcid (incl. prior employers)."""
     if not len(positions):
@@ -345,6 +387,7 @@ def run(username, outdir, min_year, max_year, midcap, smallcap,
         positions, individuals, n_users = extract_revelio(
             db, focal_rcids, seed, focal_seniority_min, exec_keys)
         positions = attach_company_names(db, positions)
+        positions = attach_job_category(db, positions)
         print(f"  candidate-executive users ({seed}-seeded): {n_users}")
         print("  ", _write(positions, "positions", outdir, "revelio_positions.csv"))
         print("  ", _write(individuals, "individual", outdir, "revelio_individual.csv"))

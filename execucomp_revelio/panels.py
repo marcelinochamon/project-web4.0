@@ -9,6 +9,8 @@ Compustat fundamentals, Execucomp NEOs and the executive-year panel.
 
 from collections import defaultdict
 
+from . import jobcat
+
 
 def _year_of(date_text):
     if not date_text:
@@ -19,12 +21,13 @@ def _year_of(date_text):
 
 def _positions_by_user(cur):
     by_user = defaultdict(list)
-    for (user_id, rcid, role_raw, role_k150, seniority, salary,
+    for (user_id, rcid, role_raw, role_k150, job_category, seniority, salary,
          startdate, enddate) in cur.execute(
-            "SELECT user_id, rcid, role_raw, role_k150, seniority, salary, "
-            "startdate, enddate FROM revelio_positions"):
+            "SELECT user_id, rcid, role_raw, role_k150, job_category, seniority, "
+            "salary, startdate, enddate FROM revelio_positions"):
         by_user[user_id].append({
             "rcid": rcid, "role_raw": role_raw, "role_k150": role_k150,
+            "job_category": job_category,
             "seniority": seniority, "salary": salary,
             "start": _year_of(startdate) if startdate else 0,
             "end": _year_of(enddate) if enddate else 9999,
@@ -65,7 +68,7 @@ def _build_executive_year(conn):
             JOIN universe_firm_year u ON u.gvkey = a.gvkey AND u.year = a.year
             """):
         user_id = match_tier = match_score = None
-        rev_seniority = rev_role = rev_salary = None
+        rev_seniority = rev_role = rev_jobcat = rev_salary = None
         match = best.get((execid, gvkey))
         if match:
             user_id, match_tier, match_score = match
@@ -74,6 +77,7 @@ def _build_executive_year(conn):
             if pos:
                 rev_seniority = pos["seniority"]
                 rev_role = pos["role_raw"] or pos["role_k150"]
+                rev_jobcat = jobcat.normalize(pos["job_category"])
                 rev_salary = pos["salary"]
         rows.append((
             execid, gvkey, year, full, coname, title,
@@ -81,7 +85,7 @@ def _build_executive_year(conn):
             1 if (cfoann or "").upper() == "CFO" else 0,
             salary, bonus, tdc1,
             user_id, match_tier, match_score,
-            rev_seniority, rev_role, rev_salary,
+            rev_seniority, rev_role, rev_jobcat, rev_salary,
         ))
 
     cur.execute("DELETE FROM executive_year_panel;")
@@ -90,8 +94,8 @@ def _build_executive_year(conn):
         INSERT OR REPLACE INTO executive_year_panel
         (execid, gvkey, year, exec_fullname, coname, title, is_ceo, is_cfo,
          salary, bonus, tdc1, user_id, match_tier, match_score,
-         revelio_seniority, revelio_role, revelio_salary)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         revelio_seniority, revelio_role, revelio_job_category, revelio_salary)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         rows,
     )

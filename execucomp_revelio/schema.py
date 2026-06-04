@@ -106,6 +106,7 @@ CREATE TABLE revelio_positions (
     role_raw        TEXT,           -- raw role/title text, if available
     role_k150       TEXT,           -- role taxonomy (150 levels)
     role_k1500      TEXT,           -- role taxonomy (1500 levels)
+    job_category    TEXT,           -- 7-value job family (Revelio role_k7)
     seniority       INTEGER,        -- ordinal seniority 1-7
     salary          REAL,           -- modeled annual salary, USD
     startdate       TEXT,           -- position start date (YYYY-MM-DD), may be NULL
@@ -200,6 +201,7 @@ CREATE TABLE exec_work_history (
     gvkey           TEXT,           -- Compustat gvkey of the company, if mapped
     role_raw        TEXT,           -- raw role/title
     role_k150       TEXT,           -- role taxonomy (150 levels)
+    job_category    TEXT,           -- 7-value job family (admin/finance/...)
     seniority       INTEGER,        -- ordinal seniority 1-7
     salary          REAL,           -- modeled annual salary, USD
     startdate       TEXT,           -- spell start (YYYY-MM-DD)
@@ -216,6 +218,7 @@ CREATE TABLE exec_mobility (
     n_employers                  INTEGER,  -- distinct companies (rcid) worked at
     max_seniority                INTEGER,  -- highest seniority reached (1-7)
     n_exec_positions             INTEGER,  -- spells at executive seniority
+    primary_job_category         TEXT,     -- job family of the top-seniority role
     career_start_year            INTEGER,  -- earliest position start year
     career_end_year              INTEGER,  -- latest end year (ref year if ongoing)
     experience_years             INTEGER,  -- career_end_year - career_start_year
@@ -276,6 +279,7 @@ CREATE TABLE executive_year_panel (
     match_score       REAL,
     revelio_seniority INTEGER,   -- seniority of the Revelio position active that year
     revelio_role      TEXT,      -- role of that position
+    revelio_job_category TEXT,   -- 7-value job family of that position
     revelio_salary    REAL,      -- Revelio modeled annual salary, USD
     PRIMARY KEY (execid, gvkey, year)
 );

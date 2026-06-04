@@ -8,6 +8,8 @@ the primary deliverable: the executives' complete work history plus Revelio's
 modeled salary for each spell.
 """
 
+from . import jobcat
+
 
 def build_work_history(conn):
     """Populate ``exec_work_history``; return (n_execs, n_position_rows)."""
@@ -29,14 +31,15 @@ def build_work_history(conn):
     rows = []
     for execid, user_id in pairs:
         for (position_id, position_number, rcid, company, role_raw, role_k150,
-             seniority, salary, startdate, enddate) in cur.execute(
+             job_category, seniority, salary, startdate, enddate) in cur.execute(
                 "SELECT position_id, position_number, rcid, company, role_raw, "
-                "role_k150, seniority, salary, startdate, enddate "
+                "role_k150, job_category, seniority, salary, startdate, enddate "
                 "FROM revelio_positions WHERE user_id = ? "
                 "ORDER BY position_number", (user_id,)):
             rows.append((
                 execid, user_id, position_id, position_number, rcid, company,
-                rcid_to_gvkey.get(rcid), role_raw, role_k150, seniority, salary,
+                rcid_to_gvkey.get(rcid), role_raw, role_k150,
+                jobcat.normalize(job_category), seniority, salary,
                 startdate, enddate,
             ))
 
@@ -45,8 +48,8 @@ def build_work_history(conn):
         """
         INSERT OR IGNORE INTO exec_work_history
         (execid, user_id, position_id, position_number, rcid, company, gvkey,
-         role_raw, role_k150, seniority, salary, startdate, enddate)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         role_raw, role_k150, job_category, seniority, salary, startdate, enddate)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         rows,
     )

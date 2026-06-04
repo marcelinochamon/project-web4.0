@@ -8,7 +8,8 @@ import sqlite3
 import tempfile
 import unittest
 
-from execucomp_revelio import build_database, mobility, reconstruct, schema, wiki_parse
+from execucomp_revelio import (build_database, jobcat, mobility, reconstruct,
+                               schema, wiki_parse)
 from execucomp_revelio.build_database import DEFAULTS, SAMPLE_DIR, create_schema
 from execucomp_revelio.names import canonical, name_score
 
@@ -140,6 +141,30 @@ class PipelineTest(unittest.TestCase):
 
     def test_mobility_built_for_each_matched_exec(self):
         self.assertEqual(self.summary["mobility_rows"], 4)
+
+    def test_work_history_carries_job_category(self):
+        cats = dict(self.q("SELECT company, job_category FROM exec_work_history "
+                           "WHERE execid='E001'"))
+        # Junior early-career roles keep their own category, not the CEO's.
+        self.assertEqual(cats["College Intern Co"], "finance")
+        self.assertEqual(cats["Prior Co"], "sales")
+        self.assertEqual(cats["Acme Midcap Corporation"], "operations")
+
+    def test_job_category_always_one_of_seven(self):
+        vals = {v for (v,) in self.q(
+            "SELECT DISTINCT job_category FROM exec_work_history "
+            "WHERE job_category IS NOT NULL")}
+        self.assertTrue(vals.issubset(set(jobcat.CATEGORIES)), vals)
+
+    def test_exec_year_and_mobility_job_category(self):
+        # Active-position category in the executive-year panel.
+        self.assertEqual(self.q(
+            "SELECT revelio_job_category FROM executive_year_panel "
+            "WHERE execid='E005' AND year=2015")[0][0], "finance")
+        # Primary = top-seniority role's category (CFO=finance, not founder).
+        self.assertEqual(self.q(
+            "SELECT primary_job_category FROM exec_mobility "
+            "WHERE execid='E005'")[0][0], "finance")
 
     def test_mobility_flags_external_hire_in_sample(self):
         # E001 worked elsewhere then joined Acme directly as CEO -> external.
@@ -338,6 +363,21 @@ class ReconstructTest(unittest.TestCase):
     def test_spans_helper_splits_on_gaps(self):
         self.assertEqual(reconstruct._spans([2012, 2013, 2015, 2016, 2019]),
                          [(2012, 2013), (2015, 2016), (2019, 2019)])
+
+
+class JobCategoryTest(unittest.TestCase):
+    def test_normalize_synonyms(self):
+        self.assertEqual(jobcat.normalize("Engineering"), "engineer")
+        self.assertEqual(jobcat.normalize("ADMINISTRATIVE"), "admin")
+        self.assertEqual(jobcat.normalize("Research"), "scientist")
+        self.assertEqual(jobcat.normalize("finance"), "finance")
+        self.assertIsNone(jobcat.normalize("Healthcare"))
+        self.assertIsNone(jobcat.normalize(None))
+
+    def test_primary_picks_highest_seniority(self):
+        pairs = [("engineer", 6), ("finance", 7), ("sales", 3)]
+        self.assertEqual(jobcat.primary(pairs), "finance")
+        self.assertIsNone(jobcat.primary([("unknownthing", 9)]))
 
 
 class MobilityLogicTest(unittest.TestCase):

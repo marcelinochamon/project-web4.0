@@ -85,8 +85,9 @@ _INSERTS = {
         "lastname, gender, ethnicity) VALUES (" + ",".join("?" * 6) + ");",
     "revelio_positions":
         "INSERT INTO revelio_positions (position_id, user_id, rcid, company, "
-        "position_number, role_raw, role_k150, role_k1500, seniority, salary, "
-        "startdate, enddate, location) VALUES (" + ",".join("?" * 13) + ");",
+        "position_number, role_raw, role_k150, role_k1500, job_category, "
+        "seniority, salary, startdate, enddate, location) "
+        "VALUES (" + ",".join("?" * 14) + ");",
     "revelio_company_mapping":
         "INSERT INTO revelio_company_mapping (rcid, company, ticker, cusip, "
         "isin, gvkey, lei, naics, sic) VALUES (" + ",".join("?" * 9) + ");",

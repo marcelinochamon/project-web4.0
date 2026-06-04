@@ -103,6 +103,7 @@ REVELIO_POSITIONS_COLUMNS = {
     "role_raw": _to_text,
     "role_k150": _to_text,
     "role_k1500": _to_text,
+    "job_category": _to_text,
     "seniority": _to_int,
     "salary": _to_float,
     "startdate": _to_text,

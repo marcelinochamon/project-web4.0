@@ -280,6 +280,24 @@ career-path flags relative to the *focal* firm (where Execucomp observed them):
 Ongoing spells are closed at the latest year observed in the data so
 `experience_years` is deterministic.
 
+## Job category (`role_k7`)
+
+Every Revelio position carries a **`job_category`** taking one of exactly seven
+values — **admin, finance, marketing, sales, operations, scientist, engineer**
+(Revelio's top-level `role_k7` taxonomy, normalized to these canonical labels).
+It flows through:
+
+- `exec_work_history.job_category` — the family of *each* career spell (so an
+  executive's early junior roles are categorized too, not just the focal one);
+- `executive_year_panel.revelio_job_category` — the category of the position
+  active that year;
+- `exec_mobility.primary_job_category` — the family of the executive's
+  highest-seniority role (their "home" function).
+
+In the WRDS extract, `wrds_extract.py` maps each position's `role_k1500` code to
+`role_k7` via `revelio.individual_role_lookup_v2` (auto-detecting the key/label
+columns; run `--list` to see them).
+
 ## Match-quality report
 
 Every build prints — and `--export-dir` writes to `match_quality_report.txt` —
@@ -345,6 +363,7 @@ execucomp_revelio/
 ├── workhistory.py       # complete work history of matched executives
 ├── mobility.py          # per-executive career-mobility features
 ├── panels.py            # firm-year + executive-year panels
+├── jobcat.py            # 7-value job-category (role_k7) normalizer
 ├── report.py            # match-quality report
 ├── export.py            # optional CSV export of the deliverable tables
 ├── sample_data/         # runnable example inputs (6 CSVs)

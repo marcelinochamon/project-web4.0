@@ -23,7 +23,7 @@ in the positions data, so ``experience_years`` is deterministic.
 
 from collections import defaultdict
 
-from . import config
+from . import config, jobcat
 
 
 def _max_observed_year(cur):
@@ -51,14 +51,15 @@ def build_mobility(conn):
 
     # All spells per matched (execid, user_id), already sorted chronologically.
     spells = defaultdict(list)
-    for (execid, user_id, position_number, rcid, seniority,
+    for (execid, user_id, position_number, rcid, seniority, job_category,
          startdate, enddate) in cur.execute(
             "SELECT execid, user_id, position_number, rcid, seniority, "
-            "startdate, enddate FROM exec_work_history "
+            "job_category, startdate, enddate FROM exec_work_history "
             "ORDER BY execid, user_id, position_number"):
         spells[(execid, user_id)].append({
             "pos": position_number if position_number is not None else 0,
             "rcid": rcid, "seniority": seniority or 0,
+            "job_category": job_category,
             "start": _year(startdate), "end": _year(enddate),
         })
 
@@ -94,6 +95,7 @@ def build_mobility(conn):
             len({p["rcid"] for p in ps if p["rcid"]}),
             max((p["seniority"] for p in ps), default=None),
             sum(1 for p in ps if p["seniority"] >= thresh),
+            jobcat.primary((p["job_category"], p["seniority"]) for p in ps),
             start_year, end_year,
             (end_year - start_year) if (start_year is not None and end_year is not None) else None,
             n_prior, internal, external,
@@ -104,9 +106,10 @@ def build_mobility(conn):
         """
         INSERT INTO exec_mobility
         (execid, user_id, n_positions, n_employers, max_seniority,
-         n_exec_positions, career_start_year, career_end_year, experience_years,
+         n_exec_positions, primary_job_category, career_start_year,
+         career_end_year, experience_years,
          n_prior_employers_before_focal, internal_promotion, external_hire)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         rows,
     )
