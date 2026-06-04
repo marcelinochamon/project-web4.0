@@ -8,8 +8,8 @@ import sqlite3
 import tempfile
 import unittest
 
-from execucomp_revelio import build_database
-from execucomp_revelio.build_database import DEFAULTS
+from execucomp_revelio import build_database, mobility, schema
+from execucomp_revelio.build_database import DEFAULTS, create_schema
 from execucomp_revelio.names import canonical, name_score
 
 
@@ -136,6 +136,31 @@ class PipelineTest(unittest.TestCase):
                      "WHERE execid='E004' AND year=2015")[0][0]
         self.assertEqual(sal, 1200000.0)
 
+    # --- Mobility features --------------------------------------------------
+
+    def test_mobility_built_for_each_matched_exec(self):
+        self.assertEqual(self.summary["mobility_rows"], 4)
+
+    def test_mobility_flags_external_hire_in_sample(self):
+        # E001 worked elsewhere then joined Acme directly as CEO -> external.
+        row = self.q("SELECT n_positions, n_employers, max_seniority, "
+                     "n_prior_employers_before_focal, internal_promotion, "
+                     "external_hire FROM exec_mobility WHERE execid='E001'")[0]
+        n_pos, n_emp, max_sen, n_prior, internal, external = row
+        self.assertEqual((n_pos, n_emp, max_sen), (3, 3, 7))
+        self.assertEqual(n_prior, 2)
+        self.assertEqual((internal, external), (0, 1))
+
+    # --- Report -------------------------------------------------------------
+
+    def test_report_match_rate(self):
+        rep = self.summary["report"]
+        self.assertEqual(rep["total_execs"], 5)
+        self.assertEqual(rep["matched_execs"], 4)
+        self.assertEqual(rep["match_rate"], 0.8)
+        self.assertEqual(rep["tier_counts"].get("high"), 4)
+        self.assertEqual(rep["ambiguous_pairs"], 0)
+
     # --- Acceptance threshold knob -----------------------------------------
 
     def test_strict_tier_still_accepts_high_matches(self):
@@ -171,6 +196,58 @@ class PipelineTest(unittest.TestCase):
         finally:
             import shutil
             shutil.rmtree(tmpdir)
+
+
+class MobilityLogicTest(unittest.TestCase):
+    """Exercise internal-promotion / external-hire / founder paths directly."""
+
+    def setUp(self):
+        self.tmp = tempfile.NamedTemporaryFile(suffix=".db", delete=False)
+        self.tmp.close()
+        self.conn = sqlite3.connect(self.tmp.name)
+        create_schema(self.conn)
+
+    def tearDown(self):
+        self.conn.close()
+        os.remove(self.tmp.name)
+
+    def _link(self, execid, user_id, rcid):
+        self.conn.execute(
+            "INSERT INTO exec_revelio_link (execid, gvkey, user_id, rcid, "
+            "tier, accepted, is_best) VALUES (?, 'G', ?, ?, 'high', 1, 1)",
+            (execid, user_id, rcid))
+
+    def _spell(self, execid, user_id, pos, rcid, seniority, start, end):
+        self.conn.execute(
+            "INSERT INTO exec_work_history (execid, user_id, position_id, "
+            "position_number, rcid, seniority, startdate, enddate) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (execid, user_id, f"{execid}-{pos}", pos, rcid, seniority,
+             start, end))
+
+    def _flags(self, execid):
+        return self.conn.execute(
+            "SELECT internal_promotion, external_hire "
+            "FROM exec_mobility WHERE execid=?", (execid,)).fetchone()
+
+    def test_internal_external_and_founder(self):
+        # Internal: started below exec at focal firm RF, later CEO there.
+        self._link("IN", "u1", "RF")
+        self._spell("IN", "u1", 1, "RF", 4, "2000-01-01", "2008-01-01")
+        self._spell("IN", "u1", 2, "RF", 7, "2008-01-01", None)
+        # External: senior elsewhere first, then joined focal RF2 as CEO.
+        self._link("EX", "u2", "RF2")
+        self._spell("EX", "u2", 1, "OTHER", 6, "2000-01-01", "2010-01-01")
+        self._spell("EX", "u2", 2, "RF2", 7, "2010-01-01", None)
+        # Founder: very first job is the focal exec role -> neither flag.
+        self._link("FO", "u3", "RF3")
+        self._spell("FO", "u3", 1, "RF3", 7, "2005-01-01", None)
+        self.conn.commit()
+
+        mobility.build_mobility(self.conn)
+        self.assertEqual(self._flags("IN"), (1, 0))
+        self.assertEqual(self._flags("EX"), (0, 1))
+        self.assertEqual(self._flags("FO"), (0, 0))
 
 
 class NameScoreTest(unittest.TestCase):

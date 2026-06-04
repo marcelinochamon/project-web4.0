@@ -32,7 +32,7 @@ import logging
 import os
 import sqlite3
 
-from . import config, schema, crosswalk, matching, panels, universe
+from . import config, schema, crosswalk, matching, mobility, panels, report, universe
 from .export import export_tables
 from .workhistory import build_work_history
 from .loaders import (
@@ -147,13 +147,25 @@ def build_database(paths, output_path, min_tier=config.DEFAULT_MIN_TIER,
         LOG.info("Work history: %d positions for %d matched execs",
                  n_wh_rows, n_wh_execs)
 
+        n_mobility = mobility.build_mobility(conn)
+        LOG.info("Mobility features: %d matched executives", n_mobility)
+
         n_exec_year, n_firm_year = panels.build_panels(conn)
         LOG.info("Panels: %d executive-years, %d firm-years",
                  n_exec_year, n_firm_year)
 
+        quality = report.build_report(conn)
+        LOG.info("Match rate: %s (%d/%d NEOs)", quality["match_rate"],
+                 quality["matched_execs"], quality["total_execs"])
+
         if export_dir:
             exported = export_tables(conn, export_dir)
-            LOG.info("Exported %d CSV files to %s", len(exported), export_dir)
+            os.makedirs(export_dir, exist_ok=True)
+            with open(os.path.join(export_dir, "match_quality_report.txt"),
+                      "w", encoding="utf-8") as fh:
+                fh.write(report.format_report(quality) + "\n")
+            LOG.info("Exported %d CSV files + report to %s",
+                     len(exported), export_dir)
     finally:
         conn.close()
 
@@ -164,8 +176,10 @@ def build_database(paths, output_path, min_tier=config.DEFAULT_MIN_TIER,
         "match": match_summary,
         "work_history_execs": n_wh_execs,
         "work_history_rows": n_wh_rows,
+        "mobility_rows": n_mobility,
         "executive_year_rows": n_exec_year,
         "firm_year_rows": n_firm_year,
+        "report": quality,
         "output": output_path,
         "exported": exported,
     }
@@ -227,10 +241,13 @@ def main(argv=None):
         "({match[accepted]} accepted, {match[execs_matched]} execs)\n"
         "  Work-history rows     : {work_history_rows} "
         "for {work_history_execs} execs\n"
+        "  Mobility features     : {mobility_rows} execs\n"
         "  Executive-year panel  : {executive_year_rows} rows\n"
         "  Firm-year panel       : {firm_year_rows} rows"
         .format(**s)
     )
+    print()
+    print(report.format_report(s["report"]))
     if s["exported"]:
         print("  CSV exports:")
         for table, (path, count) in s["exported"].items():

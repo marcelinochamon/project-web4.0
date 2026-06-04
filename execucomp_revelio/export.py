@@ -15,6 +15,7 @@ DEFAULT_EXPORT_TABLES = (
     "firm_year_panel",
     "executive_year_panel",
     "exec_work_history",
+    "exec_mobility",
     "exec_revelio_link",
 )
 

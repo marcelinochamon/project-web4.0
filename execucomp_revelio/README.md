@@ -57,7 +57,9 @@ deliverable tables:
 out/firm_year_panel.csv
 out/executive_year_panel.csv
 out/exec_work_history.csv
+out/exec_mobility.csv          # per-executive career-mobility features
 out/exec_revelio_link.csv      # the scored match / review table
+out/match_quality_report.txt   # the match-quality report (see below)
 ```
 
 `NULL` values render as empty cells. This uses the standard-library `csv`
@@ -136,6 +138,7 @@ Dates are `YYYY-MM-DD` (only the year is used for windows). See
 | `company_crosswalk` | gvkey × rcid | company link + provenance |
 | `exec_revelio_link` | execid × gvkey × user | **scored, tiered candidate matches** |
 | `exec_work_history` | execid × user × position | **each matched exec’s complete Revelio career + modeled salary** |
+| `exec_mobility` | execid × user | per-executive career-mobility features (see below) |
 | `firm_year_panel` | gvkey × year | **deliverable** — financials + NEO comp aggregates + matched-exec Revelio salary |
 | `executive_year_panel` | execid × gvkey × year | **deliverable** — per-exec comp + the Revelio position active that year |
 
@@ -143,6 +146,43 @@ Dates are `YYYY-MM-DD` (only the year is used for windows). See
 contains *all* their Revelio position spells across *every* employer (prior,
 non-universe firms carry a `NULL` gvkey), with seniority, role and modeled
 annual salary.
+
+## Executive-mobility features (`exec_mobility`)
+
+Derived from the work history, one row per matched executive: `n_positions`,
+`n_employers`, `max_seniority`, `n_exec_positions`, `career_start_year`,
+`career_end_year`, `experience_years`, `n_prior_employers_before_focal`, and two
+career-path flags relative to the *focal* firm (where Execucomp observed them):
+
+* **`internal_promotion`** — their first spell at the focal firm was below
+  executive seniority but a later focal spell reached it → rose through the
+  ranks internally.
+* **`external_hire`** — their first focal spell was already executive level and
+  they had prior experience elsewhere → brought in from outside.
+
+(Neither flag fires for a founder whose very first job was the focal exec role.)
+Ongoing spells are closed at the latest year observed in the data so
+`experience_years` is deterministic.
+
+## Match-quality report
+
+Every build prints — and `--export-dir` writes to `match_quality_report.txt` —
+a summary to help you tune `--min-tier` and spot bad links:
+
+```
+Executives (NEOs)     : 5 (4 matched, 1 unmatched, rate 0.8)
+Accepted by tier      : high=4, medium=0, low=0
+Ambiguous pairs       : 0 (execid+gvkey with >1 accepted person -> review)
+Salary ratio (rev/exec): n=4 min=1.373 median=1.478 max=1.622 outliers=0
+Match rate by year    :
+    2014: 4/5  (0.8)
+    2015: 4/5  (0.8)
+```
+
+* **Ambiguous pairs** — accepted (execid, gvkey) with more than one Revelio
+  person; review these before trusting the link.
+* **Salary-ratio outliers** — best matches with Revelio/Execucomp salary ratio
+  < 0.3 or > 3.0, a cheap signal of a mis-link.
 
 ## Configuration
 
@@ -185,7 +225,9 @@ execucomp_revelio/
 ├── crosswalk.py         # gvkey <-> rcid (Revelio gvkey + ticker/cusip fallback)
 ├── matching.py          # executive <-> Revelio person matcher (scored/tiered)
 ├── workhistory.py       # complete work history of matched executives
+├── mobility.py          # per-executive career-mobility features
 ├── panels.py            # firm-year + executive-year panels
+├── report.py            # match-quality report
 ├── export.py            # optional CSV export of the deliverable tables
 ├── sample_data/         # runnable example inputs (6 CSVs)
 └── tests/               # unittest suite

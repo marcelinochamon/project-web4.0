@@ -193,6 +193,24 @@ CREATE TABLE exec_work_history (
 );
 """
 
+MOBILITY_TABLE = """
+CREATE TABLE exec_mobility (
+    execid                       TEXT NOT NULL,  -- Execucomp executive
+    user_id                      TEXT NOT NULL,  -- matched Revelio person
+    n_positions                  INTEGER,  -- total Revelio position spells
+    n_employers                  INTEGER,  -- distinct companies (rcid) worked at
+    max_seniority                INTEGER,  -- highest seniority reached (1-7)
+    n_exec_positions             INTEGER,  -- spells at executive seniority
+    career_start_year            INTEGER,  -- earliest position start year
+    career_end_year              INTEGER,  -- latest end year (ref year if ongoing)
+    experience_years             INTEGER,  -- career_end_year - career_start_year
+    n_prior_employers_before_focal INTEGER, -- distinct employers before the focal firm
+    internal_promotion           INTEGER,  -- 1 = rose to exec inside the focal firm
+    external_hire                INTEGER,  -- 1 = entered focal firm at exec level from outside
+    PRIMARY KEY (execid, user_id)
+);
+"""
+
 # --- Merged analytical panels ----------------------------------------------
 
 FIRM_YEAR_PANEL_TABLE = """
@@ -258,13 +276,14 @@ INDEXES = [
     "CREATE INDEX idx_mapping_gvkey ON revelio_company_mapping (gvkey);",
     "CREATE INDEX idx_link_user ON exec_revelio_link (user_id);",
     "CREATE INDEX idx_workhist_user ON exec_work_history (user_id);",
+    "CREATE INDEX idx_mobility_user ON exec_mobility (user_id);",
     "CREATE INDEX idx_fpanel_year ON firm_year_panel (year);",
     "CREATE INDEX idx_epanel_year ON executive_year_panel (year);",
 ]
 
 # Drop order (children before parents not required for SQLite, but keep tidy).
 ALL_TABLES = [
-    "executive_year_panel", "firm_year_panel",
+    "executive_year_panel", "firm_year_panel", "exec_mobility",
     "exec_work_history", "exec_revelio_link", "company_crosswalk",
     "universe_firm_year",
     "revelio_company_mapping", "revelio_positions", "revelio_individual",
@@ -276,5 +295,5 @@ CREATE_STATEMENTS = [
     REVELIO_INDIVIDUAL_TABLE, REVELIO_POSITIONS_TABLE,
     REVELIO_COMPANY_MAPPING_TABLE,
     UNIVERSE_TABLE, CROSSWALK_TABLE, EXEC_LINK_TABLE, WORK_HISTORY_TABLE,
-    FIRM_YEAR_PANEL_TABLE, EXECUTIVE_YEAR_PANEL_TABLE,
+    MOBILITY_TABLE, FIRM_YEAR_PANEL_TABLE, EXECUTIVE_YEAR_PANEL_TABLE,
 ]
