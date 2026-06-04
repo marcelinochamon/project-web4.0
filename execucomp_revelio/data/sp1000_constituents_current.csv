@@ -1,0 +1,1004 @@
+ticker,company,cik,index_name
+AA,Alcoa,,SP400MidCap
+AAL,American Airlines Group,,SP400MidCap
+AAON,AAON,,SP400MidCap
+ACI,Albertsons,,SP400MidCap
+ACM,AECOM,,SP400MidCap
+ADC,Agree Realty,,SP400MidCap
+AEIS,Advanced Energy,,SP400MidCap
+AFG,American Financial Group,,SP400MidCap
+AGCO,AGCO,,SP400MidCap
+AHR,American Healthcare REIT,,SP400MidCap
+AIT,Applied Industrial Technologies,,SP400MidCap
+ALGM,Allegro MicroSystems,,SP400MidCap
+ALK,Alaska Air Group,,SP400MidCap
+ALLY,Ally Financial,,SP400MidCap
+ALV,Autoliv,,SP400MidCap
+AM,Antero Midstream,,SP400MidCap
+AMG,Affiliated Managers Group,,SP400MidCap
+AMH,American Homes 4 Rent,,SP400MidCap
+AMKR,Amkor Technology,,SP400MidCap
+AN,AutoNation,,SP400MidCap
+ANF,Abercrombie & Fitch,,SP400MidCap
+APG,APi Group,,SP400MidCap
+APPF,AppFolio,,SP400MidCap
+AR,Antero Resources,,SP400MidCap
+ARMK,Aramark,,SP400MidCap
+ARW,Arrow Electronics,,SP400MidCap
+ARWR,Arrowhead Pharmaceuticals,,SP400MidCap
+ASB,Associated Bank,,SP400MidCap
+ASH,Ashland Global,,SP400MidCap
+ATI,ATI Inc.,,SP400MidCap
+ATR,AptarGroup,,SP400MidCap
+AVAV,AeroVironment,,SP400MidCap
+AVNT,Avient,,SP400MidCap
+AVT,Avnet,,SP400MidCap
+AVTR,Avantor,,SP400MidCap
+AXTA,Axalta,,SP400MidCap
+AYI,Acuity Brands,,SP400MidCap
+BAH,Booz Allen Hamilton,,SP400MidCap
+BBWI,"Bath & Body Works, Inc.",,SP400MidCap
+BC,Brunswick,,SP400MidCap
+BCO,Brink's,,SP400MidCap
+BDC,Belden Inc.,,SP400MidCap
+BHF,Brighthouse Financial,,SP400MidCap
+BILL,Bill Holdings,,SP400MidCap
+BIO,Bio-Rad Laboratories,,SP400MidCap
+BJ,BJ's Wholesale Club,,SP400MidCap
+BKH,Black Hills Corporation,,SP400MidCap
+BLD,TopBuild Corp.,,SP400MidCap
+BLKB,Blackbaud,,SP400MidCap
+BMRN,BioMarin Pharmaceutical,,SP400MidCap
+BRBR,BellRing Brands,,SP400MidCap
+BRKR,Bruker,,SP400MidCap
+BROS,Dutch Bros Inc.,,SP400MidCap
+BRX,Brixmor Property Group,,SP400MidCap
+BSY,Bentley Systems,,SP400MidCap
+BURL,Burlington Stores,,SP400MidCap
+BWA,BorgWarner,,SP400MidCap
+BWXT,BWX Technologies,,SP400MidCap
+BYD,Boyd Gaming,,SP400MidCap
+CACI,CACI International,,SP400MidCap
+CAR,Avis Budget Group,,SP400MidCap
+CART,Maplebear Inc.,,SP400MidCap
+CAVA,Cava Group,,SP400MidCap
+CBSH,Commerce Bancshares,,SP400MidCap
+CBT,Cabot Corp,,SP400MidCap
+CCK,Crown Holdings,,SP400MidCap
+CDP,COPT Defense Properties,,SP400MidCap
+CELH,Celsius Holdings,,SP400MidCap
+CFR,Frost Bank,,SP400MidCap
+CG,Carlyle Group (The),,SP400MidCap
+CGNX,Cognex,,SP400MidCap
+CHDN,Churchill Downs Inc.,,SP400MidCap
+CHE,Chemed Corp.,,SP400MidCap
+CHH,Choice Hotels,,SP400MidCap
+CHRD,Chord Energy,,SP400MidCap
+CHWY,Chewy,,SP400MidCap
+CLF,Cleveland-Cliffs,,SP400MidCap
+CLH,Clean Harbors,,SP400MidCap
+CMC,Commercial Metals,,SP400MidCap
+CNH,CNH Industrial,,SP400MidCap
+CNM,Core & Main,,SP400MidCap
+CNO,CNO Financial Group,,SP400MidCap
+CNX,CNX Resources,,SP400MidCap
+CNXC,Concentrix,,SP400MidCap
+COKE,Coca-Cola Consolidated,,SP400MidCap
+COLB,Columbia Banking System,,SP400MidCap
+COLM,Columbia Sportswear,,SP400MidCap
+COTY,Coty,,SP400MidCap
+CPRI,Capri Holdings,,SP400MidCap
+CR,Crane,,SP400MidCap
+CRBG,Corebridge Financial,,SP400MidCap
+CROX,Crocs,,SP400MidCap
+CRS,Carpenter Technology,,SP400MidCap
+CRUS,Cirrus Logic,,SP400MidCap
+CSL,Carlisle Companies,,SP400MidCap
+CTRE,CareTrust REIT,,SP400MidCap
+CUBE,CubeSmart,,SP400MidCap
+CUZ,Cousins Properties,,SP400MidCap
+CVLT,CommVault Systems,,SP400MidCap
+CW,Curtiss-Wright,,SP400MidCap
+CXT,Crane NXT,,SP400MidCap
+CYTK,Cytokinetics,,SP400MidCap
+DAR,Darling Ingredients,,SP400MidCap
+DBX,Dropbox,,SP400MidCap
+DCI,Donaldson Company,,SP400MidCap
+DINO,HF Sinclair,,SP400MidCap
+DKS,Dick's Sporting Goods,,SP400MidCap
+DLB,Dolby,,SP400MidCap
+DOCN,DigitalOcean,,SP400MidCap
+DOCS,Doximity,,SP400MidCap
+DOCU,Docusign,,SP400MidCap
+DT,Dynatrace,,SP400MidCap
+DTM,DT Midstream,,SP400MidCap
+DUOL,Duolingo,,SP400MidCap
+DY,Dycom Industries,,SP400MidCap
+EEFT,Euronet Worldwide,,SP400MidCap
+EGP,EastGroup Properties,,SP400MidCap
+EHC,Encompass Health,,SP400MidCap
+ELAN,Elanco,,SP400MidCap
+ELF,e.l.f. Beauty,,SP400MidCap
+ELS,Equity Lifestyle Properties,,SP400MidCap
+ENS,EnerSys,,SP400MidCap
+ENSG,Ensign Group,,SP400MidCap
+ENTG,Entegris,,SP400MidCap
+EPR,EPR Properties,,SP400MidCap
+EQH,Equitable Holdings,,SP400MidCap
+ESAB,ESAB,,SP400MidCap
+ESNT,Essent Group Ltd.,,SP400MidCap
+EVR,Evercore,,SP400MidCap
+EWBC,East West Bancorp,,SP400MidCap
+EXEL,Exelixis,,SP400MidCap
+EXLS,EXL Service,,SP400MidCap
+EXP,Eagle Materials,,SP400MidCap
+EXPO,"Exponent, Inc.",,SP400MidCap
+FAF,First American Financial Corporation,,SP400MidCap
+FBIN,Fortune Brands Innovations,,SP400MidCap
+FCFS,FirstCash,,SP400MidCap
+FCN,FTI Consulting,,SP400MidCap
+FFIN,First Financial Bankshares,,SP400MidCap
+FHI,Federated Hermes,,SP400MidCap
+FHN,First Horizon,,SP400MidCap
+FIVE,Five Below,,SP400MidCap
+FLEX,Flex Ltd.,,SP400MidCap
+FLG,Flagstar Bank,,SP400MidCap
+FLR,Fluor,,SP400MidCap
+FLS,Flowserve,,SP400MidCap
+FN,Fabrinet,,SP400MidCap
+FNB,FNB Corporation,,SP400MidCap
+FND,Floor & Decor,,SP400MidCap
+FNF,Fidelity National Financial,,SP400MidCap
+FOUR,Shift4,,SP400MidCap
+FR,First Industrial Realty Trust,,SP400MidCap
+FTI,TechnipFMC,,SP400MidCap
+G,Genpact,,SP400MidCap
+GAP,Gap Inc.,,SP400MidCap
+GATX,GATX,,SP400MidCap
+GBCI,Glacier Bancorp,,SP400MidCap
+GEF,"Greif, Inc.",,SP400MidCap
+GGG,Graco Inc.,,SP400MidCap
+GHC,Graham Holdings,,SP400MidCap
+GLPI,Gaming and Leisure Properties,,SP400MidCap
+GME,GameStop,,SP400MidCap
+GMED,Globus Medical,,SP400MidCap
+GNTX,Gentex,,SP400MidCap
+GPK,Graphic Packaging,,SP400MidCap
+GT,Goodyear Tire & Rubber,,SP400MidCap
+GTLS,Chart Industries,,SP400MidCap
+GWRE,Guidewire Software,,SP400MidCap
+GXO,GXO Logistics,,SP400MidCap
+H,Hyatt,,SP400MidCap
+HAE,Haemonetics,,SP400MidCap
+HALO,Halozyme,,SP400MidCap
+HGV,Hilton Grand Vacations,,SP400MidCap
+HIMS,Hims & Hers Health,,SP400MidCap
+HL,Hecla Mining,,SP400MidCap
+HLI,Houlihan Lokey,,SP400MidCap
+HLNE,Hamilton Lane,,SP400MidCap
+HOG,Harley-Davidson,,SP400MidCap
+HOMB,Home BancShares,,SP400MidCap
+HQY,HealthEquity,,SP400MidCap
+HR,Healthcare Realty Trust,,SP400MidCap
+HRB,H&R Block,,SP400MidCap
+HWC,Hancock Whitney,,SP400MidCap
+HXL,Hexcel,,SP400MidCap
+IBOC,Intl Bancshares Corp,,SP400MidCap
+IDA,Idacorp,,SP400MidCap
+IDCC,InterDigital,,SP400MidCap
+ILMN,"Illumina, Inc.",,SP400MidCap
+INGR,Ingredion,,SP400MidCap
+IPGP,IPG Photonics,,SP400MidCap
+IRT,IRT Living,,SP400MidCap
+ITT,ITT Inc.,,SP400MidCap
+JAZZ,Jazz Pharmaceuticals,,SP400MidCap
+JEF,Jefferies,,SP400MidCap
+JHG,Janus Henderson,,SP400MidCap
+JLL,Jones Lang LaSalle,,SP400MidCap
+KBH,KB Home,,SP400MidCap
+KBR,"KBR, Inc.",,SP400MidCap
+KD,Kyndryl,,SP400MidCap
+KEX,Kirby Corporation,,SP400MidCap
+KNF,Knife River Corporation,,SP400MidCap
+KNSL,Kinsale Capital Group,,SP400MidCap
+KNX,Knight-Swift,,SP400MidCap
+KRC,Kilroy Realty Corp,,SP400MidCap
+KRG,Kite Realty Group Trust,,SP400MidCap
+KTOS,Kratos Defense & Security Solutions,,SP400MidCap
+LAD,Lithia Motors,,SP400MidCap
+LAMR,Lamar Advertising Company,,SP400MidCap
+LEA,Lear,,SP400MidCap
+LECO,Lincoln Electric,,SP400MidCap
+LFUS,Littelfuse,,SP400MidCap
+LIVN,LivaNova,,SP400MidCap
+LNTH,Lantheus Holdings,,SP400MidCap
+LOPE,Grand Canyon Education,,SP400MidCap
+LPX,Louisiana-Pacific,,SP400MidCap
+LSCC,Lattice Semiconductor,,SP400MidCap
+LSTR,Landstar System,,SP400MidCap
+M,Macy's,,SP400MidCap
+MANH,Manhattan Associates,,SP400MidCap
+MASI,Masimo,,SP400MidCap
+MAT,Mattel,,SP400MidCap
+MEDP,Medpace,,SP400MidCap
+MIDD,Middleby,,SP400MidCap
+MKSI,MKS Instruments,,SP400MidCap
+MLI,Mueller Industries,,SP400MidCap
+MMS,Maximus Inc.,,SP400MidCap
+MOG.A,Moog Inc.,,SP400MidCap
+MORN,"Morningstar, Inc.",,SP400MidCap
+MP,MP Materials,,SP400MidCap
+MSA,MSA Safety,,SP400MidCap
+MSM,MSC Industrial Direct,,SP400MidCap
+MTDR,Matador Resources,,SP400MidCap
+MTG,MGIC Investment Corporation,,SP400MidCap
+MTN,Vail Resorts,,SP400MidCap
+MTSI,MACOM Technology Solutions,,SP400MidCap
+MTZ,MasTec,,SP400MidCap
+MUR,Murphy Oil,,SP400MidCap
+MUSA,Murphy USA,,SP400MidCap
+MZTI,The Marzetti Company,,SP400MidCap
+NBIX,Neurocrine Biosciences,,SP400MidCap
+NEU,NewMarket Corporation,,SP400MidCap
+NFG,National Fuel Gas,,SP400MidCap
+NJR,New Jersey Resources,,SP400MidCap
+NLY,Annaly Capital Management,,SP400MidCap
+NNN,NNN Reit,,SP400MidCap
+NOV,NOV Inc.,,SP400MidCap
+NOVT,Novanta,,SP400MidCap
+NSA,National Storage Affiliates Trust,,SP400MidCap
+NTNX,Nutanix,,SP400MidCap
+NVST,Envista Holdings,,SP400MidCap
+NVT,nVent Electric plc,,SP400MidCap
+NWE,NorthWestern Energy,,SP400MidCap
+NXST,Nexstar Media Group,,SP400MidCap
+NXT,Nextpower,,SP400MidCap
+NYT,New York Times Company,,SP400MidCap
+OC,Owens Corning,,SP400MidCap
+OGE,OGE Energy,,SP400MidCap
+OGS,One Gas,,SP400MidCap
+OHI,Omega Healthcare Investors,,SP400MidCap
+OKTA,"Okta, Inc.",,SP400MidCap
+OLED,Universal Display,,SP400MidCap
+OLLI,Ollie's Bargain Outlet,,SP400MidCap
+OLN,Olin Corporation,,SP400MidCap
+ONB,Old National Bank,,SP400MidCap
+ONTO,Onto Innovation,,SP400MidCap
+OPCH,Option Care Health,,SP400MidCap
+ORA,Ormat Technologies,,SP400MidCap
+ORI,Old Republic International,,SP400MidCap
+OSK,Oshkosh,,SP400MidCap
+OVV,Ovintiv,,SP400MidCap
+OZK,Bank OZK,,SP400MidCap
+P,Everpure,,SP400MidCap
+PAG,Penske Automotive Group,,SP400MidCap
+PATH,UiPath,,SP400MidCap
+PB,Prosperity Bancshares,,SP400MidCap
+PBF,PBF Energy,,SP400MidCap
+PCTY,Paylocity,,SP400MidCap
+PEGA,Pegasystems,,SP400MidCap
+PEN,"Penumbra, Inc.",,SP400MidCap
+PFGC,Performance Food Group,,SP400MidCap
+PII,Polaris,,SP400MidCap
+PINS,Pinterest,,SP400MidCap
+PK,Park Hotels & Resorts,,SP400MidCap
+PLNT,Planet Fitness,,SP400MidCap
+PNFP,Pinnacle Financial Partners,,SP400MidCap
+POR,Portland General Electric,,SP400MidCap
+POST,Post Holdings,,SP400MidCap
+PPC,Pilgrim's Pride,,SP400MidCap
+PR,Permian Resources,,SP400MidCap
+PRI,Primerica,,SP400MidCap
+PSN,Parsons Corporation,,SP400MidCap
+PVH,PVH Corp.,,SP400MidCap
+QLYS,Qualys,,SP400MidCap
+R,Ryder,,SP400MidCap
+RBA,RB Global,,SP400MidCap
+RBC,RBC Bearings,,SP400MidCap
+REXR,Rexford Industrial Realty,,SP400MidCap
+RGA,Reinsurance Group of America,,SP400MidCap
+RGEN,Repligen,,SP400MidCap
+RGLD,Royal Gold,,SP400MidCap
+RH,RH,,SP400MidCap
+RLI,RLI Corp.,,SP400MidCap
+RMBS,Rambus,,SP400MidCap
+RNR,RenaissanceRe,,SP400MidCap
+ROIV,Roivant Sciences,,SP400MidCap
+RPM,RPM International,,SP400MidCap
+RRC,Range Resources,,SP400MidCap
+RRX,Regal Rexnord,,SP400MidCap
+RS,"Reliance, Inc.",,SP400MidCap
+RYAN,Ryan Specialty,,SP400MidCap
+RYN,Rayonier,,SP400MidCap
+SAIA,Saia,,SP400MidCap
+SAIC,Science Applications Intl Corp,,SP400MidCap
+SAM,Boston Beer Company,,SP400MidCap
+SARO,StandardAero,,SP400MidCap
+SBRA,Sabra Health Care REIT,,SP400MidCap
+SCI,Service Corp Intl,,SP400MidCap
+SEIC,SEI Investments Company,,SP400MidCap
+SF,Stifel,,SP400MidCap
+SFM,Sprouts Farmers Market,,SP400MidCap
+SGI,Somnigroup International,,SP400MidCap
+SHC,Sotera Health,,SP400MidCap
+SIGI,Selective Insurance Group,,SP400MidCap
+SITM,SiTime,,SP400MidCap
+SLAB,Silicon Labs,,SP400MidCap
+SLGN,Silgan Holdings,,SP400MidCap
+SLM,SLM Corp,,SP400MidCap
+SMG,Scotts Miracle-Gro Company,,SP400MidCap
+SN,SharkNinja,,SP400MidCap
+SNX,TD Synnex,,SP400MidCap
+SOLS,Solstice Advanced Materials,,SP400MidCap
+SON,Sonoco,,SP400MidCap
+SPXC,SPX Technologies,,SP400MidCap
+SR,Spire,,SP400MidCap
+SSB,South State Bank,,SP400MidCap
+SSD,Simpson Manufacturing,,SP400MidCap
+ST,Sensata Technologies,,SP400MidCap
+STAG,STAG Industrial,,SP400MidCap
+STRL,Sterling Infrastructure,,SP400MidCap
+STWD,Starwood Property Trust,,SP400MidCap
+SWX,Southwest Gas Corp,,SP400MidCap
+SYNA,Synaptics,,SP400MidCap
+TCBI,Texas Capital Bancshares,,SP400MidCap
+TEX,Terex,,SP400MidCap
+THC,Tenet Health,,SP400MidCap
+THG,Hanover Insurance,,SP400MidCap
+THO,Thor Industries,,SP400MidCap
+TKR,Timken,,SP400MidCap
+TLN,Talen Energy,,SP400MidCap
+TMHC,Taylor Morrison,,SP400MidCap
+TNL,Travel + Leisure Co.,,SP400MidCap
+TOL,Toll Brothers,,SP400MidCap
+TREX,Trex,,SP400MidCap
+TRU,TransUnion,,SP400MidCap
+TTC,Toro,,SP400MidCap
+TTEK,Tetra Tech,,SP400MidCap
+TTMI,TTM Technologies,,SP400MidCap
+TWLO,Twilio,,SP400MidCap
+TXNM,TXNM Energy,,SP400MidCap
+TXRH,Texas Roadhouse,,SP400MidCap
+UBSI,United Bankshares,,SP400MidCap
+UFPI,UFP Industries,,SP400MidCap
+UGI,UGI Corp,,SP400MidCap
+ULS,UL Solutions,,SP400MidCap
+UMBF,UMB Financial Corp.,,SP400MidCap
+UNM,Unum,,SP400MidCap
+USFD,US Foods,,SP400MidCap
+UTHR,United Therapeutics,,SP400MidCap
+VAL,Valaris,,SP400MidCap
+VC,Visteon,,SP400MidCap
+VFC,VF Corporation,,SP400MidCap
+VICR,Vicor Corporation,,SP400MidCap
+VLY,Valley Bank,,SP400MidCap
+VMI,Valmont Industries,,SP400MidCap
+VNO,Vornado Realty Trust,,SP400MidCap
+VNOM,Viper Energy,,SP400MidCap
+VNT,Vontier,,SP400MidCap
+VOYA,Voya Financial,,SP400MidCap
+VVV,Valvoline,,SP400MidCap
+WAL,Western Alliance Bancorporation,,SP400MidCap
+WBS,Webster Bank,,SP400MidCap
+WCC,WESCO International,,SP400MidCap
+WEX,WEX Inc.,,SP400MidCap
+WFRD,Weatherford International,,SP400MidCap
+WH,Wyndham Hotels & Resorts,,SP400MidCap
+WHR,Whirlpool Corporation,,SP400MidCap
+WING,Wingstop,,SP400MidCap
+WLK,Westlake Corporation,,SP400MidCap
+WMG,Warner Music Group,,SP400MidCap
+WMS,Advanced Drainage Systems,,SP400MidCap
+WPC,W. P. Carey,,SP400MidCap
+WSO,Watsco,,SP400MidCap
+WTFC,Wintrust Financial,,SP400MidCap
+WTRG,Essential Utilities,,SP400MidCap
+WTS,Watts Water Technologies,,SP400MidCap
+WWD,"Woodward, Inc.",,SP400MidCap
+XPO,"XPO, Inc.",,SP400MidCap
+XRAY,Dentsply Sirona,,SP400MidCap
+YETI,Yeti Holdings,,SP400MidCap
+ZION,Zions Bancorporation,,SP400MidCap
+AAMI,Acadian Asset Management Inc.,0001748824,SP600SmallCap
+AAP,"Advance Auto Parts, Inc.",0001158449,SP600SmallCap
+AAT,American Assets Trust,0001500217,SP600SmallCap
+ABCB,Ameris Bancorp,0000351569,SP600SmallCap
+ABG,Asbury Automotive Group,0001144980,SP600SmallCap
+ABM,"ABM Industries, Inc.",0000771497,SP600SmallCap
+ABR,Arbor Realty Trust,0001253986,SP600SmallCap
+ACA,"Arcosa, Inc.",0001739445,SP600SmallCap
+ACAD,Acadia Pharmaceuticals,0001070494,SP600SmallCap
+ACHC,Acadia Healthcare,0001520697,SP600SmallCap
+ACIW,ACI Worldwide,0000935036,SP600SmallCap
+ACLS,"Axcelis Technologies, Inc.",0001113232,SP600SmallCap
+ACMR,"ACM Research, Inc.",0001680062,SP600SmallCap
+ACT,"Enact Holdings, Inc.",0001823529,SP600SmallCap
+ADAM,"Adamas Trust, Inc.",0001273685,SP600SmallCap
+ADEA,"Adeia, Inc.",0001803696,SP600SmallCap
+ADMA,"ADMA Biologics, Inc.",0001368514,SP600SmallCap
+ADNT,Adient,0001670541,SP600SmallCap
+ADT,ADT Inc.,0001703056,SP600SmallCap
+ADUS,Addus HomeCare Corp.,0001468328,SP600SmallCap
+AEO,American Eagle Outfitters,0000919012,SP600SmallCap
+AESI,"Atlas Energy Solutions, Inc.",0001984060,SP600SmallCap
+AGO,Assured Guaranty Ltd.,0001273813,SP600SmallCap
+AGX,"Argan, Inc.",0000100591,SP600SmallCap
+AGYS,"Agilysys, Inc.",0000078749,SP600SmallCap
+AHCO,AdaptHealth Corp.,0001725255,SP600SmallCap
+AIN,Albany International Corp.,0000819793,SP600SmallCap
+AIR,AAR CORP.,0000001750,SP600SmallCap
+AKR,Acadia Realty Trust,0000899629,SP600SmallCap
+ALG,Alamo Group,0000897077,SP600SmallCap
+ALGT,Allegiant Travel Company,0001362468,SP600SmallCap
+ALHC,"Alignment Healthcare, Inc.",0001832466,SP600SmallCap
+ALKS,Alkermes plc,0001520262,SP600SmallCap
+ALRM,"Alarm.Com, Inc.",0001459200,SP600SmallCap
+AMN,"Amn Healthcare Services, Inc.",0001142750,SP600SmallCap
+AMPH,"Amphstar Pharmaceuticals, Inc.",0001297184,SP600SmallCap
+AMR,"Alpha Metallurgical Resources, Inc.",0001704715,SP600SmallCap
+AMRX,Amneal Pharmaceuticals,0001723128,SP600SmallCap
+AMSF,"Amerisafe, Inc.",0001018979,SP600SmallCap
+AMTM,Amentum,0002011286,SP600SmallCap
+AMWD,American Woodmark Corp.,0000794619,SP600SmallCap
+ANDE,"The Andersons, Inc.",0000821026,SP600SmallCap
+ANIP,"ANI Pharmaceuticals, Inc.",0001023024,SP600SmallCap
+AORT,Artivion,0000784199,SP600SmallCap
+AOSL,"Alpha and Omega Semiconductor, Ltd.",0001387467,SP600SmallCap
+APAM,"Artisan Partners Asset Management, Inc.",0001517302,SP600SmallCap
+APLE,"Apple Hospitality REIT, Inc.",0001418121,SP600SmallCap
+APOG,"Apogee Enterprises, Inc.",0000006845,SP600SmallCap
+ARCB,ArcBest Corp.,0000894405,SP600SmallCap
+ARI,Apollo Commercial Real Estate Finance,0001467760,SP600SmallCap
+ARLO,Arlo Technologies,0001736946,SP600SmallCap
+AROC,"Archrock, Inc.",0001389050,SP600SmallCap
+ARR,Armour Residential REIT,0001428205,SP600SmallCap
+EFOR,Everforth Inc.,0000890564,SP600SmallCap
+ASO,Academy Sports + Outdoors,0001817358,SP600SmallCap
+ASTE,"Astec Industries, Inc.",0000792987,SP600SmallCap
+ASTH,"Astrana Health, Inc.",0001083446,SP600SmallCap
+ATEN,"A10 Networks, Inc.",0001580808,SP600SmallCap
+ATMU,Atmus Filtration Technologies Inc.,0001921963,SP600SmallCap
+AUB,"Atlantic Union Bankshares, Corp.",0000883948,SP600SmallCap
+AVA,Avista Corporation,0000104918,SP600SmallCap
+AVNS,"Avanos Medical, Inc.",0001606498,SP600SmallCap
+AWI,"Armstrong World Industries, Inc.",0000007431,SP600SmallCap
+AWR,American States Water Company,0001056903,SP600SmallCap
+AX,"Axos Financial, Inc.",0001299709,SP600SmallCap
+AZTA,"Azenta, Inc.",0000933974,SP600SmallCap
+AZZ,"AZZ, Inc.",0000008947,SP600SmallCap
+BANC,"Banc Of California, Inc.",0001169770,SP600SmallCap
+BANF,Bancfirst Corp,0000760498,SP600SmallCap
+BANR,Banner Corporation,0000946673,SP600SmallCap
+BBT,Beacon Financial Corp.,0001108134,SP600SmallCap
+BCC,Boise Cascade,0001328581,SP600SmallCap
+BCPC,Balchem Corporation,0000009326,SP600SmallCap
+BFAM,Bright Horizons Family Solutions Inc.,0001437578,SP600SmallCap
+BFH,"Bread Financial Holdings, Inc.",0001101215,SP600SmallCap
+BFS,"Saul Centers, Inc.",0000907254,SP600SmallCap
+BGC,"BGC Group, Inc.",0001094831,SP600SmallCap
+BHE,"Benchmark Electronics, Inc.",0000863436,SP600SmallCap
+BJRI,"BJ's Restaurants, Inc.",0001013488,SP600SmallCap
+BKE,"The Buckle, Inc.",0000885245,SP600SmallCap
+BKU,"BankUnited, Inc.",0001504008,SP600SmallCap
+BL,"BlackLine Systems, Inc.",0001666134,SP600SmallCap
+BLFS,"BioLife Solutions, Inc.",0000834365,SP600SmallCap
+BMI,"Badger Meter, Inc.",0000009092,SP600SmallCap
+BNL,"Broadstone Net Lease, Inc.",0001424182,SP600SmallCap
+BOH,Bank of Hawaii,0000046195,SP600SmallCap
+BOOT,"Boot Barn Holdings, Inc.",0001610250,SP600SmallCap
+BOX,"Box, Inc.",0001372612,SP600SmallCap
+BRC,Brady Corporation,0000746598,SP600SmallCap
+BTSG,"BrightSpring Health Services, Inc.",0001865782,SP600SmallCap
+BTU,"Peabody Energy, Inc.",0001064728,SP600SmallCap
+BXMT,"Blackstone Mortgage Trust, Inc.",0001061630,SP600SmallCap
+CABO,Cable One,0001632127,SP600SmallCap
+CAKE,"The Cheesecake Factory, Inc.",0000887596,SP600SmallCap
+CALM,"Cal-Maine Foods, Inc.",0000016160,SP600SmallCap
+CALX,Calix,0001406666,SP600SmallCap
+CALY,Callaway Golf Company,0000837465,SP600SmallCap
+CARG,CarGurus,0001494259,SP600SmallCap
+CASH,"Pathward Financial, Inc.",0000907471,SP600SmallCap
+CATY,Cathay General Bancorp,0000861842,SP600SmallCap
+CBRL,Cracker Barrel,0001067294,SP600SmallCap
+CBU,"Community Bank System, Inc.",0000723188,SP600SmallCap
+CC,Chemours,0001627223,SP600SmallCap
+CCOI,"Cogent Communications Holdings, Inc.",0001158324,SP600SmallCap
+CCS,"Century Communities, Inc.",0001576940,SP600SmallCap
+CE,Celanese,0001306830,SP600SmallCap
+CENT,Central Garden & Pet Company,0000887733,SP600SmallCap
+CENTA,Central Garden & Pet Company (Class A),0000887733,SP600SmallCap
+CENX,Century Aluminum Company,0000949157,SP600SmallCap
+CERT,"Certara, Inc.",0001827090,SP600SmallCap
+CFFN,Capitol Federal Savings Bank,0001490906,SP600SmallCap
+CHCO,City Holding Company,0000726854,SP600SmallCap
+CHEF,"Chefs' Warehouse, Inc.",0001517175,SP600SmallCap
+CLB,Core Laboratories,0001958086,SP600SmallCap
+CLSK,"CleanSpark, Inc.",0000827876,SP600SmallCap
+CNK,"Cinemark Holdings, Inc.",0001385280,SP600SmallCap
+CNMD,CONMED Corporation,0000816956,SP600SmallCap
+CNR,"Core Natural Resources, Inc.",0001710366,SP600SmallCap
+CNS,"Cohen & Steers, Inc.",0001284812,SP600SmallCap
+CNXN,"PC Connection, Inc.",0001050377,SP600SmallCap
+COCO,The Vita Coco Company,0001482981,SP600SmallCap
+COHU,"Cohu, Inc.",0000021535,SP600SmallCap
+COLL,"Collegium Pharmaceutical, Inc.",0001267565,SP600SmallCap
+CON,"Concentra Group Holdings Parent, Inc.",0002014596,SP600SmallCap
+CORT,Corcept Therapeutics Incorporated,0001088856,SP600SmallCap
+CPF,Central Pacific Financial Corp.,0000701347,SP600SmallCap
+CPK,Chesapeake Utilities Corp.,0000019745,SP600SmallCap
+CPRX,"Catalyst Pharmaceuticals Partners, Inc.",0001369568,SP600SmallCap
+CRC,California Resources Corporation,0001609253,SP600SmallCap
+CRGY,Crescent Energy Company,0001866175,SP600SmallCap
+CRI,"Carter's, Inc.",0001060822,SP600SmallCap
+CRK,"Comstock Resources, Inc.",0000023194,SP600SmallCap
+CRSR,Corsair Gaming,0001743759,SP600SmallCap
+CRVL,CorVel Corporation,0000874866,SP600SmallCap
+CSR,Centerspace Trust,0000798359,SP600SmallCap
+CSW,"CSW Industrials, Inc.",0001624794,SP600SmallCap
+CTKB,"Cytek Biosciences, Inc.",0001831915,SP600SmallCap
+CTS,CTS Corporation,0000026058,SP600SmallCap
+CUBI,"Customers Bancorp, Inc.",0001488813,SP600SmallCap
+CURB,Curbline Properties Corp.,0002027317,SP600SmallCap
+CVBF,CVB Financial Corp.,0000354647,SP600SmallCap
+CVCO,"Cavco Industries, Inc.",0000278166,SP600SmallCap
+CVI,"CVR Energy, Inc.",0001376139,SP600SmallCap
+CVSA,Covista Inc.,0000730464,SP600SmallCap
+CWEN,"Clearway Energy, Inc. (Class C)",0001567683,SP600SmallCap
+CWEN.A,"Clearway Energy, Inc. (Class A)",0001567683,SP600SmallCap
+CWK,Cushman & Wakefield plc,0001628369,SP600SmallCap
+CWST,"Casella Waste Systems, Inc.",0000911177,SP600SmallCap
+CWT,California Water Service Group,0001035201,SP600SmallCap
+CXM,"Sprinklr, Inc.",0001569345,SP600SmallCap
+CXW,CoreCivic,0001070985,SP600SmallCap
+CZR,Caesars Entertainment,0001590895,SP600SmallCap
+DAN,Dana Incorporated,0000026780,SP600SmallCap
+DBD,Diebold Nixdorf,0000028823,SP600SmallCap
+DCH,Dauch Corporation,0001062231,SP600SmallCap
+DCOM,"Dime Community Bancshares, Inc.",0000846617,SP600SmallCap
+DEA,"Easterly Government Properties, Inc.",0001622194,SP600SmallCap
+DEI,Douglas Emmett,0001364250,SP600SmallCap
+DFH,"Dream Finders Homes, Inc.",0001825088,SP600SmallCap
+DFIN,"Donnelley Financial Solutions, Inc.",0001669811,SP600SmallCap
+DGII,Digi International Inc.,0000854775,SP600SmallCap
+DIOD,Diodes Incorporated,0000029002,SP600SmallCap
+DLX,Deluxe Corporation,0000027996,SP600SmallCap
+DNOW,NOW Inc,0001599617,SP600SmallCap
+DORM,"Dorman Products, Inc.",0000868780,SP600SmallCap
+DRH,DiamondRock Hospitality Company,0001298946,SP600SmallCap
+DV,"DoubleVerify Holdings, Inc.",0001819928,SP600SmallCap
+DXC,DXC Technology,0001688568,SP600SmallCap
+DXPE,"DXP Enterprises, Inc.",0001020710,SP600SmallCap
+EAT,"Brinker International, Inc.",0000703351,SP600SmallCap
+ECG,"Everus Construction Group, Inc.",0002015845,SP600SmallCap
+ECPG,"Encore Capital Group, Inc.",0001084961,SP600SmallCap
+EFC,"Ellington Financial, Inc.",0001411342,SP600SmallCap
+EGBN,Eagle Bancorp Inc,0001050441,SP600SmallCap
+EIG,"Employers Holdings, Inc.",0001379041,SP600SmallCap
+EMBC,Embecta Corp.,0001872789,SP600SmallCap
+EMN,Eastman Chemical Company,0000915389,SP600SmallCap
+ENOV,Enovis,0001420800,SP600SmallCap
+ENPH,Enphase Energy,0001463101,SP600SmallCap
+ENR,Energizer,0001632790,SP600SmallCap
+ENVA,"Enova International, Inc.",0001529864,SP600SmallCap
+EPAC,Enerpac Tool Group,0000006955,SP600SmallCap
+EPC,Edgewell Personal Care,0001096752,SP600SmallCap
+EPRT,"Essential Properties Realty Trust, Inc.",0001728951,SP600SmallCap
+ESE,ESCO Technologies Inc.,0000866706,SP600SmallCap
+ESI,Element Solutions,0001590714,SP600SmallCap
+ETD,"Ethan Allen Interiors, Inc.",0000896156,SP600SmallCap
+ETSY,Etsy,0001370637,SP600SmallCap
+EVTC,"EVERTEC, Inc.",0001559865,SP600SmallCap
+AGNT,"eXp World Holdings, Inc.",0001495932,SP600SmallCap
+EXTR,"Extreme Networks, Inc.",0001078271,SP600SmallCap
+EYE,National Vision Holdings,0001710155,SP600SmallCap
+EZPW,"EZCORP, Inc.",0000876523,SP600SmallCap
+FBK,FB Financial Corp.,0001649749,SP600SmallCap
+FBNC,First Bancorp (Southern Pines NC),0000811589,SP600SmallCap
+FBP,First BanCorp (Puerto Rico),0001057706,SP600SmallCap
+FBRT,"Franklin BSP Realty Trust, Inc.",0001562528,SP600SmallCap
+FCF,"First Commonwealth Financial, Corp.",0000712537,SP600SmallCap
+FCPT,"Four Corners Property Trust, Inc.",0001650132,SP600SmallCap
+FDP,"Fresh Del Monte Produce, Inc.",0001047340,SP600SmallCap
+FELE,Franklin Electric,0000038725,SP600SmallCap
+FFBC,First Financial Bancorp,0000708955,SP600SmallCap
+FG,"F&G Annuities & Life, Inc.",0001934850,SP600SmallCap
+FHB,"First Hawaiian, Inc.",0000036377,SP600SmallCap
+FIBK,"First Interstate BancSystem, Inc.",0000860413,SP600SmallCap
+FIZZ,National Beverage Corp.,0000069891,SP600SmallCap
+FLO,Flowers Foods,0001128928,SP600SmallCap
+FMC,FMC Corporation,0000037785,SP600SmallCap
+FORM,"FormFactor, Inc.",0001039399,SP600SmallCap
+FOXF,Fox Factory,0001424929,SP600SmallCap
+FRPT,Freshpet,0001611647,SP600SmallCap
+FSS,Federal Signal Corporation,0000277509,SP600SmallCap
+FTDR,"Frontdoor, Inc.",0001727263,SP600SmallCap
+FTRE,Fortrea,0001965040,SP600SmallCap
+FUL,H.B. Fuller Company,0000039368,SP600SmallCap
+FULT,Fulton Financial Corporation,0000700564,SP600SmallCap
+FUN,Six Flags,0001999001,SP600SmallCap
+FWRD,Forward Air Corp.,0000912728,SP600SmallCap
+GBX,"The Greenbrier Companies, Inc.",0000923120,SP600SmallCap
+GDYN,"Grid Dynamics Holdings, Inc.",0001743725,SP600SmallCap
+GEO,"GEO Group, Inc.",0000923796,SP600SmallCap
+GFF,Griffon Corporation,0000050725,SP600SmallCap
+GIII,"G-III Apparel Group, Ltd.",0000821002,SP600SmallCap
+GKOS,Glaukos Corp.,0001192448,SP600SmallCap
+GNL,"Global Net Lease, Inc.",0001526113,SP600SmallCap
+GNW,"Genworth Financial, Inc.",0001276520,SP600SmallCap
+GO,Grocery Outlet,0001771515,SP600SmallCap
+GOGO,"Gogo, Inc.",0001537054,SP600SmallCap
+GOLF,Acushnet Company,0001672013,SP600SmallCap
+GPI,"Group 1 Automotive, Inc.",0001031203,SP600SmallCap
+GRBK,"Green Brick Partners, Inc.",0001373670,SP600SmallCap
+GSHD,"Goosehead Insurance, Inc.",0001726978,SP600SmallCap
+GTES,Gates Corporation,0001718512,SP600SmallCap
+GTM,ZoomInfo,0001794515,SP600SmallCap
+GTY,Getty Realty Corp.,0001052752,SP600SmallCap
+GVA,"Granite Construction, Inc.",0000861459,SP600SmallCap
+HAFC,Hanmi Financial Corporation,0001109242,SP600SmallCap
+HASI,"Hannon Armstrong Sustainable Infrastructure Capital, Inc.",0001561894,SP600SmallCap
+HAYW,"Hayward Holdings, Inc.",0001834622,SP600SmallCap
+HCC,"Warrior Met Coal, Inc.",0001691303,SP600SmallCap
+HCI,"HCI Group, Inc.",0001400810,SP600SmallCap
+HCSG,"Healthcare Services Group, Inc.",0000731012,SP600SmallCap
+HE,"Hawaiian Electric Industries, Inc.",0000354707,SP600SmallCap
+HFWA,Heritage Financial Corporation,0001046025,SP600SmallCap
+HIW,Highwoods Properties,0000921082,SP600SmallCap
+HLIT,Harmonic Inc.,0000851310,SP600SmallCap
+HLX,"Helix Energy Solutions Group, Inc.",0000866829,SP600SmallCap
+HMN,Horace Mann Educators Corporation,0000850141,SP600SmallCap
+HNI,HNI Corporation,0000048287,SP600SmallCap
+HOPE,"Hope Bancorp, Inc.",0001128361,SP600SmallCap
+HP,"Helmerich & Payne, Inc.",0000046765,SP600SmallCap
+HRMY,"Harmony Biosciences Holdings, Inc.",0001802665,SP600SmallCap
+HSTM,"HealthStream, Inc.",0001095565,SP600SmallCap
+HTH,Hilltop Holdings Inc.,0001265131,SP600SmallCap
+HTLD,"Heartland Express, Inc.",0000799233,SP600SmallCap
+HTO,H2O America,0000766829,SP600SmallCap
+HTZ,Hertz,0001657853,SP600SmallCap
+HUBG,"Hub Group, Inc.",0000940942,SP600SmallCap
+HWKN,"Hawkins, Inc.",0000046250,SP600SmallCap
+HZO,"MarineMax, Inc.",0001057060,SP600SmallCap
+IAC,IAC Inc.,0001800227,SP600SmallCap
+IART,Integra Lifesciences Holdings,0000917520,SP600SmallCap
+IBP,"Installed Building Products, Inc.",0001580905,SP600SmallCap
+ICHR,"Ichor Holdings, Ltd.",0001652535,SP600SmallCap
+ICUI,ICU Medical,0000883984,SP600SmallCap
+IIIN,"Insteel Industries, Inc.",0000764401,SP600SmallCap
+IIPR,"Innovative Industrial Properties, Inc.",0001677576,SP600SmallCap
+INDB,Independent Bank Corp.,0000776901,SP600SmallCap
+INDV,Indivior,0001625297,SP600SmallCap
+INSP,"Inspire Medical Systems, Inc.",0001609550,SP600SmallCap
+INSW,"International Seaways, Inc.",0001679049,SP600SmallCap
+INVA,"Innoviva, Inc.",0001080014,SP600SmallCap
+INVX,"Innovex International, Inc.",0001042893,SP600SmallCap
+IOSP,"Innospec, Inc.",0001054905,SP600SmallCap
+IPAR,"Inter Parfums, Inc.",0000822663,SP600SmallCap
+IRDM,Iridium Communications,0001418819,SP600SmallCap
+ITGR,Integer Holdings Corporation,0001114483,SP600SmallCap
+ITRI,"Itron, Inc.",0000780571,SP600SmallCap
+JBGS,JBG Smith,0001689796,SP600SmallCap
+JBLU,JetBlue,0001158463,SP600SmallCap
+JBSS,"John B. Sanfilippo & Son, Inc.",0000880117,SP600SmallCap
+JBTM,JBT Marel Corporation,0001433660,SP600SmallCap
+JJSF,J&J Snack Foods Corp.,0000785956,SP600SmallCap
+JOE,St. Joe Company,0000745308,SP600SmallCap
+JXN,"Jackson Financial, Inc.",0001822993,SP600SmallCap
+KAI,Kadant Inc.,0000886346,SP600SmallCap
+KALU,Kaiser Aluminum Corporation,0000811596,SP600SmallCap
+OPLN,"OPENLANE, Inc.",0001395942,SP600SmallCap
+KFY,Korn/Ferry International,0000056679,SP600SmallCap
+KGS,"Kodiak Gas Services, Inc.",0001767042,SP600SmallCap
+KLIC,"Kulicke and Soffa Industries, Inc.",0000056978,SP600SmallCap
+KMPR,Kemper Corporation,0000860748,SP600SmallCap
+KMT,Kennametal,0000055242,SP600SmallCap
+KMX,"CarMax, Inc.",0001170010,SP600SmallCap
+KN,Knowles Corporation,0001587523,SP600SmallCap
+KNTK,"Kinetik Holdings, Inc.",0001692787,SP600SmallCap
+KOP,"Koppers Holdings, Inc.",0001315257,SP600SmallCap
+KRYS,"Krystal Biotech, Inc.",0001711279,SP600SmallCap
+KSS,Kohl's Corp.,0000885639,SP600SmallCap
+KTB,Kontoor Brands,0001760965,SP600SmallCap
+KW,"Kennedy-Wilson Holdings, Inc.",0001408100,SP600SmallCap
+KWR,Quaker Chemical Corporation,0000081362,SP600SmallCap
+LAUR,"Laureate Education, Inc.",0000912766,SP600SmallCap
+LBRT,"Liberty Energy, Inc.",0001694028,SP600SmallCap
+LCII,LCI Industries,0000763744,SP600SmallCap
+LEG,Leggett & Platt,0000058492,SP600SmallCap
+LFST,Lifestance Health,0001845257,SP600SmallCap
+LGIH,LGI Homes,0001580670,SP600SmallCap
+LIF,Life360,0001581760,SP600SmallCap
+LGND,"Ligand Pharmaceuticals, Inc.",0000886163,SP600SmallCap
+LKFN,Lakeland Financial,0000721994,SP600SmallCap
+LKQ,LKQ Corporation,0001065696,SP600SmallCap
+LMAT,LeMaitre Vascular,0001158895,SP600SmallCap
+LNC,Lincoln Financial,0000059558,SP600SmallCap
+LNN,Lindsay Corporation,0000836157,SP600SmallCap
+LPG,Dorian LPG Ltd.,0001596993,SP600SmallCap
+LQDT,"Liquidity Services, Inc.",0001235468,SP600SmallCap
+LRN,"Stride, Inc.",0001157408,SP600SmallCap
+LTC,"LTC Properties, Inc.",0000887905,SP600SmallCap
+LTH,"Life Time Group Holdings, Inc.",0001869198,SP600SmallCap
+LUMN,Lumen Technologies,0000018926,SP600SmallCap
+LW,Lamb Weston,0001679273,SP600SmallCap
+LXP,Lexington Realty Trust,0000910108,SP600SmallCap
+LYFT,"Lyft, Inc.",0001759509,SP600SmallCap
+LZ,"LegalZoom.com, Inc.",0001286139,SP600SmallCap
+LZB,"La-Z-Boy, Inc.",0000057131,SP600SmallCap
+MAC,Macerich,0000912242,SP600SmallCap
+MAN,ManpowerGroup,0000871763,SP600SmallCap
+MARA,"MARA Holdings, Inc.",0001507605,SP600SmallCap
+MATW,Matthews International Corporation,0000063296,SP600SmallCap
+MATX,"Matson, Inc.",0000003453,SP600SmallCap
+MBC,"MasterBrand, Inc.",0001941365,SP600SmallCap
+MBIN,Merchants Bancorp,0001629019,SP600SmallCap
+MC,Moelis & Company,0001596967,SP600SmallCap
+MCRI,"Monarch Casino & Resort, Inc.",0000907242,SP600SmallCap
+MCY,Mercury General,0000064996,SP600SmallCap
+MD,Pediatrix Medical Group,0000893949,SP600SmallCap
+MDU,"MDU Resources Group, Inc.",0000067716,SP600SmallCap
+MGEE,"MGE Energy, Inc.",0001161728,SP600SmallCap
+MGY,"Magnolia Oil & Gas, Corp.",0001698990,SP600SmallCap
+MHK,Mohawk Industries,0000851968,SP600SmallCap
+MHO,"M/I Homes, Inc.",0000799292,SP600SmallCap
+MIR,"Mirion Technologies, Inc.",0001809987,SP600SmallCap
+MKTX,MarketAxess,0001278021,SP600SmallCap
+MLKN,"MillerKnoll, Inc.",0000066382,SP600SmallCap
+MMI,"Marcus & Millichap, Inc.",0001578732,SP600SmallCap
+MMSI,"Merit Medical Systems, Inc.",0000856982,SP600SmallCap
+MNRO,"Monro, Inc.",0000876427,SP600SmallCap
+MOH,Molina Healthcare,0001179929,SP600SmallCap
+MPT,Medical Properties Trust,0001287865,SP600SmallCap
+MRCY,Mercury Systems,0001049521,SP600SmallCap
+MRP,"Millrose Properties, Inc.",0002017206,SP600SmallCap
+MRTN,"Marten Transport, Ltd.",0000799167,SP600SmallCap
+MSEX,Middlesex Water Company,0000066004,SP600SmallCap
+MSGS,Madison Square Garden Sports Corp.,0001636519,SP600SmallCap
+MTCH,Match Group,0000891103,SP600SmallCap
+MTH,Meritage Homes Corporation,0000833079,SP600SmallCap
+MTRN,Materion Corp.,0001104657,SP600SmallCap
+MTUS,Metallus Inc,0001598428,SP600SmallCap
+MTX,Minerals Technologies,0000891014,SP600SmallCap
+MWA,Mueller Water Products,0001350593,SP600SmallCap
+MXL,"MaxLinear, Inc.",0001288469,SP600SmallCap
+MYRG,"MYR Group, Inc.",0000700923,SP600SmallCap
+NABL,"N-able, Inc.",0001834488,SP600SmallCap
+NATL,NCR Atleos,0001974138,SP600SmallCap
+NAVI,Navient,0001593538,SP600SmallCap
+NBHC,National Bank Holdings Corporation,0001475841,SP600SmallCap
+NBTB,"NBT Bancorp, Inc.",0000790359,SP600SmallCap
+NE,Noble Corporation,0000072207,SP600SmallCap
+NEO,"NeoGenomics Laboratories, Inc.",0001077183,SP600SmallCap
+NEOG,Neogen,0000711377,SP600SmallCap
+NGVT,"Ingevity, Corp.",0001653477,SP600SmallCap
+NHC,"National Healthcare, Corp.",0001047335,SP600SmallCap
+NMIH,"NMI Holdings, Inc.",0001547903,SP600SmallCap
+NOG,"Northern Oil and Gas, Inc.",0001104485,SP600SmallCap
+NPK,"National Presto Industries, Inc.",0000080172,SP600SmallCap
+NPO,"EnPro Industries, Inc.",0001164863,SP600SmallCap
+NSIT,"Insight Enterprises, Inc.",0000932696,SP600SmallCap
+NSP,Insperity,0001000753,SP600SmallCap
+NSSC,Napco Security Technologies,0000069633,SP600SmallCap
+NTCT,"NETSCOUT Systems, Inc.",0001078075,SP600SmallCap
+NVRI,Enviri Corporation,0000045876,SP600SmallCap
+NWBI,"Northwest Bancshares, Inc.",0001471265,SP600SmallCap
+NWL,Newell Brands,0000814453,SP600SmallCap
+NWN,NW Natural,0001733998,SP600SmallCap
+NX,Quanex Building Products Corporation,0001423221,SP600SmallCap
+NXRT,"NexPoint Residential Trust, Inc.",0001620393,SP600SmallCap
+OFG,OFG Bancorp,0001030469,SP600SmallCap
+OGN,Organon & Co.,0001821825,SP600SmallCap
+OI,"O-I Glass, Inc.",0000812074,SP600SmallCap
+OII,"Oceaneering International, Inc.",0000073756,SP600SmallCap
+OMCL,Omnicell,0000926326,SP600SmallCap
+OSIS,"OSI Systems, Inc.",0001039065,SP600SmallCap
+OSW,OneSpaWorld Holdings Limited,0001758488,SP600SmallCap
+OTTR,Otter Tail Corporation,0001466593,SP600SmallCap
+OUT,Outfront Media,0001579877,SP600SmallCap
+OXM,"Oxford Industries, Inc.",0000075288,SP600SmallCap
+PAHC,Phibro Animal Health,0001069899,SP600SmallCap
+PARR,"Par Pacific Holdings, Inc.",0000821483,SP600SmallCap
+PAYC,Paycom,0001590955,SP600SmallCap
+PAYO,Payoneer Global Inc.,0001845815,SP600SmallCap
+PATK,"Patrick Industries, Inc.",0000076605,SP600SmallCap
+PBH,Prestige Consumer Healthcare,0001295947,SP600SmallCap
+PBI,"Pitney Bowes, Inc.",0000078814,SP600SmallCap
+PCRX,"Pacira BioSciences, Inc.",0001396814,SP600SmallCap
+PDFS,"PDF Solutions, Inc.",0001120914,SP600SmallCap
+PEB,Pebblebrook Hotel Trust,0001474098,SP600SmallCap
+PECO,Phillips Edison & Company,0001476204,SP600SmallCap
+PENG,"Penguin Solutions, Inc.",0001616533,SP600SmallCap
+PENN,Penn Entertainment,0000921738,SP600SmallCap
+PFBC,Preferred Bank,0001492165,SP600SmallCap
+PFS,"Provident Financial Services, Inc.",0001178970,SP600SmallCap
+PGNY,Progyny,0001551306,SP600SmallCap
+PHIN,"PHINIA, Inc.",0001968915,SP600SmallCap
+PI,"Impinj, Inc.",0001114995,SP600SmallCap
+PIPR,Piper Sandler Companies,0001230245,SP600SmallCap
+PJT,"PJT Partners, Inc.",0001626115,SP600SmallCap
+PLAB,"Photronics, Inc.",0000810136,SP600SmallCap
+PLMR,"Palomar Holdings, Inc.",0001761312,SP600SmallCap
+PLUS,"ePlus, Inc.",0001022408,SP600SmallCap
+PLXS,Plexus Corp.,0000785786,SP600SmallCap
+PMT,PennyMac Mortgage Investment Trust,0001464423,SP600SmallCap
+POWI,Power Integrations,0000833640,SP600SmallCap
+POWL,"Powell Industries, Inc.",0000080420,SP600SmallCap
+PRA,ProAssurance Corporation,0001127703,SP600SmallCap
+PRAA,"PRA Group, Inc.",0001185348,SP600SmallCap
+PRDO,Perdoceo Education Corp.,0001046568,SP600SmallCap
+PRG,"PROG Holdings, Inc.",0001808834,SP600SmallCap
+PRGO,Perrigo,0001585364,SP600SmallCap
+PRGS,Progress Software Corporation,0000876167,SP600SmallCap
+PRIM,Primoris Services Corporation,0001361538,SP600SmallCap
+PRK,Park National Corp.,0000805676,SP600SmallCap
+PRKS,United Parks & Resorts,0001564902,SP600SmallCap
+PRLB,Protolabs,0001443669,SP600SmallCap
+PRSU,"Pursuit Attractions & Hospitality, Inc.",0000884219,SP600SmallCap
+PRVA,"Privia Health Group, Inc.",0001759655,SP600SmallCap
+PSMT,PriceSmart,0001041803,SP600SmallCap
+PTCT,"PTC Therapeutics, Inc.",0001070081,SP600SmallCap
+PTEN,"Patterson-UTI Energy, Inc.",0000889900,SP600SmallCap
+PTGX,"Protagonist Therapeutics, Inc.",0001377121,SP600SmallCap
+PZZA,Papa John's Pizza,0000901491,SP600SmallCap
+QDEL,QuidelOrtho,0001906324,SP600SmallCap
+QNST,"QuinStreet, Inc.",0001117297,SP600SmallCap
+QRVO,Qorvo,0001604778,SP600SmallCap
+QTWO,"Q2 Holdings, Inc.",0001410384,SP600SmallCap
+RAMP,"LiveRamp Holdings, Inc.",0000733269,SP600SmallCap
+RAL,Ralliant Corp,0002041385,SP600SmallCap
+RCUS,"Arcus Biosciences, Inc.",0001724521,SP600SmallCap
+RDN,"Radian Group, Inc.",0000890926,SP600SmallCap
+RDNT,"RadNet, Inc.",0000790526,SP600SmallCap
+RELY,Remitly,0001782170,SP600SmallCap
+RES,"RPC, Inc.",0000742278,SP600SmallCap
+REYN,Reynolds Consumer Products,0001786431,SP600SmallCap
+REX,REX American Resources Corporation,0000744187,SP600SmallCap
+REZI,"Resideo Technologies, Inc.",0001740332,SP600SmallCap
+RHI,Robert Half,0000315213,SP600SmallCap
+RHP,Ryman Hospitality Properties,0001040829,SP600SmallCap
+RITM,Rithm Capital,0001556593,SP600SmallCap
+RNG,"RingCentral, Inc.",0001384905,SP600SmallCap
+RNST,Renasant Corp.,0000715072,SP600SmallCap
+ROCK,"Gibraltar Industries, Inc.",0000912562,SP600SmallCap
+ROG,Rogers Corporation,0000084748,SP600SmallCap
+RRR,"Red Rock Resorts, Inc.",0001653653,SP600SmallCap
+RUN,Sunrun,0001469367,SP600SmallCap
+RUSHA,Rush Enterprises,0001012019,SP600SmallCap
+RWT,"Redwood Trust, Inc.",0000930236,SP600SmallCap
+RXO,"RXO, Inc.",0001929561,SP600SmallCap
+SAFE,"Safehold, Inc.",0001095651,SP600SmallCap
+SABR,Sabre,0001597033,SP600SmallCap
+SAFT,"Safety Insurance Group, Inc.",0001172052,SP600SmallCap
+SAH,"Sonic Automotive, Inc.",0001043509,SP600SmallCap
+SANM,Sanmina Corporation,0000897723,SP600SmallCap
+SBCF,Seacoast Banking Corporation of Florida,0000730708,SP600SmallCap
+SBH,"Sally Beauty Holdings, Inc.",0001368458,SP600SmallCap
+SBSI,"Southside Bancshares, Inc.",0000705432,SP600SmallCap
+SCHL,Scholastic Corporation,0000866729,SP600SmallCap
+SCL,Stepan Company,0000094049,SP600SmallCap
+SCSC,"ScanSource, Inc.",0000918965,SP600SmallCap
+SDGR,"Schrödinger, Inc.",0001490978,SP600SmallCap
+SEDG,SolarEdge,0001419612,SP600SmallCap
+SEM,"Select Medical Holdings, Corp.",0001320414,SP600SmallCap
+SEZL,Sezzle,0001662991,SP600SmallCap
+SFBS,"ServisFirst Bancshares, Inc.",0001430723,SP600SmallCap
+SFNC,Simmons First National Corporation,0000090498,SP600SmallCap
+SHAK,"Shake Shack, Inc.",0001620533,SP600SmallCap
+SHEN,Shenandoah Telecommunications Co,0000354963,SP600SmallCap
+SHO,"Sunstone Hotel Investors, Inc.",0001295810,SP600SmallCap
+SHOO,"Steven Madden, Ltd.",0000913241,SP600SmallCap
+SIG,Signet Jewelers,0000832988,SP600SmallCap
+SKT,"Tanger Factory Outlet Centers, Inc.",0000899715,SP600SmallCap
+SKY,"Champion Homes, Inc.",0000090896,SP600SmallCap
+SKYW,"SkyWest, Inc.",0000793733,SP600SmallCap
+SLG,SL Green Realty,0001040971,SP600SmallCap
+SLVM,Sylvamo Corp.,0001856485,SP600SmallCap
+SM,SM Energy Company,0000893538,SP600SmallCap
+SMP,"Standard Motor Products, Inc.",0000093389,SP600SmallCap
+SMPL,Simply Good Foods Company,0001702744,SP600SmallCap
+SMTC,Semtech Corporation,0000088941,SP600SmallCap
+SNDR,Schneider National,0001692063,SP600SmallCap
+SNEX,StoneX Group Inc.,0000913760,SP600SmallCap
+SONO,"Sonos, Inc.",0001314727,SP600SmallCap
+SPHR,Sphere Entertainment,0001795250,SP600SmallCap
+SPNT,SiriusPoint Ltd.,0001576018,SP600SmallCap
+SPSC,"SPS Commerce, Inc.",0001092699,SP600SmallCap
+SRPT,Sarepta Therapeutics,0000873303,SP600SmallCap
+SSTK,"Shutterstock, Inc.",0001549346,SP600SmallCap
+STAA,STAAR Surgical Company,0000718937,SP600SmallCap
+STBA,"S&T Bancorp, Inc.",0000719220,SP600SmallCap
+STC,Stewart Information Services Corporation,0000094344,SP600SmallCap
+STEL,"Stellar Bancorp, Inc.",0001473844,SP600SmallCap
+STEP,StepStone Group,0001796022,SP600SmallCap
+STRA,"Strategic Education, Inc.",0001013934,SP600SmallCap
+SUPN,"Supernus Pharmaceuticals, Inc.",0001356576,SP600SmallCap
+SXI,Standex International Corporation,0000310354,SP600SmallCap
+SXT,Sensient Technologies,0000310142,SP600SmallCap
+TALO,"Talos Energy, Inc.",0001724965,SP600SmallCap
+TBBK,"The Bancorp, Inc.",0001295401,SP600SmallCap
+TDC,Teradata,0000816761,SP600SmallCap
+TDS,"Telephone and Data Systems, Inc.",0001051512,SP600SmallCap
+TDW,"Tidewater, Inc.",0000098222,SP600SmallCap
+TFIN,"Triumph Bancorp, Inc.",0001539638,SP600SmallCap
+TFX,Teleflex,0000096943,SP600SmallCap
+TGTX,"TG Therapeutics, Inc.",0001001316,SP600SmallCap
+THRM,Gentherm Incorporated,0000903129,SP600SmallCap
+TILE,"Interface, Inc.",0000715787,SP600SmallCap
+TMDX,"TransMedics Group, Inc.",0001756262,SP600SmallCap
+TMP,Tompkins Financial Corporation,0001005817,SP600SmallCap
+TNC,Tennant Company,0000097134,SP600SmallCap
+TNDM,Tandem Diabetes Care,0001438133,SP600SmallCap
+TR,"Tootsie Roll Industries, Inc.",0000098677,SP600SmallCap
+TRIP,TripAdvisor,0001526520,SP600SmallCap
+TRMK,Trustmark Corp.,0000036146,SP600SmallCap
+TRN,"Trinity Industries, Inc.",0000099780,SP600SmallCap
+TRNO,Terreno Realty Corporation,0001476150,SP600SmallCap
+TRST,TrustCo Bank Corp NY,0000357301,SP600SmallCap
+TRUP,Trupanion,0001371285,SP600SmallCap
+TWO,Two Harbors Investment Corp.,0001465740,SP600SmallCap
+UA,Under Armour (Class C),0001336917,SP600SmallCap
+UAA,Under Armour (Class A),0001336917,SP600SmallCap
+UCB,"United Community Banks, Inc.",0000857855,SP600SmallCap
+UCTT,"Ultra Clean Holdings, Inc.",0001275014,SP600SmallCap
+UE,Urban Edge Properties,0001611547,SP600SmallCap
+UFCS,"United Fire Group, Inc.",0000101199,SP600SmallCap
+UFPT,"UFP Technologies, Inc.",0000914156,SP600SmallCap
+UHT,Universal Health Realty Income Trust,0000798783,SP600SmallCap
+UNF,UniFirst Corporation,0000717954,SP600SmallCap
+UNFI,United Natural Foods Inc,0001020859,SP600SmallCap
+UNIT,Uniti Group,0002020795,SP600SmallCap
+UPBD,"Upbound Group, Inc.",0000933036,SP600SmallCap
+UPWK,"Upwork, Inc.",0001627475,SP600SmallCap
+URBN,"Urban Outfitters, Inc.",0000912615,SP600SmallCap
+USPH,"U.S. Physical Therapy, Inc.",0000885978,SP600SmallCap
+UTL,Unitil Corporation,0000755001,SP600SmallCap
+UVV,Universal Corporation,0000102037,SP600SmallCap
+VAC,Marriott Vacations Worldwide,0001524358,SP600SmallCap
+VCEL,Vericel,0000887359,SP600SmallCap
+VCTR,"Victory Capital Holdings, Inc.",0001570827,SP600SmallCap
+VCYT,"Veracyte, Inc.",0001384101,SP600SmallCap
+VECO,Veeco Instruments Inc.,0000103145,SP600SmallCap
+VGNT,Versigent PLC,0002078008,SP600SmallCap
+VIAV,VIAVI Solutions,0000912093,SP600SmallCap
+VIR,"Vir Biotechnology, Inc.",0001706431,SP600SmallCap
+VIRT,"Virtu Financial, Inc.",0001592386,SP600SmallCap
+VITL,"Vital Farms, Inc.",0001579733,SP600SmallCap
+VRE,"Veris Residential, Inc.",0000924901,SP600SmallCap
+VRRM,Verra Mobility Corporation,0001682745,SP600SmallCap
+VRTS,"Virtus Investment Partners, Inc.",0000883237,SP600SmallCap
+VSAT,"Viasat, Inc.",0000797721,SP600SmallCap
+VSXY,Victoria's Secret,0001856437,SP600SmallCap
+VSEC,VSE Corporation,0000102752,SP600SmallCap
+VSH,Vishay Intertechnology,0000103730,SP600SmallCap
+VSNT,"Versant Media Group, Inc.",0002067876,SP600SmallCap
+VSTS,Vestis,0001967649,SP600SmallCap
+VTOL,Bristow Group Inc.,0001525221,SP600SmallCap
+VYX,NCR Voyix,0000070866,SP600SmallCap
+WABC,Westamerica Bank,0000311094,SP600SmallCap
+WAFD,"WaFd, Inc.",0000936528,SP600SmallCap
+WAY,Waystar Holding Corp,0001990354,SP600SmallCap
+WD,"Walker & Dunlop, Inc.",0001497770,SP600SmallCap
+WDFC,WD-40 Company,0000105132,SP600SmallCap
+WEN,The Wendy's Company,0000105668,SP600SmallCap
+WERN,Werner Enterprises,0000793074,SP600SmallCap
+WGO,"Winnebago Industries, Inc.",0000107687,SP600SmallCap
+WHD,"Cactus, Inc.",0001699136,SP600SmallCap
+WINA,Winmark,0000908315,SP600SmallCap
+WKC,World Kinect Corporation,0000789460,SP600SmallCap
+WLY,John Wiley & Sons,0000107140,SP600SmallCap
+WOR,Worthington Enterprises,0000108516,SP600SmallCap
+WRLD,World Acceptance Corporation,0000108385,SP600SmallCap
+WS,Worthington Steel,0001968487,SP600SmallCap
+WSC,WillScot Holdings Corp.,0001647088,SP600SmallCap
+WSFS,WSFS Financial Corporation,0000828944,SP600SmallCap
+WSR,Whitestone REIT,0001175535,SP600SmallCap
+WT,"WisdomTree Investments, Inc.",0000880631,SP600SmallCap
+WU,Western Union,0001365135,SP600SmallCap
+WWW,"Wolverine World Wide, Inc.",0000110471,SP600SmallCap
+XHR,"Xenia Hotels & Resorts, Inc.",0001616000,SP600SmallCap
+XNCR,Xencor Inc,0001326732,SP600SmallCap
+XPEL,"XPEL, Inc.",0001767258,SP600SmallCap
+YELP,"Yelp, Inc.",0001345016,SP600SmallCap
+YOU,"Clear Secure, Inc.",0001856314,SP600SmallCap
+ZD,Ziff Davis,0001084048,SP600SmallCap
+ZWS,Zurn Elkay Water Solutions Corp.,0001439288,SP600SmallCap

@@ -1,27 +1,141 @@
-"""Convert a Wikipedia 'List of S&P 400/600 companies' dump into a constituent CSV.
+"""Convert Wikipedia 'List of S&P 400/600 companies' pages into constituent data.
 
 Wikipedia is *current* membership only (a survivorship-biased proxy for a
-historical panel) and carries no gvkey -- but its tables do give ticker, name,
-and (for the S&P 600) CIK, which the pipeline can resolve to gvkey. This parser
-turns a copy/paste or saved dump of those pages into a clean CSV with columns
-``ticker,company,cik,index_name`` for use with ``--constituents``.
+historical panel) and carries no gvkey -- but its tables give ticker, name, and
+(for the S&P 600) CIK, plus a "past changes" log. This module reads either a
+Safari ``.webarchive``, a saved ``.html``, or a plain-text dump of those pages
+and emits:
 
-Use it on the *downloaded* page text for full fidelity::
+* **constituents** -- ``ticker,company,cik,index_name`` (use with ``--constituents``)
+* **changes**      -- ``date,year,action,ticker,company,index_name,reason`` from
+  the "Selected/Recent changes" tables (added/removed events)
 
-    python -m execucomp_revelio.wiki_parse sp1000_dump.txt -o sp1000_constituents.csv
+Examples::
 
-The parser is delimiter-driven: an S&P 400 record ends at a ``reports`` line; an
-S&P 600 record ends at the ``view`` line followed by a numeric CIK. Header and
-boilerplate lines are ignored. It auto-switches the index label when it sees the
-'List of S&P 600 companies' heading.
+    # current constituents (one or more pages) -> one CSV
+    python -m execucomp_revelio.wiki_parse sp400.webarchive sp600.webarchive \\
+        -o sp1000_constituents.csv
+
+    # the index change log instead
+    python -m execucomp_revelio.wiki_parse --kind changes \\
+        sp400.webarchive sp600.webarchive -o sp1000_changes.csv
+
+Note the change logs do not reach the early years of a 2009-2019 study (the S&P
+400 log starts ~2012, the S&P 600 log ~2019), so they cannot fully reconstruct
+historical membership -- use WRDS ``idxcst_his`` for that.
 """
 
 import argparse
 import csv
+import plistlib
 import re
 import sys
+from html.parser import HTMLParser
 
-# Lines that are never company fields (lower-cased, exact match).
+_REF = re.compile(r"\[\d+\]")          # footnote markers like [2]
+_YEAR = re.compile(r"(19|20)\d{2}")
+
+
+# --- HTML table extraction --------------------------------------------------
+
+class _TableParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.tables, self._t, self._row, self._cell, self._in = [], None, None, None, False
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "table":
+            self._t = []
+            self.tables.append(self._t)
+        elif tag == "tr" and self._t is not None:
+            self._row = []
+            self._t.append(self._row)
+        elif tag in ("td", "th") and self._row is not None:
+            self._cell, self._in = [], True
+        elif tag == "br" and self._in:
+            self._cell.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self._in:
+            text = _REF.sub("", re.sub(r"\s+", " ", "".join(self._cell)).strip())
+            self._row.append(text)
+            self._in, self._cell = False, None
+        elif tag == "table":
+            self._t = None
+
+    def handle_data(self, data):
+        if self._in:
+            self._cell.append(data)
+
+
+def _html_from(path):
+    """Return page HTML from a .webarchive, .html, or text file."""
+    if path.endswith(".webarchive"):
+        with open(path, "rb") as f:
+            pl = plistlib.load(f)
+        return pl["WebMainResource"]["WebResourceData"].decode("utf-8", "replace")
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
+def _tables(html):
+    p = _TableParser()
+    p.feed(html)
+    return p.tables
+
+
+def _index_label(path, html):
+    blob = (path + " " + html[:2000]).lower()
+    return "SP600SmallCap" if "600" in blob else "SP400MidCap"
+
+
+# --- Row extractors ---------------------------------------------------------
+
+def constituents_from_tables(tables, index_name):
+    rows = []
+    for t in tables:
+        if not t or t[0][:2] != ["Symbol", "Security"]:
+            continue
+        has_cik = "CIK" in t[0]
+        for r in t[1:]:
+            if len(r) < 2 or not r[0]:
+                continue
+            cik = r[6] if has_cik and len(r) > 6 else ""
+            rows.append({"ticker": r[0], "company": r[1], "cik": cik,
+                         "index_name": index_name})
+        break
+    return rows
+
+
+def changes_from_tables(tables, index_name):
+    events = []
+    for t in tables:
+        if not t or t[0] != ["Date", "Added", "Removed", "Reason"]:
+            continue
+        for r in t[1:]:
+            if not r or r[0] in ("Ticker", "Date") or not _YEAR.search(r[0]):
+                continue
+            date = r[0]
+            year = int(_YEAR.search(date).group())
+            add_t = r[1] if len(r) > 1 else ""
+            add_s = r[2] if len(r) > 2 else ""
+            rem_t = r[3] if len(r) > 3 else ""
+            rem_s = r[4] if len(r) > 4 else ""
+            reason = r[5] if len(r) > 5 else ""
+            if add_t:
+                events.append({"date": date, "year": year, "action": "added",
+                               "ticker": add_t, "company": add_s,
+                               "index_name": index_name, "reason": reason})
+            if rem_t:
+                events.append({"date": date, "year": year, "action": "removed",
+                               "ticker": rem_t, "company": rem_s,
+                               "index_name": index_name, "reason": reason})
+        break
+    return events
+
+
+# --- Plain-text dump fallback (kept for copy/paste input) -------------------
+
 _IGNORE_EXACT = {
     "article talk", "language watch edit", "watch", "edit", "language",
     "contents", "see also", "references", "related articles", "symbol",
@@ -29,7 +143,6 @@ _IGNORE_EXACT = {
     "sec filings", "cik", "home", "random", "nearby", "log in", "settings",
     "donate now", "about wikipedia", "disclaimers", "install",
 }
-# Prefixes that mark boilerplate / prose lines to skip.
 _IGNORE_PREFIX = (
     "last edited", "list of s&p", "the s&p", "below is", "stocks here",
     "these index", "the companies listed", "recent and announced",
@@ -48,7 +161,7 @@ def _skip(line_lc):
 
 
 def parse_text(text):
-    """Parse dump text into a list of ``{ticker, company, cik, index_name}`` dicts."""
+    """Parse a plain-text paste of the pages into constituent dicts."""
     label = "SP400MidCap"
     fields, rows, pending_cik = [], [], False
 
@@ -64,47 +177,72 @@ def parse_text(text):
         if not line:
             continue
         low = line.lower()
-
         if low.startswith("list of s&p 600"):
-            label = "SP600SmallCap"  # switch when the second table starts
+            label = "SP600SmallCap"
             fields.clear()
             continue
         if pending_cik and _DIGITS.match(line):
             emit(cik=line)
             pending_cik = False
             continue
-        if low == "reports":         # S&P 400 record terminator
+        if low == "reports":
             emit()
             continue
-        if low == "view":            # S&P 600: CIK comes on the next line
+        if low == "view":
             pending_cik = True
             continue
         if _skip(low):
             continue
         fields.append(line)
-
     return rows
+
+
+# --- File-level convenience + CLI ------------------------------------------
+
+def parse_file(path, kind="constituents"):
+    """Parse one page file into constituent or change dicts."""
+    html = _html_from(path)
+    tables = _tables(html)
+    label = _index_label(path, html)
+    if not tables:                      # plain-text dump
+        return parse_text(html) if kind == "constituents" else []
+    if kind == "changes":
+        return changes_from_tables(tables, label)
+    return constituents_from_tables(tables, label)
+
+
+_FIELDS = {
+    "constituents": ["ticker", "company", "cik", "index_name"],
+    "changes": ["date", "year", "action", "ticker", "company", "index_name", "reason"],
+}
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    p.add_argument("input", help="Path to the Wikipedia dump text file.")
-    p.add_argument("-o", "--output", default=None,
-                   help="Output CSV path (default: stdout).")
+    p.add_argument("inputs", nargs="+", help="Page files (.webarchive/.html/.txt).")
+    p.add_argument("--kind", choices=["constituents", "changes"],
+                   default="constituents", help="What to extract (default: constituents).")
+    p.add_argument("-o", "--output", default=None, help="Output CSV (default: stdout).")
     args = p.parse_args(argv)
 
-    with open(args.input, encoding="utf-8") as fh:
-        rows = parse_text(fh.read())
+    rows, seen = [], set()
+    for path in args.inputs:
+        for row in parse_file(path, args.kind):
+            key = tuple(row.get(k) for k in ("ticker", "index_name", "date", "action"))
+            if key in seen:              # de-dupe duplicate uploads
+                continue
+            seen.add(key)
+            rows.append(row)
 
     out = open(args.output, "w", newline="", encoding="utf-8") if args.output else sys.stdout
     try:
-        writer = csv.DictWriter(out, fieldnames=["ticker", "company", "cik", "index_name"])
-        writer.writeheader()
-        writer.writerows(rows)
+        w = csv.DictWriter(out, fieldnames=_FIELDS[args.kind])
+        w.writeheader()
+        w.writerows(rows)
     finally:
         if args.output:
             out.close()
-    sys.stderr.write(f"Parsed {len(rows)} constituents\n")
+    sys.stderr.write(f"Wrote {len(rows)} {args.kind} rows\n")
 
 
 if __name__ == "__main__":

@@ -70,15 +70,34 @@ python -m execucomp_revelio --constituents sp1000_constituents.csv --export-dir 
 
 ### Wikipedia → constituent CSV
 
-To turn a saved/downloaded Wikipedia dump of those pages into a clean list
-(`ticker,company,cik,index_name`) with no transcription error:
+`wiki_parse` turns saved Wikipedia pages (Safari `.webarchive`, saved `.html`,
+or a plain-text paste) of "List of S&P 400/600 companies" into clean CSVs, with
+no transcription error:
 
 ```bash
-python -m execucomp_revelio.wiki_parse sp1000_dump.txt -o sp1000_constituents.csv
+# current constituents (ticker,company,cik,index_name)
+python -m execucomp_revelio.wiki_parse sp400.webarchive sp600.webarchive \
+    -o sp1000_constituents.csv
+
+# the index change log (date,year,action,ticker,company,index_name,reason)
+python -m execucomp_revelio.wiki_parse --kind changes \
+    sp400.webarchive sp600.webarchive -o sp1000_changes.csv
 ```
 
 It handles both the S&P 400 (ticker + name) and S&P 600 (ticker + name + CIK)
-table formats and labels each row’s index.
+formats and de-duplicates repeated uploads.
+
+A snapshot is bundled in `data/`:
+
+| file | rows | notes |
+| ---- | ---- | ----- |
+| `data/sp1000_constituents_current.csv` | 1,003 | 400 MidCap + 603 SmallCap (all 603 with CIK) — **current** membership |
+| `data/sp1000_index_changes.csv` | ~1,959 | add/remove events, **2012→2026** |
+
+> ⚠️ **The change log does not cover the early study years.** The S&P 400 log
+> starts ~2012 and the S&P 600 log ~2019, so it cannot reconstruct 2009–2011
+> (400) or 2009–2018 (600) membership. Use it only to walk *recent* membership
+> backward; rely on WRDS `idxcst_his` for the full 2009–2019 history.
 
 ## CSV export
 

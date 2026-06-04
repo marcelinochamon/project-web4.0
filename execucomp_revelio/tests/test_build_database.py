@@ -255,6 +255,32 @@ class WikiParseTest(unittest.TestCase):
         self.assertEqual(by_ticker["AAP"]["index_name"], "SP600SmallCap")
         self.assertEqual(by_ticker["AAP"]["cik"], "0001158449")
 
+    HTML = (
+        "<table><tr><th>Symbol</th><th>Security</th><th>GICS Sector</th>"
+        "<th>GICS Sub-Industry</th><th>Headquarters Location</th>"
+        "<th>SEC filings</th><th>CIK</th></tr>"
+        "<tr><td>AAP</td><td>Advance Auto Parts, Inc.</td><td>Cons Disc</td>"
+        "<td>Auto Retail</td><td>Raleigh, NC</td><td>view</td>"
+        "<td>0001158449</td></tr></table>"
+        "<table><tr><th>Date</th><th>Added</th><th>Removed</th><th>Reason</th></tr>"
+        "<tr><td>Ticker</td><td>Security</td><td>Ticker</td><td>Security</td></tr>"
+        "<tr><td>May 19, 2026</td><td>FG</td><td>F&amp;G</td><td>MCW</td>"
+        "<td>Mister Car Wash</td><td>Acquired.[5]</td></tr></table>"
+    )
+
+    def test_html_tables_constituents_and_changes(self):
+        tables = wiki_parse._tables(self.HTML)
+        cons = wiki_parse.constituents_from_tables(tables, "SP600SmallCap")
+        self.assertEqual(cons, [{"ticker": "AAP",
+                                 "company": "Advance Auto Parts, Inc.",
+                                 "cik": "0001158449",
+                                 "index_name": "SP600SmallCap"}])
+        chg = wiki_parse.changes_from_tables(tables, "SP600SmallCap")
+        actions = {(c["action"], c["ticker"]) for c in chg}
+        self.assertEqual(actions, {("added", "FG"), ("removed", "MCW")})
+        self.assertEqual(chg[0]["year"], 2026)
+        self.assertEqual(chg[0]["reason"], "Acquired.")  # footnote stripped
+
 
 class MobilityLogicTest(unittest.TestCase):
     """Exercise internal-promotion / external-hire / founder paths directly."""
