@@ -218,8 +218,7 @@ def _exec_name_keys(anncomp):
     return sorted(set(keys))
 
 
-# SQL fragment that builds the same 'lastname|firstinitial' key from a Revelio
-# fullname, so it can be matched against the Execucomp keys.
+# SQL that builds the 'lastname|firstinitial' key from a Revelio fullname.
 _REV_NAMEKEY = (
     "lower(reverse(split_part(reverse(trim(u.fullname)), ' ', 1))) || '|' || "
     "lower(left(split_part(trim(u.fullname), ' ', 1), 1))")
@@ -230,33 +229,23 @@ def _seed_users(db, focal_rcids, seed, seniority_min, exec_keys):
 
     seed='name' (default): Revelio people at a focal firm whose lastname+first
     initial matches an Execucomp NEO -- ANY seniority, so no executive is lost
-    to a seniority mislabel. Falls back to 'seniority' if the temp-table join
-    isn't permitted. seed='seniority': senior positions only. seed='all': every
-    employee at the focal firms (complete but very large).
+    to a seniority mislabel. Done with pure-SQL IN-lists (the WRDS connection is
+    read-only, so no temp tables). seed='seniority': senior positions only.
+    seed='all': every employee at the focal firms (complete but very large).
     """
-    import pandas as pd
     if seed == "name":
-        try:
-            pd.DataFrame({"rcid": [int(r) for r in focal_rcids]}).to_sql(
-                "tmp_er_rcid", db.engine, if_exists="replace", index=False)
-            pd.DataFrame({"namekey": exec_keys}).to_sql(
-                "tmp_er_key", db.engine, if_exists="replace", index=False)
-            try:
-                u = db.raw_sql(f"""
+        users = set()
+        for rc in _chunks(focal_rcids):
+            for kc in _chunks(exec_keys):
+                q = db.raw_sql(f"""
                     SELECT DISTINCT p.user_id
                     FROM {TABLES['rev_positions']} p
-                    JOIN tmp_er_rcid r ON r.rcid = p.rcid
                     JOIN {TABLES['rev_individual']} u ON u.user_id = p.user_id
-                    JOIN tmp_er_key k ON k.namekey = {_REV_NAMEKEY}
+                    WHERE p.rcid IN ({_in_list(rc)})
+                      AND ({_REV_NAMEKEY}) IN ({_in_list(kc)})
                 """)
-            finally:
-                for t in ("tmp_er_rcid", "tmp_er_key"):
-                    db.connection.exec_driver_sql(f"DROP TABLE IF EXISTS {t}")
-            return sorted(_clean_ids(u["user_id"]))
-        except Exception as exc:                       # noqa: BLE001
-            print(f"  name-seed temp-table join failed ({exc}); "
-                  f"falling back to seniority>={seniority_min}")
-            seed = "seniority"
+                users.update(_clean_ids(q["user_id"]))
+        return sorted(users)
 
     users = set()
     for chunk in _chunks(focal_rcids):
