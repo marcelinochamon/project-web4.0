@@ -130,3 +130,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# execucomp_revelio build artifact
+execucomp_revelio/execucomp_revelio.db

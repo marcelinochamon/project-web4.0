@@ -1,0 +1,11 @@
+position_id,user_id,rcid,company,position_number,role_raw,role_k150,role_k1500,seniority,salary,startdate,enddate,location
+P0,U1,R901,College Intern Co,1,Analyst,Finance,Junior Analyst,2,80000,1995-06-01,1998-08-01,Boston US
+P2,U1,R900,Prior Co,2,Vice President Sales,Sales,VP Sales,5,420000,2001-05-01,2009-12-31,Boston US
+P1,U1,R100,Acme Midcap Corporation,3,Chief Executive Officer,Executive,CEO,7,1500000,2010-01-01,,New York US
+P4,U2,R902,Old Holdings,1,Controller,Finance,Controller,5,300000,2004-01-01,2010-05-01,Chicago US
+P3,U2,R100,Acme Midcap Corporation,2,Chief Financial Officer,Executive,CFO,7,900000,2010-06-01,,New York US
+P5b,U3,R903,Founders LLC,1,Co-Founder,Executive,Founder,6,200000,2002-01-01,2008-08-01,San Diego US
+P5,U3,R200,Beta Smallcap Inc,2,President and Chief Executive Officer,Executive,CEO,7,1200000,2008-09-01,,San Diego US
+P7,U4,R904,Startup X,1,Founder and CEO,Executive,Founder,6,150000,2005-03-01,2011-01-31,Austin US
+P6,U4,R200,Beta Smallcap Inc,2,Chief Financial Officer,Executive,CFO,7,700000,2011-02-01,,San Diego US
+P8,U6,R100,Acme Midcap Corporation,1,Software Engineer,Engineering,Backend Engineer,3,150000,2012-01-01,,New York US

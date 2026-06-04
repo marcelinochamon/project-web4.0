@@ -1,0 +1,11 @@
+gvkey,year,execid,co_per_rol,exec_fullname,exec_fname,exec_mname,exec_lname,coname,title,ceoann,cfoann,joined_co,leftco,salary,bonus,tdc1,tdc2,age,gender
+010001,2014,E001,1,Robert A. Smith,Robert,A,Smith,ACME MIDCAP CORP,Chairman & CEO,CEO,,2005-04-01,,900,500,5200,5400,58,MALE
+010001,2015,E001,1,Robert A. Smith,Robert,A,Smith,ACME MIDCAP CORP,Chairman & CEO,CEO,,2005-04-01,,950,600,5600,5800,59,MALE
+010001,2014,E002,2,Jane Q. Doe,Jane,Q,Doe,ACME MIDCAP CORP,EVP & CFO,,CFO,2010-06-01,,600,300,2200,2300,49,FEMALE
+010001,2015,E002,2,Jane Q. Doe,Jane,Q,Doe,ACME MIDCAP CORP,EVP & CFO,,CFO,2010-06-01,,620,320,2300,2400,50,FEMALE
+010001,2014,E003,3,Michael Brown,Michael,,Brown,ACME MIDCAP CORP,Chief Operating Officer,,,2012-01-01,,500,250,1800,1850,55,MALE
+010001,2015,E003,3,Michael Brown,Michael,,Brown,ACME MIDCAP CORP,Chief Operating Officer,,,2012-01-01,,520,260,1850,1900,56,MALE
+010002,2014,E004,4,Maria Garcia,Maria,,Garcia,BETA SMALLCAP INC,President & CEO,CEO,,2008-09-01,,800,400,3000,3100,52,FEMALE
+010002,2015,E004,4,Maria Garcia,Maria,,Garcia,BETA SMALLCAP INC,President & CEO,CEO,,2008-09-01,,820,420,3100,3200,53,FEMALE
+010002,2014,E005,5,John Williams,John,,Williams,BETA SMALLCAP INC,Chief Financial Officer,,CFO,2011-02-01,,500,200,1500,1550,47,MALE
+010002,2015,E005,5,John Williams,John,,Williams,BETA SMALLCAP INC,Chief Financial Officer,,CFO,2011-02-01,,520,210,1550,1600,48,MALE
