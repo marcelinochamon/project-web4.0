@@ -73,13 +73,15 @@ def list_schema(db):
             if any(k in t for k in ("funda", "company", "idx", "anncomp",
                                     "individual", "position", "mapping", "user")):
                 print(f"   - {t}")
-    # Index code lookup for the S&P 1000 sub-indexes.
+    # Index code lookup for the S&P 1000 sub-indexes. Filter in pandas rather
+    # than SQL ILIKE: a literal '%' in raw_sql is misread by psycopg2 as a
+    # parameter placeholder under SQLAlchemy 2 ("immutabledict is not a sequence").
     try:
-        idx = db.raw_sql(
-            f"SELECT gvkeyx, conm FROM {TABLES['idx_index']} "
-            "WHERE conm ILIKE '%midcap 400%' OR conm ILIKE '%smallcap 600%' "
-            "OR conm ILIKE '%s&p 1000%'")
-        print("\nIndex gvkeyx candidates:\n", idx.to_string(index=False))
+        allidx = db.raw_sql(f"SELECT gvkeyx, conm FROM {TABLES['idx_index']}")
+        mask = allidx["conm"].str.contains(
+            "midcap 400|smallcap 600|s&p 1000", case=False, na=False)
+        print("\nIndex gvkeyx candidates:\n",
+              allidx[mask].to_string(index=False))
     except Exception as exc:                           # noqa: BLE001
         print("idx_index lookup failed:", exc)
 
