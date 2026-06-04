@@ -30,6 +30,7 @@ CREATE TABLE compustat_funda (
     datadate  TEXT,               -- fiscal period end date (YYYY-MM-DD)
     tic       TEXT,               -- exchange ticker
     cusip     TEXT,               -- 9-character CUSIP
+    cik       TEXT,               -- SEC Central Index Key
     conm      TEXT,               -- company name
     sale      REAL,               -- revenue, USD millions
     at        REAL,               -- total assets, USD millions
@@ -126,6 +127,20 @@ CREATE TABLE revelio_company_mapping (
     naics   TEXT,            -- NAICS industry code
     sic     TEXT,            -- SIC industry code
     PRIMARY KEY (rcid)
+);
+"""
+
+# --- Optional explicit constituent list (alternative to idxcst_his) --------
+
+CONSTITUENTS_TABLE = """
+CREATE TABLE constituents_list (
+    ticker     TEXT,            -- exchange ticker (resolves to gvkey via funda.tic)
+    company    TEXT,            -- company name (for audit)
+    cik        TEXT,            -- SEC CIK (resolves to gvkey via funda.cik; preferred)
+    gvkey      TEXT,            -- gvkey if already known (used directly)
+    index_name TEXT,            -- which index the row belongs to (e.g. SP400MidCap)
+    from_year  INTEGER,         -- first membership year, if known (else all years)
+    thru_year  INTEGER          -- last membership year, if known (else all years)
 );
 """
 
@@ -285,7 +300,7 @@ INDEXES = [
 ALL_TABLES = [
     "executive_year_panel", "firm_year_panel", "exec_mobility",
     "exec_work_history", "exec_revelio_link", "company_crosswalk",
-    "universe_firm_year",
+    "universe_firm_year", "constituents_list",
     "revelio_company_mapping", "revelio_positions", "revelio_individual",
     "execucomp_anncomp", "compustat_index_constituents", "compustat_funda",
 ]
@@ -293,7 +308,7 @@ ALL_TABLES = [
 CREATE_STATEMENTS = [
     COMPUSTAT_FUNDA_TABLE, INDEX_CONSTITUENTS_TABLE, EXECUCOMP_TABLE,
     REVELIO_INDIVIDUAL_TABLE, REVELIO_POSITIONS_TABLE,
-    REVELIO_COMPANY_MAPPING_TABLE,
+    REVELIO_COMPANY_MAPPING_TABLE, CONSTITUENTS_TABLE,
     UNIVERSE_TABLE, CROSSWALK_TABLE, EXEC_LINK_TABLE, WORK_HISTORY_TABLE,
     MOBILITY_TABLE, FIRM_YEAR_PANEL_TABLE, EXECUTIVE_YEAR_PANEL_TABLE,
 ]

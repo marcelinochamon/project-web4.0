@@ -38,6 +38,7 @@ from .workhistory import build_work_history
 from .loaders import (
     load_compustat_funda, load_index_constituents, load_execucomp,
     load_revelio_individual, load_revelio_positions, load_revelio_company_mapping,
+    load_constituents,
 )
 
 LOG = logging.getLogger("execucomp_revelio")
@@ -68,9 +69,9 @@ def create_schema(conn):
 
 _INSERTS = {
     "compustat_funda":
-        "INSERT INTO compustat_funda (gvkey, fyear, datadate, tic, cusip, conm, "
-        "sale, at, ni, ceq, dltt, capx, xrd, emp, naics, sic, sich) "
-        "VALUES (" + ",".join("?" * 17) + ");",
+        "INSERT INTO compustat_funda (gvkey, fyear, datadate, tic, cusip, cik, "
+        "conm, sale, at, ni, ceq, dltt, capx, xrd, emp, naics, sic, sich) "
+        "VALUES (" + ",".join("?" * 18) + ");",
     "compustat_index_constituents":
         "INSERT INTO compustat_index_constituents (gvkey, gvkeyx, conm, "
         "indexname, from_date, thru_date) VALUES (" + ",".join("?" * 6) + ");",
@@ -89,6 +90,9 @@ _INSERTS = {
     "revelio_company_mapping":
         "INSERT INTO revelio_company_mapping (rcid, company, ticker, cusip, "
         "isin, gvkey, lei, naics, sic) VALUES (" + ",".join("?" * 9) + ");",
+    "constituents_list":
+        "INSERT INTO constituents_list (ticker, company, cik, gvkey, "
+        "index_name, from_year, thru_year) VALUES (" + ",".join("?" * 7) + ");",
 }
 
 
@@ -114,26 +118,39 @@ def build_database(paths, output_path, min_tier=config.DEFAULT_MIN_TIER,
                    index_gvkeyx=config.SP1000_INDEX_GVKEYX,
                    min_fyear=config.MIN_FYEAR, max_fyear=config.MAX_FYEAR,
                    excluded_sic_ranges=config.EXCLUDED_SIC_RANGES,
-                   export_dir=None):
+                   export_dir=None, constituents_path=None):
     """Run the full pipeline; return a summary dict of stage counts.
 
-    If ``export_dir`` is given, the deliverable tables are also written out as
-    CSV files there (in addition to the SQLite database).
+    The universe is built from ``compustat_index_constituents`` (idxcst_his) by
+    default, or -- if ``constituents_path`` is given -- from an explicit
+    constituent list resolved to gvkey via CIK/ticker (the ``--constituents``
+    path). If ``export_dir`` is given, the deliverable tables are also written
+    out as CSV files there (in addition to the SQLite database).
     """
     if os.path.exists(output_path):
         os.remove(output_path)
 
     conn = sqlite3.connect(output_path)
     exported = None
+    universe_stats = None
     try:
         create_schema(conn)
         loaded = load_sources(conn, paths)
         LOG.info("Loaded sources: %s", loaded)
 
-        uni = universe.build_universe(
-            conn, index_gvkeyx, min_fyear, max_fyear, excluded_sic_ranges)
-        LOG.info("Universe: %d firm-years (S&P 1000, FY %d-%d, ex SIC)",
-                 len(uni), min_fyear, max_fyear)
+        if constituents_path:
+            crows = load_constituents(constituents_path)
+            conn.executemany(_INSERTS["constituents_list"], crows)
+            conn.commit()
+            uni, universe_stats = universe.build_universe_from_list(
+                conn, min_fyear, max_fyear, excluded_sic_ranges)
+            LOG.info("Universe from list: %d firm-years (FY %d-%d, ex SIC); "
+                     "resolution %s", len(uni), min_fyear, max_fyear, universe_stats)
+        else:
+            uni = universe.build_universe(
+                conn, index_gvkeyx, min_fyear, max_fyear, excluded_sic_ranges)
+            LOG.info("Universe: %d firm-years (S&P 1000, FY %d-%d, ex SIC)",
+                     len(uni), min_fyear, max_fyear)
 
         links = crosswalk.build_crosswalk(conn)
         LOG.info("Company crosswalk: %d gvkey<->rcid links", len(links))
@@ -172,6 +189,7 @@ def build_database(paths, output_path, min_tier=config.DEFAULT_MIN_TIER,
     return {
         "loaded": loaded,
         "universe_rows": len(uni),
+        "universe_stats": universe_stats,
         "crosswalk_links": len(links),
         "match": match_summary,
         "work_history_execs": n_wh_execs,
@@ -215,6 +233,11 @@ def _parse_args(argv=None):
     p.add_argument("--export-dir", default=None,
                    help="If set, also write the panels, work history and match "
                         "table as CSV files into this directory.")
+    p.add_argument("--constituents", default=None,
+                   help="Optional constituent-list CSV (columns: ticker/cik/"
+                        "gvkey [+ company, index_name, from_year, thru_year]). "
+                        "If given, the universe is built from this list "
+                        "(resolved to gvkey) instead of from idxcst_his.")
     return p.parse_args(argv)
 
 
@@ -230,7 +253,7 @@ def main(argv=None):
         paths, args.output, min_tier=args.min_tier,
         index_gvkeyx=tuple(args.index_gvkeyx),
         min_fyear=args.min_fyear, max_fyear=args.max_fyear,
-        export_dir=args.export_dir,
+        export_dir=args.export_dir, constituents_path=args.constituents,
     )
     print(
         "Built {output}\n"

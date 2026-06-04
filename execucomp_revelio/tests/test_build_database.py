@@ -8,8 +8,8 @@ import sqlite3
 import tempfile
 import unittest
 
-from execucomp_revelio import build_database, mobility, schema
-from execucomp_revelio.build_database import DEFAULTS, create_schema
+from execucomp_revelio import build_database, mobility, schema, wiki_parse
+from execucomp_revelio.build_database import DEFAULTS, SAMPLE_DIR, create_schema
 from execucomp_revelio.names import canonical, name_score
 
 
@@ -196,6 +196,64 @@ class PipelineTest(unittest.TestCase):
         finally:
             import shutil
             shutil.rmtree(tmpdir)
+
+
+class ConstituentListModeTest(unittest.TestCase):
+    """Universe built from an explicit constituent list (CIK/ticker -> gvkey)."""
+
+    def test_list_mode_resolves_and_filters(self):
+        tmp = tempfile.NamedTemporaryFile(suffix=".db", delete=False)
+        tmp.close()
+        constituents = os.path.join(SAMPLE_DIR, "sp1000_constituents_sample.csv")
+        try:
+            s = build_database(dict(DEFAULTS), tmp.name,
+                               constituents_path=constituents)
+            conn = sqlite3.connect(tmp.name)
+            try:
+                rows = {(g, y) for g, y in
+                        conn.execute("SELECT gvkey, year FROM universe_firm_year")}
+            finally:
+                conn.close()
+            # ACME (ticker) + BETA (cik) resolve and survive; Gamma (financial)
+            # and Delta (utility) are SIC-excluded; ZZZZ is unresolved.
+            self.assertEqual(rows, {("010001", 2014), ("010001", 2015),
+                                    ("010002", 2014), ("010002", 2015)})
+            st = s["universe_stats"]
+            self.assertEqual(st["by_ticker"], 2)   # ACME, DPWR
+            self.assertEqual(st["by_cik"], 1)      # BETA
+            self.assertEqual(st["by_gvkey"], 1)    # Gamma
+            self.assertEqual(st["unresolved"], 1)  # ZZZZ
+            # Downstream still runs: same 4 executives match as in idxcst mode.
+            self.assertEqual(s["match"]["execs_matched"], 4)
+        finally:
+            os.remove(tmp.name)
+
+
+class WikiParseTest(unittest.TestCase):
+    """The Wikipedia dump parser handles both the 400 and 600 table formats."""
+
+    DUMP = "\n".join([
+        "List of S&P 400 companies", "Symbol", "Security", "GICS Sector",
+        "GICS Sub-Industry", "Headquarters Location", "SEC filings",
+        "AA", "Alcoa", "Materials", "Aluminum", "Pittsburgh, Pennsylvania", "reports",
+        "AAL", "American Airlines Group", "Industrials", "Passenger Airlines",
+        "Fort Worth, Texas", "reports",
+        "List of S&P 600 companies", "A B C D E F G",
+        "Symbol", "Security", "GICS Sector", "GICS Sub-Industry",
+        "Headquarters Location", "SEC filings", "CIK",
+        "AAP", "Advance Auto Parts, Inc.", "Consumer Discretionary",
+        "Automotive Retail", "Raleigh, North Carolina", "view", "0001158449",
+    ])
+
+    def test_parses_both_formats(self):
+        rows = wiki_parse.parse_text(self.DUMP)
+        by_ticker = {r["ticker"]: r for r in rows}
+        self.assertEqual(set(by_ticker), {"AA", "AAL", "AAP"})
+        self.assertEqual(by_ticker["AA"]["company"], "Alcoa")
+        self.assertEqual(by_ticker["AA"]["index_name"], "SP400MidCap")
+        self.assertEqual(by_ticker["AA"]["cik"], "")
+        self.assertEqual(by_ticker["AAP"]["index_name"], "SP600SmallCap")
+        self.assertEqual(by_ticker["AAP"]["cik"], "0001158449")
 
 
 class MobilityLogicTest(unittest.TestCase):

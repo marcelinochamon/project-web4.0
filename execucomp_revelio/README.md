@@ -47,6 +47,39 @@ python -m execucomp_revelio \
     --export-dir       ./out          # optional: also write CSVs
 ```
 
+## Defining the universe (two modes)
+
+**Default — `idxcst_his` (recommended).** Pass the historical constituent table
+via `--index`; membership is derived per firm-year from the from/thru dates.
+This is historically accurate for 2009–2019 and already keyed by `gvkey`.
+
+**Alternative — explicit constituent list (`--constituents`).** Supply a CSV
+keyed on `ticker`, `cik`, and/or `gvkey`; the pipeline resolves each to a
+`gvkey` against Compustat `funda` (preferring `gvkey` → `cik` → `ticker`) and
+prints a resolution summary (`by_gvkey/by_cik/by_ticker/unresolved/ambiguous`).
+Optional `from_year`/`thru_year` columns scope membership by year.
+
+```bash
+python -m execucomp_revelio --constituents sp1000_constituents.csv --export-dir ./out
+```
+
+> ⚠️ **Survivorship bias.** A *current* constituent list (e.g. Wikipedia’s
+> "List of S&P 400/600 companies") omits firms that left the index before today
+> and includes recent additions, so applying it across 2009–2019 biases the
+> sample. Use it for prototyping; use `idxcst_his` for the final panel.
+
+### Wikipedia → constituent CSV
+
+To turn a saved/downloaded Wikipedia dump of those pages into a clean list
+(`ticker,company,cik,index_name`) with no transcription error:
+
+```bash
+python -m execucomp_revelio.wiki_parse sp1000_dump.txt -o sp1000_constituents.csv
+```
+
+It handles both the S&P 400 (ticker + name) and S&P 600 (ticker + name + CIK)
+table formats and labels each row’s index.
+
 ## CSV export
 
 The pipeline always writes the SQLite database. Pass `--export-dir DIR` to
@@ -117,8 +150,9 @@ Dates are `YYYY-MM-DD` (only the year is used for windows). See
 
 | file (flag) | grain | key columns |
 | ----------- | ----- | ----------- |
-| `--funda` | gvkey × fyear | `gvkey, fyear, datadate, tic, cusip, conm, sale, at, ni, ceq, dltt, capx, xrd, emp, naics, sic, sich` |
+| `--funda` | gvkey × fyear | `gvkey, fyear, datadate, tic, cusip, cik, conm, sale, at, ni, ceq, dltt, capx, xrd, emp, naics, sic, sich` |
 | `--index` | membership spell | `gvkey, gvkeyx, conm, indexname, from_date, thru_date` |
+| `--constituents` | constituent | `ticker, cik, gvkey` (any one required) `+ company, index_name, from_year, thru_year` |
 | `--execucomp` | exec × year | `gvkey, year, execid, exec_fullname, exec_fname, exec_mname, exec_lname, coname, title, ceoann, cfoann, joined_co, leftco, salary, bonus, tdc1, tdc2, age, gender` |
 | `--individual` | user | `user_id, fullname, firstname, lastname, gender, ethnicity` |
 | `--positions` | position | `position_id, user_id, rcid, company, position_number, role_raw, role_k150, role_k1500, seniority, salary, startdate, enddate, location` |
@@ -221,7 +255,8 @@ execucomp_revelio/
 ├── schema.py            # SQL DDL for all tables
 ├── loaders.py           # CSV readers with type coercion (expected headers)
 ├── names.py             # name normalization + similarity score
-├── universe.py          # S&P 1000 / window / SIC filter
+├── universe.py          # S&P 1000 / window / SIC filter (idxcst or list mode)
+├── wiki_parse.py        # Wikipedia S&P 400/600 dump -> constituent CSV
 ├── crosswalk.py         # gvkey <-> rcid (Revelio gvkey + ticker/cusip fallback)
 ├── matching.py          # executive <-> Revelio person matcher (scored/tiered)
 ├── workhistory.py       # complete work history of matched executives

@@ -38,6 +38,7 @@ COMPUSTAT_FUNDA_COLUMNS = {
     "datadate": _to_text,
     "tic": _to_text,
     "cusip": _to_text,
+    "cik": _to_text,
     "conm": _to_text,
     "sale": _to_float,
     "at": _to_float,
@@ -145,6 +146,34 @@ def load_rows(path, columns):
 
 def load_compustat_funda(path):
     return load_rows(path, COMPUSTAT_FUNDA_COLUMNS)
+
+
+# Constituent-list columns are all optional (a row needs at least one of
+# ticker / cik / gvkey to be resolvable), so this loader tolerates any subset.
+CONSTITUENTS_COLUMNS = {
+    "ticker": _to_text,
+    "company": _to_text,
+    "cik": _to_text,
+    "gvkey": _to_text,
+    "index_name": _to_text,
+    "from_year": _to_int,
+    "thru_year": _to_int,
+}
+
+
+def load_constituents(path):
+    """Read a constituent-list CSV; missing optional columns become NULL."""
+    rows = []
+    with open(path, newline="", encoding="utf-8-sig") as fh:
+        reader = csv.DictReader(fh)
+        fields = set(reader.fieldnames or [])
+        if not ({"ticker", "cik", "gvkey"} & fields):
+            raise ValueError(
+                f"{path} must contain at least one of: ticker, cik, gvkey")
+        for record in reader:
+            rows.append(tuple(
+                coerce(record.get(name)) for name, coerce in CONSTITUENTS_COLUMNS.items()))
+    return rows
 
 
 def load_index_constituents(path):

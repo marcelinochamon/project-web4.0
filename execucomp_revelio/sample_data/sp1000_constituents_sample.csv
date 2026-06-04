@@ -1,0 +1,6 @@
+ticker,company,cik,gvkey,index_name,from_year,thru_year
+ACME,Acme Midcap Corp,,,SP400MidCap,,
+BETA,,0000100002,,SP600SmallCap,,
+,Gamma Bank,,010003,SP400MidCap,,
+DPWR,Delta Power,,,SP600SmallCap,,
+ZZZZ,Nonexistent Co,,,SP600SmallCap,,
