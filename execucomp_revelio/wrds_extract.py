@@ -317,8 +317,13 @@ def attach_job_category(db, positions):
         print(f"  role lookup unavailable ({exc}); job_category left null")
         positions["job_category"] = None
         return positions
-    key_col = next((c for c in cols if "k1500" in c), None)
-    cat_col = (next((c for c in cols if "k7" in c and ("label" in c or "name" in c)), None)
+    # Confirmed schema: key=role_k1500_v2, category=job_category_v2. Fall back to
+    # fuzzy detection for other vintages.
+    key_col = ("role_k1500_v2" if "role_k1500_v2" in cols
+               else next((c for c in cols if "k1500" in c), None))
+    cat_col = ("job_category_v2" if "job_category_v2" in cols
+               else "job_category" if "job_category" in cols
+               else next((c for c in cols if "k7" in c and ("label" in c or "name" in c)), None)
                or next((c for c in cols if "k7" in c), None)
                or next((c for c in cols if "category" in c.lower()), None))
     if not key_col or not cat_col:
