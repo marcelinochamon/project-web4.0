@@ -151,6 +151,27 @@ class PipelineTest(unittest.TestCase):
         self.assertEqual(s2["firm_year_rows"], self.summary["firm_year_rows"])
         self.assertEqual(s2["work_history_rows"], self.summary["work_history_rows"])
 
+    # --- CSV export ---------------------------------------------------------
+
+    def test_csv_export_writes_panels(self):
+        tmpdir = tempfile.mkdtemp()
+        db = os.path.join(tmpdir, "out.db")
+        try:
+            s = build_database(dict(DEFAULTS), db, export_dir=tmpdir)
+            for name in ("firm_year_panel", "executive_year_panel",
+                         "exec_work_history", "exec_revelio_link"):
+                path = os.path.join(tmpdir, f"{name}.csv")
+                self.assertTrue(os.path.exists(path), name)
+            # The firm-year CSV has a header + one row per firm-year.
+            with open(os.path.join(tmpdir, "firm_year_panel.csv"),
+                      encoding="utf-8") as fh:
+                lines = fh.read().splitlines()
+            self.assertEqual(lines[0].split(",")[:3], ["gvkey", "rcid", "year"])
+            self.assertEqual(len(lines) - 1, s["firm_year_rows"])
+        finally:
+            import shutil
+            shutil.rmtree(tmpdir)
+
 
 class NameScoreTest(unittest.TestCase):
     def test_exact_match(self):

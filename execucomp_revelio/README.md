@@ -43,8 +43,26 @@ python -m execucomp_revelio \
     --company-mapping  path/to/revelio_company_mapping.csv \
     --output           execucomp_revelio.db \
     --min-tier medium \
-    --index-gvkeyx 000400 000600
+    --index-gvkeyx 000400 000600 \
+    --export-dir       ./out          # optional: also write CSVs
 ```
+
+## CSV export
+
+The pipeline always writes the SQLite database. Pass `--export-dir DIR` to
+*also* drop flat CSV files (openable in Excel / Stata / R / pandas) for the
+deliverable tables:
+
+```
+out/firm_year_panel.csv
+out/executive_year_panel.csv
+out/exec_work_history.csv
+out/exec_revelio_link.csv      # the scored match / review table
+```
+
+`NULL` values render as empty cells. This uses the standard-library `csv`
+module — no extra dependency. (Parquet is intentionally not included, as it
+would require `pyarrow`; ask if you want it.)
 
 ## How the link works (and why)
 
@@ -168,6 +186,7 @@ execucomp_revelio/
 ├── matching.py          # executive <-> Revelio person matcher (scored/tiered)
 ├── workhistory.py       # complete work history of matched executives
 ├── panels.py            # firm-year + executive-year panels
+├── export.py            # optional CSV export of the deliverable tables
 ├── sample_data/         # runnable example inputs (6 CSVs)
 └── tests/               # unittest suite
 ```

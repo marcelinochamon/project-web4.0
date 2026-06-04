@@ -33,6 +33,7 @@ import os
 import sqlite3
 
 from . import config, schema, crosswalk, matching, panels, universe
+from .export import export_tables
 from .workhistory import build_work_history
 from .loaders import (
     load_compustat_funda, load_index_constituents, load_execucomp,
@@ -112,12 +113,18 @@ def load_sources(conn, paths):
 def build_database(paths, output_path, min_tier=config.DEFAULT_MIN_TIER,
                    index_gvkeyx=config.SP1000_INDEX_GVKEYX,
                    min_fyear=config.MIN_FYEAR, max_fyear=config.MAX_FYEAR,
-                   excluded_sic_ranges=config.EXCLUDED_SIC_RANGES):
-    """Run the full pipeline; return a summary dict of stage counts."""
+                   excluded_sic_ranges=config.EXCLUDED_SIC_RANGES,
+                   export_dir=None):
+    """Run the full pipeline; return a summary dict of stage counts.
+
+    If ``export_dir`` is given, the deliverable tables are also written out as
+    CSV files there (in addition to the SQLite database).
+    """
     if os.path.exists(output_path):
         os.remove(output_path)
 
     conn = sqlite3.connect(output_path)
+    exported = None
     try:
         create_schema(conn)
         loaded = load_sources(conn, paths)
@@ -143,6 +150,10 @@ def build_database(paths, output_path, min_tier=config.DEFAULT_MIN_TIER,
         n_exec_year, n_firm_year = panels.build_panels(conn)
         LOG.info("Panels: %d executive-years, %d firm-years",
                  n_exec_year, n_firm_year)
+
+        if export_dir:
+            exported = export_tables(conn, export_dir)
+            LOG.info("Exported %d CSV files to %s", len(exported), export_dir)
     finally:
         conn.close()
 
@@ -156,6 +167,7 @@ def build_database(paths, output_path, min_tier=config.DEFAULT_MIN_TIER,
         "executive_year_rows": n_exec_year,
         "firm_year_rows": n_firm_year,
         "output": output_path,
+        "exported": exported,
     }
 
 
@@ -186,6 +198,9 @@ def _parse_args(argv=None):
                         "(MidCap 400 + SmallCap 600).")
     p.add_argument("--min-fyear", type=int, default=config.MIN_FYEAR)
     p.add_argument("--max-fyear", type=int, default=config.MAX_FYEAR)
+    p.add_argument("--export-dir", default=None,
+                   help="If set, also write the panels, work history and match "
+                        "table as CSV files into this directory.")
     return p.parse_args(argv)
 
 
@@ -201,6 +216,7 @@ def main(argv=None):
         paths, args.output, min_tier=args.min_tier,
         index_gvkeyx=tuple(args.index_gvkeyx),
         min_fyear=args.min_fyear, max_fyear=args.max_fyear,
+        export_dir=args.export_dir,
     )
     print(
         "Built {output}\n"
@@ -215,6 +231,10 @@ def main(argv=None):
         "  Firm-year panel       : {firm_year_rows} rows"
         .format(**s)
     )
+    if s["exported"]:
+        print("  CSV exports:")
+        for table, (path, count) in s["exported"].items():
+            print(f"    {path} ({count} rows)")
 
 
 if __name__ == "__main__":
