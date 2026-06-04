@@ -1,36 +1,35 @@
 """Extract the six pipeline inputs directly from WRDS.
 
-This runs on **your** WRDS access (it needs your credentials + Duo 2FA and
-network access to WRDS, neither of which exist in a sandbox). It uses the
-official ``wrds`` Python package and writes CSVs whose headers match exactly
-what ``execucomp_revelio`` expects, so the flow is simply::
+Runs on **your** WRDS access (it needs your credentials + network, neither of
+which exist in a sandbox). Uses the official ``wrds`` package and writes CSVs
+whose headers match exactly what ``execucomp_revelio`` expects::
 
-    pip install wrds
+    pip install wrds pandas
     python -m execucomp_revelio.wrds_extract --username YOUR_WRDS_ID --outdir ./wrds_csv
     python -m execucomp_revelio \
-        --funda           ./wrds_csv/compustat_funda.csv \
-        --index           ./wrds_csv/compustat_idxcst_his.csv \
-        --execucomp       ./wrds_csv/execucomp_anncomp.csv \
-        --individual      ./wrds_csv/revelio_individual.csv \
-        --positions       ./wrds_csv/revelio_positions.csv \
+        --funda ./wrds_csv/compustat_funda.csv --index ./wrds_csv/compustat_idxcst_his.csv \
+        --execucomp ./wrds_csv/execucomp_anncomp.csv \
+        --individual ./wrds_csv/revelio_individual.csv \
+        --positions ./wrds_csv/revelio_positions.csv \
         --company-mapping ./wrds_csv/revelio_company_mapping.csv \
-        --export-dir      ./out
+        --export-dir ./out
 
-Run ``--list`` FIRST to confirm the library/table/column names in your WRDS
-vintage (schemas drift over time); adjust the TABLES/COLUMNS config below if
-``--list`` shows different names. Everything here is plain SQL via
-``db.raw_sql`` so you can also paste the queries into the WRDS web query tool
-and download each result as CSV.
+Table/column names below are pinned to the WRDS schema confirmed via ``--list``
+(comp / comp_execucomp / revelio). The Revelio individual data only carries
+``fullname`` (first/last are derived) and gender/ethnicity as predicted
+columns; positions carry a role *taxonomy* (``role_k1500_v2``) rather than free
+text. Because we only need the executives, the Revelio pull is restricted to
+senior positions at the focal firms, then those people's *entire* histories.
+
+Run ``--list`` first if you want to re-confirm names; all queries are plain
+``db.raw_sql`` (avoiding literal ``%``, which psycopg2 misreads as a bind
+parameter under SQLAlchemy 2).
 """
 
 import argparse
 import os
 import sys
 
-# --- WRDS schema configuration (confirm with --list, then edit if needed) ---
-#
-# Library/table names as they appear in WRDS PostgreSQL. These match the common
-# 2023+ layout; older accounts may differ (e.g. execucomp as ``execcomp``).
 TABLES = {
     "funda": "comp.funda",
     "company": "comp.company",
@@ -42,10 +41,28 @@ TABLES = {
     "rev_company": "revelio.company_mapping",
 }
 
-# Compustat gvkeyx codes for the two S&P 1000 sub-indexes. Confirm via --list
-# (prints idx_index rows matching 'midcap 400' / 'smallcap 600').
-DEFAULT_MIDCAP_GVKEYX = "000400"
-DEFAULT_SMALLCAP_GVKEYX = "000600"
+# Confirmed gvkeyx codes (comp.idx_index): S&P MidCap 400 / SmallCap 600.
+DEFAULT_MIDCAP_GVKEYX = "024248"
+DEFAULT_SMALLCAP_GVKEYX = "030824"
+
+# Output column order per file (must match execucomp_revelio.loaders).
+COLS = {
+    "funda": ["gvkey", "fyear", "datadate", "tic", "cusip", "cik", "conm",
+              "sale", "at", "ni", "ceq", "dltt", "capx", "xrd", "emp",
+              "naics", "sic", "sich"],
+    "idx": ["gvkey", "gvkeyx", "conm", "indexname", "from_date", "thru_date"],
+    "anncomp": ["gvkey", "year", "execid", "co_per_rol", "exec_fullname",
+                "exec_fname", "exec_mname", "exec_lname", "coname", "title",
+                "ceoann", "cfoann", "joined_co", "leftco", "salary", "bonus",
+                "tdc1", "tdc2", "age", "gender"],
+    "individual": ["user_id", "fullname", "firstname", "lastname", "gender",
+                   "ethnicity"],
+    "positions": ["position_id", "user_id", "rcid", "company", "position_number",
+                  "role_raw", "role_k150", "role_k1500", "seniority", "salary",
+                  "startdate", "enddate", "location"],
+    "mapping": ["rcid", "company", "ticker", "cusip", "isin", "gvkey", "lei",
+                "naics", "sic"],
+}
 
 
 def _chunks(seq, n=900):
@@ -54,14 +71,48 @@ def _chunks(seq, n=900):
 
 
 def _in_list(values):
-    """SQL-safe quoted IN-list from string values."""
     return ",".join("'" + str(v).replace("'", "''") + "'" for v in values)
+
+
+def _norm_gvkey(series):
+    """Compustat-style 6-char zero-padded gvkey (so Revelio joins line up)."""
+    s = series.astype(str).str.strip().str.replace(r"\.0$", "", regex=True)
+    return s.where(s.isin(["", "nan", "None"]), s.str.zfill(6))
+
+
+def _id_col(series):
+    """Integer-like id column as plain strings (NaN -> <NA>)."""
+    import pandas as pd
+    return pd.to_numeric(series, errors="coerce").astype("Int64").astype(str)
+
+
+def _clean_ids(series):
+    """Clean integer-like ids (rcid/user_id) to plain string form, NaN dropped."""
+    import pandas as pd
+    return (pd.to_numeric(series, errors="coerce").dropna()
+            .astype("int64").astype(str))
+
+
+def _concat(frames):
+    import pandas as pd
+    frames = [f for f in frames if f is not None and len(f)]
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+
+
+def _write(df, key, outdir, name):
+    import pandas as pd
+    cols = COLS[key]
+    for c in cols:
+        if c not in df.columns:
+            df[c] = None
+    path = os.path.join(outdir, name)
+    df[cols].to_csv(path, index=False)
+    return path, len(df)
 
 
 # --- Discovery -------------------------------------------------------------
 
 def list_schema(db):
-    """Print candidate libraries/tables/columns so names can be confirmed."""
     for lib in ("comp", "comp_execucomp", "execcomp", "revelio"):
         try:
             tables = db.list_tables(library=lib)
@@ -73,23 +124,18 @@ def list_schema(db):
             if any(k in t for k in ("funda", "company", "idx", "anncomp",
                                     "individual", "position", "mapping", "user")):
                 print(f"   - {t}")
-    # Index code lookup for the S&P 1000 sub-indexes. Filter in pandas rather
-    # than SQL ILIKE: a literal '%' in raw_sql is misread by psycopg2 as a
-    # parameter placeholder under SQLAlchemy 2 ("immutabledict is not a sequence").
     try:
         allidx = db.raw_sql(f"SELECT gvkeyx, conm FROM {TABLES['idx_index']}")
         mask = allidx["conm"].str.contains(
             "midcap 400|smallcap 600|s&p 1000", case=False, na=False)
-        print("\nIndex gvkeyx candidates:\n",
-              allidx[mask].to_string(index=False))
+        print("\nIndex gvkeyx candidates:\n", allidx[mask].to_string(index=False))
     except Exception as exc:                           # noqa: BLE001
         print("idx_index lookup failed:", exc)
 
 
 # --- Extraction steps ------------------------------------------------------
 
-def universe_gvkeys(db, midcap, smallcap, min_year, max_year):
-    """Return (idxcst_df, sorted gvkey list) for S&P 1000 in the window."""
+def universe(db, midcap, smallcap, min_year, max_year):
     sql = f"""
         SELECT gvkey, gvkeyx, "from" AS from_date, thru AS thru_date
         FROM {TABLES['idxcst_his']}
@@ -98,35 +144,36 @@ def universe_gvkeys(db, midcap, smallcap, min_year, max_year):
           AND (thru   IS NULL OR EXTRACT(YEAR FROM thru)   >= {min_year})
     """
     df = db.raw_sql(sql)
+    df["gvkey"] = _norm_gvkey(df["gvkey"])
     df["indexname"] = df["gvkeyx"].map(
         {midcap: "S&P MidCap 400", smallcap: "S&P SmallCap 600"})
     df["conm"] = None
-    df = df[["gvkey", "gvkeyx", "conm", "indexname", "from_date", "thru_date"]]
-    return df, sorted(df["gvkey"].astype(str).unique())
+    return df, sorted(df["gvkey"].unique())
 
 
 def extract_funda(db, gvkeys, min_year, max_year):
     frames = []
     for chunk in _chunks(gvkeys):
-        sql = f"""
+        frames.append(db.raw_sql(f"""
             SELECT f.gvkey, f.fyear, f.datadate, f.tic, f.cusip, c.cik, f.conm,
                    f.sale, f.at, f.ni, f.ceq, f.dltt, f.capx, f.xrd, f.emp,
-                   COALESCE(f.naicsh::text, c.naics) AS naics, c.sic, f.sich
+                   c.naics, c.sic, f.sich
             FROM {TABLES['funda']} f
             LEFT JOIN {TABLES['company']} c ON c.gvkey = f.gvkey
             WHERE f.indfmt='INDL' AND f.datafmt='STD' AND f.popsrc='D'
-              AND f.consol='C'
-              AND f.fyear BETWEEN {min_year} AND {max_year}
+              AND f.consol='C' AND f.fyear BETWEEN {min_year} AND {max_year}
               AND f.gvkey IN ({_in_list(chunk)})
-        """
-        frames.append(db.raw_sql(sql))
-    return _concat(frames)
+        """))
+    df = _concat(frames)
+    if len(df):
+        df["gvkey"] = _norm_gvkey(df["gvkey"])
+    return df
 
 
 def extract_anncomp(db, gvkeys, min_year, max_year):
     frames = []
     for chunk in _chunks(gvkeys):
-        sql = f"""
+        frames.append(db.raw_sql(f"""
             SELECT gvkey, year, execid, co_per_rol, exec_fullname,
                    exec_fname, exec_mname, exec_lname, coname, title,
                    ceoann, cfoann, joined_co, leftofc AS leftco,
@@ -134,61 +181,91 @@ def extract_anncomp(db, gvkeys, min_year, max_year):
             FROM {TABLES['anncomp']}
             WHERE year BETWEEN {min_year} AND {max_year}
               AND gvkey IN ({_in_list(chunk)})
-        """
-        frames.append(db.raw_sql(sql))
-    return _concat(frames)
+        """))
+    df = _concat(frames)
+    if len(df):
+        df["gvkey"] = _norm_gvkey(df["gvkey"])
+    return df
 
 
-def extract_company_mapping(db, gvkeys):
-    frames = []
-    for chunk in _chunks(gvkeys):
-        sql = f"""
-            SELECT rcid, company, ticker, cusip, isin, gvkey, lei, naics, sic
-            FROM {TABLES['rev_company']}
-            WHERE gvkey IN ({_in_list(chunk)})
-        """
-        frames.append(db.raw_sql(sql))
-    return _concat(frames)
+def extract_mapping(db, gvkey_set):
+    """All company_mapping rows with a gvkey, normalised and filtered to universe."""
+    df = db.raw_sql(f"""
+        SELECT rcid, company, ticker, cusip, isin, gvkey, lei,
+               naics_code AS naics, NULL AS sic
+        FROM {TABLES['rev_company']} WHERE gvkey IS NOT NULL
+    """)
+    if len(df):
+        df["gvkey"] = _norm_gvkey(df["gvkey"])
+        df["rcid"] = _id_col(df["rcid"])
+        df = df[df["gvkey"].isin(gvkey_set)]
+    return df
 
 
-def extract_positions_and_users(db, rcids):
-    """Two-stage: positions at focal companies -> their users -> ALL positions.
+def extract_revelio(db, focal_rcids, focal_seniority_min):
+    """Senior people at focal firms -> their ENTIRE position history + profiles."""
+    # Stage 1: user_ids holding a senior position at a focal company.
+    users = set()
+    for chunk in _chunks(focal_rcids):
+        u = db.raw_sql(f"""
+            SELECT DISTINCT user_id FROM {TABLES['rev_positions']}
+            WHERE seniority >= {focal_seniority_min}
+              AND rcid IN ({_in_list(chunk)})
+        """)
+        users.update(_clean_ids(u["user_id"]))
+    users = sorted(users)
 
-    This yields each matched person's *complete* work history (every employer),
-    not just the focal-firm spell.
-    """
-    # Stage 1: user_ids who held a position at a focal rcid.
-    user_frames = []
-    for chunk in _chunks(rcids):
-        user_frames.append(db.raw_sql(
-            f"SELECT DISTINCT user_id FROM {TABLES['rev_positions']} "
-            f"WHERE rcid IN ({_in_list(chunk)})"))
-    users = sorted(_concat(user_frames)["user_id"].astype(str).unique())
-
-    # Stage 2: ALL positions for those users + their individual records.
-    pos_cols = ("position_id, user_id, rcid, company, position_number, "
-                "role_raw, role_k150, role_k1500, seniority, salary, "
-                "startdate, enddate, location")
+    # Stage 2: every position for those users + their individual records.
     pos_frames, ind_frames = [], []
     for chunk in _chunks(users):
-        pos_frames.append(db.raw_sql(
-            f"SELECT {pos_cols} FROM {TABLES['rev_positions']} "
-            f"WHERE user_id IN ({_in_list(chunk)})"))
-        ind_frames.append(db.raw_sql(
-            "SELECT user_id, fullname, firstname, lastname, gender, ethnicity "
-            f"FROM {TABLES['rev_individual']} WHERE user_id IN ({_in_list(chunk)})"))
-    return _concat(pos_frames), _concat(ind_frames), len(users)
+        pos_frames.append(db.raw_sql(f"""
+            SELECT position_id, user_id, rcid, position_number,
+                   role_k1500_v2 AS role_k1500, seniority, salary,
+                   startdate, enddate,
+                   concat_ws(', ', city, state, country) AS location
+            FROM {TABLES['rev_positions']} WHERE user_id IN ({_in_list(chunk)})
+        """))
+        ind_frames.append(db.raw_sql(f"""
+            SELECT user_id, fullname,
+                   split_part(trim(fullname), ' ', 1) AS firstname,
+                   reverse(split_part(reverse(trim(fullname)), ' ', 1)) AS lastname,
+                   sex_predicted AS gender, ethnicity_predicted AS ethnicity
+            FROM {TABLES['rev_individual']} WHERE user_id IN ({_in_list(chunk)})
+        """))
+    positions, individuals = _concat(pos_frames), _concat(ind_frames)
+    for df in (positions, individuals):
+        if "user_id" in df.columns and len(df):
+            df["user_id"] = _id_col(df["user_id"])
+    if len(positions):
+        positions["rcid"] = _id_col(positions["rcid"])
+    return positions, individuals, len(users)
 
 
-def _concat(frames):
-    import pandas as pd
-    frames = [f for f in frames if f is not None and len(f)]
-    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+def attach_company_names(db, positions):
+    """Fill positions.company by mapping every rcid (incl. prior employers)."""
+    if not len(positions):
+        positions["company"] = None
+        return positions
+    rcids = sorted(positions["rcid"].dropna().unique())
+    frames = []
+    for chunk in _chunks(rcids):
+        frames.append(db.raw_sql(
+            f"SELECT rcid, company FROM {TABLES['rev_company']} "
+            f"WHERE rcid IN ({_in_list(chunk)})"))
+    names = _concat(frames)
+    if len(names):
+        names["rcid"] = _id_col(names["rcid"])
+        lookup = dict(zip(names["rcid"], names["company"]))
+        positions["company"] = positions["rcid"].map(lookup)
+    else:
+        positions["company"] = None
+    return positions
 
 
 # --- Orchestration ---------------------------------------------------------
 
-def run(username, outdir, min_year, max_year, midcap, smallcap, do_list):
+def run(username, outdir, min_year, max_year, midcap, smallcap,
+        focal_seniority_min, do_list):
     import wrds
     os.makedirs(outdir, exist_ok=True)
     db = wrds.Connection(wrds_username=username)
@@ -197,46 +274,50 @@ def run(username, outdir, min_year, max_year, midcap, smallcap, do_list):
             list_schema(db)
             return
 
-        idxcst, gvkeys = universe_gvkeys(db, midcap, smallcap, min_year, max_year)
-        print(f"S&P 1000 universe: {len(gvkeys)} distinct gvkeys")
-        idxcst.to_csv(os.path.join(outdir, "compustat_idxcst_his.csv"), index=False)
+        idx, gvkeys = universe(db, midcap, smallcap, min_year, max_year)
+        gvkey_set = set(gvkeys)
+        print(f"S&P 1000 universe: {len(gvkeys)} gvkeys")
+        print("  ", _write(idx, "idx", outdir, "compustat_idxcst_his.csv"))
 
-        funda = extract_funda(db, gvkeys, min_year, max_year)
-        funda.to_csv(os.path.join(outdir, "compustat_funda.csv"), index=False)
-        print(f"funda: {len(funda)} firm-years")
+        print("  ", _write(extract_funda(db, gvkeys, min_year, max_year),
+                           "funda", outdir, "compustat_funda.csv"))
+        print("  ", _write(extract_anncomp(db, gvkeys, min_year, max_year),
+                           "anncomp", outdir, "execucomp_anncomp.csv"))
 
-        anncomp = extract_anncomp(db, gvkeys, min_year, max_year)
-        anncomp.to_csv(os.path.join(outdir, "execucomp_anncomp.csv"), index=False)
-        print(f"anncomp: {len(anncomp)} exec-years")
+        mapping = extract_mapping(db, gvkey_set)
+        print("  ", _write(mapping, "mapping", outdir, "revelio_company_mapping.csv"))
+        focal_rcids = sorted(set(_clean_ids(mapping["rcid"])))
+        print(f"  focal rcids: {len(focal_rcids)}")
 
-        mapping = extract_company_mapping(db, gvkeys)
-        mapping.to_csv(os.path.join(outdir, "revelio_company_mapping.csv"), index=False)
-        rcids = sorted(mapping["rcid"].dropna().astype(str).unique())
-        print(f"company mapping: {len(mapping)} rows, {len(rcids)} rcids")
-
-        positions, individuals, n_users = extract_positions_and_users(db, rcids)
-        positions.to_csv(os.path.join(outdir, "revelio_positions.csv"), index=False)
-        individuals.to_csv(os.path.join(outdir, "revelio_individual.csv"), index=False)
-        print(f"revelio: {n_users} users, {len(positions)} positions")
-        print(f"\nDone. CSVs in {outdir}/ — now run `python -m execucomp_revelio`.")
+        positions, individuals, n_users = extract_revelio(
+            db, focal_rcids, focal_seniority_min)
+        positions = attach_company_names(db, positions)
+        print(f"  senior users at focal firms: {n_users}")
+        print("  ", _write(positions, "positions", outdir, "revelio_positions.csv"))
+        print("  ", _write(individuals, "individual", outdir, "revelio_individual.csv"))
+        print(f"\nDone -> {outdir}/  (now run `python -m execucomp_revelio ...`)")
     finally:
         db.close()
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    p.add_argument("--username", required=True, help="Your WRDS username.")
-    p.add_argument("--outdir", default="./wrds_csv", help="Output directory for CSVs.")
+    p.add_argument("--username", required=True)
+    p.add_argument("--outdir", default="./wrds_csv")
     p.add_argument("--min-year", type=int, default=2009)
     p.add_argument("--max-year", type=int, default=2019)
     p.add_argument("--midcap-gvkeyx", default=DEFAULT_MIDCAP_GVKEYX)
     p.add_argument("--smallcap-gvkeyx", default=DEFAULT_SMALLCAP_GVKEYX)
+    p.add_argument("--focal-seniority-min", type=int, default=5,
+                   help="Min Revelio seniority (1-7) for the focal-firm pull "
+                        "that seeds the executive search (default 5).")
     p.add_argument("--list", action="store_true",
-                   help="Only list libraries/tables/columns + index codes, then exit.")
+                   help="List libraries/tables/columns + index codes, then exit.")
     args = p.parse_args(argv)
     try:
         run(args.username, args.outdir, args.min_year, args.max_year,
-            args.midcap_gvkeyx, args.smallcap_gvkeyx, args.list)
+            args.midcap_gvkeyx, args.smallcap_gvkeyx,
+            args.focal_seniority_min, args.list)
     except ImportError:
         sys.exit("The 'wrds' package is required: pip install wrds pandas")
 

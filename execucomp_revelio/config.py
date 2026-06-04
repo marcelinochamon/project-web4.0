@@ -15,15 +15,11 @@ MAX_FYEAR = 2019
 # --- S&P 1000 membership ----------------------------------------------------
 
 # The S&P 1000 = S&P MidCap 400 + S&P SmallCap 600. In Compustat ``idxcst_his``
-# each index is identified by a ``gvkeyx``. The codes below are PLACEHOLDERS
-# that match the bundled sample data; before running on real WRDS data, confirm
-# the gvkeyx values for your environment, e.g.:
-#
-#     SELECT DISTINCT gvkeyx, conm FROM comp.idxcst_his
-#     WHERE conm ILIKE '%MIDCAP 400%' OR conm ILIKE '%SMALLCAP 600%';
-#
-# and override via the ``--index-gvkeyx`` CLI flag or by editing this tuple.
-SP1000_INDEX_GVKEYX = ("000400", "000600")
+# each index is identified by a ``gvkeyx``. These are the confirmed WRDS codes
+# (from ``comp.idx_index``): S&P MidCap 400 = 024248, S&P SmallCap 600 = 030824
+# (a direct "S&P 1000 Index" also exists as 146884). Override via
+# ``--index-gvkeyx`` if your environment differs.
+SP1000_INDEX_GVKEYX = ("024248", "030824")
 
 
 # --- SIC industry exclusions ------------------------------------------------

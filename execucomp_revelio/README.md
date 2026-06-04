@@ -43,7 +43,7 @@ python -m execucomp_revelio \
     --company-mapping  path/to/revelio_company_mapping.csv \
     --output           execucomp_revelio.db \
     --min-tier medium \
-    --index-gvkeyx 000400 000600 \
+    --index-gvkeyx 024248 030824 \
     --export-dir       ./out          # optional: also write CSVs
 ```
 
@@ -302,10 +302,9 @@ Defaults live in `config.py` (all overridable):
 
 * `MIN_FYEAR` / `MAX_FYEAR` — study window (2009–2019).
 * `SP1000_INDEX_GVKEYX` — Compustat `gvkeyx` codes for S&P MidCap 400 +
-  SmallCap 600. **Verify these against your WRDS environment** —
-  `SELECT DISTINCT gvkeyx, conm FROM comp.idxcst_his` — and override via
-  `--index-gvkeyx`. The bundled placeholders (`000400`, `000600`) match the
-  sample data.
+  SmallCap 600. Confirmed WRDS values `024248` (MidCap 400) and `030824`
+  (SmallCap 600); a direct "S&P 1000 Index" is `146884`. Override via
+  `--index-gvkeyx` if needed. (The sample data uses these same codes.)
 * `EXCLUDED_SIC_RANGES` — financials `6000–6999` and utilities `4900–4949`
   (historical `sich` preferred over header `sic`).
 * `EXEC_SENIORITY_MIN`, `EXEC_ROLE_KEYWORDS`, `NAME_STRONG`/`NAME_WEAK`, the
