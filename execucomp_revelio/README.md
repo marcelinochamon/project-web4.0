@@ -84,11 +84,21 @@ script if your schema names differ (Execucomp/Revelio table names drift).
 > Don't commit the resulting WRDS/Revelio CSVs — they're licensed data. Keep
 > them local and run the pipeline there (it has no third-party deps).
 
-## Defining the universe (two modes)
+## Defining the universe (three modes)
 
-**Default — `idxcst_his` (recommended).** Pass the historical constituent table
-via `--index`; membership is derived per firm-year from the from/thru dates.
-This is historically accurate for 2009–2019 and already keyed by `gvkey`.
+**Default — `idxcst_his` (recommended *if your licence carries history*).** Pass
+the historical constituent table via `--index`; membership is derived per
+firm-year from the from/thru dates. This is historically accurate for 2009–2019
+and already keyed by `gvkey`.
+
+> ⚠️ **Check that `idxcst_his` actually has history on your account.** On some
+> WRDS licences `comp.idxcst_his` is a *current snapshot* — every member row has
+> a `from` date but a **NULL `thru`**, so firms that left the index are simply
+> absent. That silently reintroduces the survivorship bias you were trying to
+> avoid. Quick test: for an S&P MidCap 400/SmallCap 600 `gvkeyx`, the row count
+> should far exceed the index size and many rows should have a non-NULL `thru`.
+> If every `thru` is NULL and the count equals the current index size, your
+> `idxcst_his` is a snapshot — use the **CRSP market-cap proxy** below instead.
 
 **Alternative — explicit constituent list (`--constituents`).** Supply a CSV
 keyed on `ticker`, `cik`, and/or `gvkey`; the pipeline resolves each to a
@@ -104,6 +114,29 @@ python -m execucomp_revelio --constituents sp1000_constituents.csv --export-dir 
 > "List of S&P 400/600 companies") omits firms that left the index before today
 > and includes recent additions, so applying it across 2009–2019 biases the
 > sample. Use it for prototyping; use `idxcst_his` for the final panel.
+
+**Survivorship-free — CRSP market-cap proxy (`crsp_universe.py`).** When
+point-in-time index membership isn't available (e.g. a snapshot-only
+`idxcst_his`, or no S&P 400/600 history on your licence at all), reconstruct the
+"S&P 1000" idea — mid- plus small-cap U.S. common stocks — directly from CRSP.
+Each June it ranks eligible commons (share codes 10/11, exchanges 1/2/3) by
+market equity and keeps a fixed size band (ranks 501–1500 by default), holding
+Jul→Jun and applying CRSP **delisting returns**. Because CRSP retains every
+security that ever traded, the universe includes firms that later died — it is
+survivorship-free by construction, with no dependence on index membership.
+
+```bash
+pip install wrds pandas
+python -m execucomp_revelio.crsp_universe --username YOUR_WRDS_ID \
+    --start-year 2020 --end-year 2024 --outdir ./wrds_csv
+# -> crsp_mktcap_universe.csv (form_year,form_date,permno,gvkey,me,me_rank)
+#    crsp_mktcap_returns.csv  (form_year,permno,gvkey,month,ret,dlret,retadj)
+```
+
+It links `permno → gvkey` via the CCM link table, so the universe collapses to
+a `gvkey × year` spine that merges with the rest of this pipeline. Add
+`--nyse-breaks` for Fama-French-style NYSE-only breakpoints; the held window
+truncates at the latest CRSP date your licence carries.
 
 ### Wikipedia → constituent CSV
 
@@ -356,6 +389,7 @@ execucomp_revelio/
 ├── names.py             # name normalization + similarity score
 ├── universe.py          # S&P 1000 / window / SIC filter (idxcst or list mode)
 ├── wrds_extract.py      # pull the six inputs from WRDS (run on your account)
+├── crsp_universe.py     # survivorship-free mid/small-cap universe from CRSP (market-cap proxy)
 ├── wiki_parse.py        # Wikipedia S&P 400/600 page -> constituent / change CSV
 ├── reconstruct.py       # backward-reconstruct historical membership from changes
 ├── crosswalk.py         # gvkey <-> rcid (Revelio gvkey + ticker/cusip fallback)
